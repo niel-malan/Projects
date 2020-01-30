@@ -1,0 +1,857 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     32639,        849]
+NotebookOptionsPosition[     29516,        781]
+NotebookOutlinePosition[     30500,        813]
+CellTagsIndexPosition[     30457,        810]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Carrier gas flow measurement", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.7877537795374966`*^9, 
+   3.78775379001549*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["11 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.7877521117137113`*^9, 
+   3.78775212007336*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+We need to have a measure of the carrier gas flow in the fast GC column. The \
+convention is to use average linear velocity, which is measured by dividing \
+the length of the column by the retention time of an unretained compound. In \
+the fast GC this is not a realistic, simple solution, because the void time \
+is to short to measure conveniently with a stopwatch: by the time the syringe \
+is removed from the inlet the compound is already eluting. I therefore used \
+the installation of a new column as an opportunity to do a gas flow \
+calibration.\
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.787752125654442*^9, 3.7877521969797697`*^9}, {3.787752369774887*^9, 
+   3.787752613787538*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell["\<\
+Using different settings on the pressure regulator of the GC inlet gas \
+pressure, I measured the volumetric flow through a 1-metre length of column \
+using a bubble flow meter.\
+\>", "Text",
+ CellChangeTimes->{{3.7855664096603127`*^9, 3.785566453273655*^9}, {
+  3.7855688519408875`*^9, 3.785568896176516*^9}, {3.7860966115098705`*^9, 
+  3.786096632020996*^9}, {3.787752201446829*^9, 3.7877522722475586`*^9}, {
+  3.7877523337611227`*^9, 3.7877523599521065`*^9}, {3.787752567140233*^9, 
+  3.787752587025078*^9}},ExpressionUUID->"118762a6-a6d4-4b58-9526-\
+022a13f7bd6f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculations", "Section",
+ CellChangeTimes->{{3.7854911900001135`*^9, 3.7854912032646475`*^9}, {
+  3.785589805500736*^9, 3.7855898070067077`*^9}, {3.7860967323396125`*^9, 
+  3.7860967370230837`*^9}},ExpressionUUID->"313534f2-78b3-47e4-a3e5-\
+f406dd67943e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\fskdm\\\\My \
+PhD\\\\Projects\\\\2019_12_20_PhD_Last_Project\\\\2019_12_17_Flow_measurement.\
+xlsx\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.787752279325638*^9, 3.787752313184127*^9}, 
+   3.787752700152195*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"e5483b9c-054a-4c75-9356-ba9fe69dd72d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", "data", "]"}]], "Input",
+ CellChangeTimes->{{3.7877526959584045`*^9, 3.787752711776119*^9}, {
+  3.787752755168157*^9, 3.7877527720969152`*^9}},
+ CellLabel->
+  "In[113]:=",ExpressionUUID->"74feb117-c899-4f75-8dea-d782fee1cdd8"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {"\<\"Head pressure (psi)\"\>"},
+       {"\<\"Volume (ml)\"\>"},
+       {"\<\"Time (s)\"\>"},
+       {"\<\"Time (min)\"\>"},
+       {"\<\"Flow (ml/min)\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"8.`"},
+       {"2.`"},
+       {"11.2`"},
+       {"0.18666666666666665`"},
+       {"10.714285714285715`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"8.`"},
+       {"2.`"},
+       {"11.11`"},
+       {"0.18516666666666665`"},
+       {"10.801080108010803`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"8.`"},
+       {"1.5`"},
+       {"8.31`"},
+       {"0.1385`"},
+       {"10.830324909747292`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"8.`"},
+       {"2.`"},
+       {"10.99`"},
+       {"0.18316666666666667`"},
+       {"10.91901728844404`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.58`"},
+       {"0.059666666666666666`"},
+       {"33.5195530726257`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.63`"},
+       {"0.0605`"},
+       {"33.057851239669425`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.61`"},
+       {"0.06016666666666667`"},
+       {"33.2409972299169`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.7`"},
+       {"0.06166666666666667`"},
+       {"32.432432432432435`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.75`"},
+       {"0.0625`"},
+       {"32.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"2.`"},
+       {"2.13`"},
+       {"0.0355`"},
+       {"56.33802816901409`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"10.`"},
+       {"9.91`"},
+       {"0.16516666666666666`"},
+       {"60.54490413723512`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"10.`"},
+       {"11.88`"},
+       {"0.198`"},
+       {"50.505050505050505`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"2.`"},
+       {"2.07`"},
+       {"0.034499999999999996`"},
+       {"57.97101449275363`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"2.`"},
+       {"1.99`"},
+       {"0.033166666666666664`"},
+       {"60.30150753768845`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"8.`"},
+       {"5.31`"},
+       {"0.0885`"},
+       {"90.3954802259887`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"8.`"},
+       {"5.38`"},
+       {"0.08966666666666666`"},
+       {"89.2193308550186`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"8.`"},
+       {"5.33`"},
+       {"0.08883333333333333`"},
+       {"90.0562851782364`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"8.`"},
+       {"5.32`"},
+       {"0.08866666666666667`"},
+       {"90.22556390977444`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"10.`"},
+       {"6.73`"},
+       {"0.11216666666666668`"},
+       {"89.15304606240713`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.79`"},
+       {"0.1465`"},
+       {"6.825938566552901`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.55`"},
+       {"0.14250000000000002`"},
+       {"7.017543859649122`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.46`"},
+       {"0.14100000000000001`"},
+       {"7.092198581560283`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.46`"},
+       {"0.14100000000000001`"},
+       {"7.092198581560283`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.35`"},
+       {"0.13916666666666666`"},
+       {"7.185628742514971`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{{
+     "Head pressure (psi)", "Volume (ml)", "Time (s)", "Time (min)", 
+      "Flow (ml/min)"}, {8., 2., 11.2, 0.18666666666666665`, 
+     10.714285714285715`}, {8., 2., 11.11, 0.18516666666666665`, 
+     10.801080108010803`}, {8., 1.5, 8.31, 0.1385, 10.830324909747292`}, {8., 
+     2., 10.99, 0.18316666666666667`, 10.91901728844404}, {12., 2., 3.58, 
+     0.059666666666666666`, 33.5195530726257}, {12., 2., 3.63, 0.0605, 
+     33.057851239669425`}, {12., 2., 3.61, 0.06016666666666667, 
+     33.2409972299169}, {12., 2., 3.7, 0.06166666666666667, 
+     32.432432432432435`}, {12., 2., 3.75, 0.0625, 32.}, {16., 2., 2.13, 
+     0.0355, 56.33802816901409}, {16., 10., 9.91, 0.16516666666666666`, 
+     60.54490413723512}, {16., 10., 11.88, 0.198, 50.505050505050505`}, {16., 
+     2., 2.07, 0.034499999999999996`, 57.97101449275363}, {16., 2., 1.99, 
+     0.033166666666666664`, 60.30150753768845}, {20., 8., 5.31, 0.0885, 
+     90.3954802259887}, {20., 8., 5.38, 0.08966666666666666, 
+     89.2193308550186}, {20., 8., 5.33, 0.08883333333333333, 
+     90.0562851782364}, {20., 8., 5.32, 0.08866666666666667, 
+     90.22556390977444}, {20., 10., 6.73, 0.11216666666666668`, 
+     89.15304606240713}, {7., 1., 8.79, 0.1465, 6.825938566552901}, {7., 1., 
+     8.55, 0.14250000000000002`, 7.017543859649122}, {7., 1., 8.46, 
+     0.14100000000000001`, 7.092198581560283}, {7., 1., 8.46, 
+     0.14100000000000001`, 7.092198581560283}, {7., 1., 8.35, 
+     0.13916666666666666`, 7.185628742514971}}, {{}}, {{}}}]]], "Output",
+ CellChangeTimes->{
+  3.7877527122199345`*^9, {3.787752761087298*^9, 3.7877527733604865`*^9}},
+ CellLabel->
+  "Out[113]//TableForm=",ExpressionUUID->"195bec3e-e431-47a1-8c25-\
+8c5df604f216"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"line", " ", "=", " ", 
+  RowBox[{"Fit", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"data", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{
+       RowBox[{"2", ";;"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "5"}], "}"}]}], "]"}], "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "x"}], "}"}], ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.787753434526634*^9, 3.787753466041388*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"7b1e5a90-4bf6-47ee-9a88-4ced093dd4cf"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "39.77549946625027`"}], "+", 
+  RowBox[{"6.293326542638903`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{3.787753467220235*^9, 3.7878922535513277`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"0e3f1b1c-a992-4e79-8f61-e469ace356b3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results & Discussion", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}, {3.7877536985589733`*^9, 
+  3.7877537020017705`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\[IndentingNewLine]", "\t", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"data", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{
+        RowBox[{"2", ";;"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "5"}], "}"}]}], "]"}], "]"}], 
+     "\[IndentingNewLine]", ",", " ", 
+     RowBox[{"PlotLabel", "\[Rule]", " ", "\"\<Flow calibration\>\""}], 
+     "\[IndentingNewLine]", ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Inlet pressure (psi)\>\"", ",", "\"\<Flow (ml/min)\>\""}],
+        "}"}]}], " ", "\[IndentingNewLine]", ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}], 
+   "\[IndentingNewLine]", "\t", ",", " ", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"line", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "0", ",", " ", "20"}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.7877527334512105`*^9, 3.787752734461474*^9}, {
+  3.78775278315335*^9, 3.787753058011158*^9}, {3.787753142873299*^9, 
+  3.787753160210952*^9}, {3.7877534742185793`*^9, 3.7877535484880195`*^9}},
+ CellLabel->
+  "In[135]:=",ExpressionUUID->"ea026e26-20a1-43f8-b828-9e73eb599782"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxTTMoPSmViYGCQAGIQDQEKDne25d7elqvqAOPfPcykoz4Lwc+8tiNCYSWC
+f3KZTH7nNRhfwyFqN//2hkMOcP5Tk/jV6e0I/o5Sr/835iH4Zc2anyLNEXwI
+DeMbOGS2nm100faB8xcVmGTvd/WD86cxba1b6uAJ51/U+Gjs9Qeh3uN915np
+ajD1Jg4tpt49/jPD4PwDwR4tnH4I/vSPqrqzmhH85y9mL87vQ/DrTLY1nvaE
+8WUcrNLeXzvkKw3nyx+sZfkuKAPnf1QX8suMw82fbsRZJrpPxgEAaN5asg==
+
+       "]]}, {}}, {}, {}, {}, {}}, {{{}, {}, 
+     TagBox[
+      {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+       Opacity[1.], LineBox[CompressedData["
+1:eJwVxX041AcAB/ArRUNzaCJz7kyO89LpVxt5ua+79Uri3C9PRzUvoVORp3sm
+x1IRCjFKmLdQTymV6cWEXyh5u5JGDSUyi4x2XVzZbtsfn+fDCo4S7llIo9G2
+/uf/i34I1nQMLXRvy4iTCUYFVGsv08ufeZg3nR1zUvhCQKkfNB5nMtN4xmcl
++UHPBVQRlWG+mJnP21ssvn3kkYDa5ybdP2t+iad7bZ2ivl5A9X6KyJ0xr+MJ
+H3+UrMkVUFoDI+wp83bekIFMvHK9gCrrKDk4af6cp8iTOWtd5FPV19IG9jlM
+8E41u+909PGgwnk9+W9jFDz5Ra98QzqoA2M2o7XVKl6pdUFd3BU3SpuVxH7p
+REM831y3UMOFyqR3csq+00B1j/Np21QnKnhA1KTRpYlbZc+GUvvXUgfvJwVH
+sbXBSwx0kRIEdSNa189481KYPZW299zlUmWyyAmuPx2lPVYbPrDsqGMl877v
+3+qjZixdbLOSTdF6h3E3zhAPjRrS4zwsKKtDYbEizheg50xWdfxuQr1W5m3X
+aTDCTHcNLYhGp7aMSRJ+PGiMUq7d55eXKZu8X2fZMhgrUPona85dT8mbaAlO
+fHjVFNzA9DgDh8/hoN9nJthtBu5QTKZekwm0ecqgQQUDsQMVmZefsbBxSjxr
+QTJx5YFWE+HKxrPm0AViOxaGc0t7ik/Y4WZq6y6mkoU1rin3ltVzEbZYOiyX
+W4A5Vee9NIJASIzspm7BV7hj7V91ZnwtVoXbyr2CLPGY1FNlip3wyMBOR+q8
+EnS+QFa/0AX11ccK7TSsMH/nVdf3CW6QLeD4dA1ZIXU24dLPRoD2YNymA7Vs
+CE8Zj4VEeGDsAiu3JN4a0aERSwLL+ci1NllUR9rA0uzD/ak5AbIKwtqCmBxw
+TZ0j275ZD3HuTrnuOAdz2Z+l7YjegLlvK1UljbbY/sdyj+SWjRgd48c2p9hB
+O2lgeE69CefdHE27g+whVA+u0PTfgqvJUv1wewfMNOW4BuR5IoUM8dRQOsBb
+1d8X0eOFtYNll1K6V4FvINahW3njnE3h1W5PLk5GZ7PVIdtwhMo451nHxRp/
+jWnBLh9sNSUrOywdcbQm6USoli88DrQF6Kc54vD1YX2bSl+UfBls2aV0hGtx
+gGSdjxCWLRfPegesxmWHG7emp4XIsm/mPGlcjVjZVt7RdD+EKRb1tHMI0O8s
+ObP7axGCb/zFTDtNQJhX/OLVUxH2HfOb35JN4CjkFZX9Ikj9avt1cwhUv/lb
+svc3EVKV0sysswS0XXfOzrwUodpZ9SmviEDzsCmdNimC6p6670IVAS4n34Ox
+gETWE92M1jYCeg05FWJ7EgXl+yNOtBNwC2uRMLgkyg/JBZs6CUTqKbgjq0nc
+Msr62Ckn0BYkbNjrRGJQbBjR+yuBI5r6fbECEuxRE8HIKIGpbZlaeTtIcGvj
+GBVjBFaoGrrFgSTWJQ+o9owT2Hx+Koexm4QXu+j6mwkC5e+9mBdCScREMhnv
+3hEIyNdxvhlFIt71qKpGQeAk30UdG0MieenI00NKArcnJfddpSTOXSs/NTdH
+wNC9w7c1jsT5xEXhv3wkwB9XLU9NIFHlu4cfP08gKsvmhWciiVqLB2bu/xD4
+yXlHhd5xEo0KK5VaTaBzJFXSm0ziXxfELAs=
+        "]]},
+      Annotation[#, "Charting`Private`Tag$60765#1"]& ]}, {}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"Inlet pressure (psi)\"", TraditionalForm], 
+    FormBox["\"Flow (ml/min)\"", TraditionalForm]},
+  AxesOrigin->{6.796875, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->Large,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox["\"Flow calibration\"", TraditionalForm],
+  PlotRange->{{7., 20.}, {0, 90.3954802259887}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7877527352533894`*^9, {3.787752817183337*^9, 3.7877529741224365`*^9}, {
+   3.787753041814456*^9, 3.7877530586235213`*^9}, 3.7877531614865417`*^9, 
+   3.787753549623949*^9},
+ CellLabel->
+  "Out[135]=",ExpressionUUID->"25d444e9-de19-44ae-8ace-4901717b999e"]
+}, Open  ]],
+
+Cell["\<\
+The graph shows how the flow varies with head pressure. Because of the \
+shortness of the column the flow is very high for head pressures that would \
+be considered quite moderate in normal GC.\
+\>", "Text",
+ CellChangeTimes->{{3.787753126527995*^9, 3.787753190093112*^9}, {
+  3.7877533438071566`*^9, 
+  3.7877533859834356`*^9}},ExpressionUUID->"25d122ed-53cc-4802-b4bb-\
+9eb6ab692c01"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 3.785569649894513*^9}, {
+  3.7877536872571907`*^9, 
+  3.7877536891491385`*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+The flow data that was collected will be useful in predicting the carrier gas \
+flow in the SFC\[Times]GC.\
+\>", "Text",
+ CellChangeTimes->{{3.7877536181259937`*^9, 
+  3.78775367730579*^9}},ExpressionUUID->"3b5e87c5-f887-49f5-96a0-\
+e6082e806f0e"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 500, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1341, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1499, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1759, 51, 413, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2197, 61, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2359, 66, 1551, 23, 77, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3947, 94, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[4109, 99, 578, 10, 33, "Text",ExpressionUUID->"118762a6-a6d4-4b58-9526-022a13f7bd6f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4724, 114, 262, 4, 69, "Section",ExpressionUUID->"313534f2-78b3-47e4-a3e5-f406dd67943e"],
+Cell[4989, 120, 413, 10, 39, "Input",ExpressionUUID->"e5483b9c-054a-4c75-9356-ba9fe69dd72d"],
+Cell[CellGroupData[{
+Cell[5427, 134, 267, 5, 39, "Input",ExpressionUUID->"74feb117-c899-4f75-8dea-d782fee1cdd8"],
+Cell[5697, 141, 16509, 451, 138, "Output",ExpressionUUID->"195bec3e-e431-47a1-8c25-8c5df604f216"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22243, 597, 551, 15, 39, "Input",ExpressionUUID->"7b1e5a90-4bf6-47ee-9a88-4ced093dd4cf"],
+Cell[22797, 614, 269, 5, 72, "Output",ExpressionUUID->"0e3f1b1c-a992-4e79-8f61-e469ace356b3"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23115, 625, 316, 5, 69, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[CellGroupData[{
+Cell[23456, 634, 1282, 31, 154, "Input",ExpressionUUID->"ea026e26-20a1-43f8-b828-9e73eb599782"],
+Cell[24741, 667, 3829, 82, 350, "Output",ExpressionUUID->"25d444e9-de19-44ae-8ace-4901717b999e"]
+}, Open  ]],
+Cell[28585, 752, 396, 8, 33, "Text",ExpressionUUID->"25d122ed-53cc-4802-b4bb-9eb6ab692c01"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29018, 765, 210, 4, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[29231, 771, 257, 6, 33, "Text",ExpressionUUID->"3b5e87c5-f887-49f5-96a0-e6082e806f0e"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

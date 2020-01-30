@@ -1,0 +1,424 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19495,        416]
+NotebookOptionsPosition[     16216,        348]
+NotebookOutlinePosition[     17200,        380]
+CellTagsIndexPosition[     17157,        377]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["SFC Virtual Chromatogram for SFC\[Times]GC", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.7873998524447985`*^9, 
+   3.787399864661182*^9}, {3.787400346078088*^9, 
+   3.787400350443427*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["07 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.787399873222263*^9, 
+   3.787399878003484*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+The SFC\[Times]GC is a rather unitary instrument. Although it\
+\[CloseCurlyQuote]s conceptually a GC connected to an SFC, in practice it\
+\[CloseCurlyQuote]s just an SFC\[Times]GC. Its only output is data for 2D \
+chromatograms, and all that\[CloseCurlyQuote]s visible on the screen while \
+the instrument is running is the FID trace. (Apart from all the temperature \
+and pressure control data, of course.) The 2D chromatograms are produced \
+offline, at this time. This means that it\[CloseCurlyQuote]s not really \
+possible to know how far a run has gone: one has to set an end time for the \
+SFC and hope that all the analytes elute in this time. Also, if you\
+\[CloseCurlyQuote]re not present when the GC peaks come out, you don\
+\[CloseCurlyQuote]t know if there has been a peak on the SFC. 
+To help solve this problem I added a virtual SFC chromatogram display to the \
+virtual instrument (VI) front panel. \
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.787399886713236*^9, 3.78740008321896*^9}, {3.7874002014367056`*^9, 
+   3.7874003166428165`*^9}, {3.7874003626707883`*^9, 3.787400446385974*^9}, {
+   3.7874004837072177`*^9, 3.787400504522588*^9}, {3.787400552639966*^9, 
+   3.7874006646855245`*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell[CellGroupData[{
+
+Cell["Data Structure", "Subsection",
+ CellChangeTimes->{{3.787400816498726*^9, 
+  3.7874008248554473`*^9}},ExpressionUUID->"f2187147-11c9-4b6f-a710-\
+19c1202d7fe4"],
+
+Cell["\<\
+The SFC\[Times]GC data are stored in binary format. All the records are \
+identical. \
+\>", "Text",
+ CellChangeTimes->{{3.7874008286852093`*^9, 3.787400848278788*^9}, {
+  3.7874008883917*^9, 
+  3.7874009459448643`*^9}},ExpressionUUID->"cdffd5ee-c767-42a3-b7aa-\
+f3a2af8ffc6d"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0", "0.09999999999990905`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+     "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`"},
+    {"1", "59.8`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+     "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`"},
+    {"2", "0.058999999999741704`", "299.0229172655926`", "340.5319060251718`",
+      "1.3784515380859377`", "0.471258544921875`", "1.7860881317138672`*^7", 
+     "63761.03210449219`", "612.5110538844065`", "579.8311524122994`", 
+     "0.268341064453125`", "237.3924780694349`", "2.0265`*^7", 
+     "2.7676923749999996`*^7", "623.15`", "673.15`", "253.15`"},
+    {"2", "0.08099999999967622`", "298.9857952765548`", "341.222026589887`", 
+     "1.3785491943359376`", "0.47115478515625003`", "1.7900430473327637`*^7", 
+     "58597.068786621094`", "612.1942767562173`", "579.5319064998596`", 
+     "0.2692413330078125`", "237.3497839021283`", "2.0265`*^7", 
+     "2.7676923749999996`*^7", "623.15`", "673.15`", "253.15`"},
+    {"2", "0.10199999999986176`", "299.0110290283062`", "338.88955478500986`",
+      "1.3778289794921876`", "0.4707550048828125`", "1.787927986907959`*^7", 
+     "48207.298278808594`", "612.433925772196`", "579.3508618267579`", 
+     "0.27059326171875`", "237.30194652138604`", "2.0265`*^7", 
+     "2.7676923749999996`*^7", "623.15`", "673.15`", "253.15`"},
+    {"2", "0.12399999999979627`", "299.0165948191333`", "336.9807105795804`", 
+     "1.3775970458984377`", "0.47066650390625003`", "1.784978034210205`*^7", 
+     "46042.762756347656`", "612.4827392794531`", "579.4673017736687`", 
+     "0.2655548095703125`", "237.2990638168768`", "2.0265`*^7", 
+     "2.7676923749999996`*^7", "623.15`", "673.15`", "253.15`"},
+    {"2", "0.1449999999999818`", "299.00578756356833`", "335.0166470798786`", 
+     "1.3777618408203125`", "0.47074279785156253`", "1.777253734588623`*^7", 
+     "67873.64959716797`", "612.4840665294907`", "579.3848733737713`", 
+     "0.25919189453125`", "237.30528797431916`", "2.0265`*^7", 
+     "2.7676923749999996`*^7", "623.15`", "673.15`", "253.15`"},
+    {"2", "0.16699999999991633`", "298.9638594640263`", "342.7898993701628`", 
+     "1.37841796875`", "0.47064208984375`", "1.782776392364502`*^7", 
+     "68492.0883178711`", "612.209172138934`", "579.1781257316119`", 
+     "0.2675445556640625`", "237.20420852822974`", "2.0265`*^7", 
+     "2.7676923749999996`*^7", "623.15`", "673.15`", "253.15`"},
+    {"2", "0.18899999999985084`", "298.9870379977407`", "337.3528233586069`", 
+     "1.378961181640625`", "0.4705657958984375`", "1.783215483856201`*^7", 
+     "63451.812744140625`", "612.2634441162913`", "579.1806507386282`", 
+     "0.2692352294921875`", "237.1228435728542`", "2.0265`*^7", 
+     "2.7676923749999996`*^7", "623.15`", "673.15`", "253.15`"},
+    {"2", "0.21000000000003638`", "299.0025724886064`", "341.44275043105057`",
+      "1.3790771484375002`", "0.4702789306640625`", "1.7744367462158203`*^7", 
+     "53927.8564453125`", "612.4247824132563`", "578.8978388983026`", 
+     "0.268194580078125`", "237.02144000458426`", "2.0265`*^7", 
+     "2.7676923749999996`*^7", "623.15`", "673.15`", "256.10524999999734`"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.5873672365079255`*^9, 3.590912044588068*^9, 3.5915169304400215`*^9, 
+   3.5916077135439816`*^9, 3.5916113259075975`*^9, {3.5916876400014133`*^9, 
+   3.591687666619936*^9}, 3.5916940988424034`*^9, 3.591949746354146*^9, 
+   3.591949839154454*^9, {3.5920285168231907`*^9, 3.592028533661154*^9}, 
+   3.5920357067584314`*^9, 3.5920452513845634`*^9, 3.592045381852026*^9, 
+   3.592123220787706*^9, 3.592123277951976*^9, 3.5925787907881327`*^9, 
+   3.5935301801926565`*^9, 3.594547514341856*^9, 3.59497073244938*^9, 
+   3.5950713673298993`*^9, 3.653992955296204*^9, 3.6539944210790415`*^9, 
+   3.654325068942825*^9, 3.654336748198618*^9, 3.6573640386856623`*^9, 
+   3.6574286216913786`*^9, 3.6730823094550734`*^9, 3.6749898376492205`*^9, 
+   3.6846478828301754`*^9, 3.684832414936378*^9, 3.68509437355602*^9, 
+   3.685098752688492*^9, 3.6854406888465037`*^9, 3.685872402480863*^9, 
+   3.685876254453183*^9, 3.6859635760266104`*^9, 3.686030451027958*^9, 
+   3.6860305380459347`*^9, 3.690194278034718*^9, {3.705824425629095*^9, 
+   3.7058244553477955`*^9}, {3.7058246353680916`*^9, 3.705824665209799*^9}, 
+   3.7058248041837473`*^9, 3.7058266016225553`*^9, 3.711268150146989*^9, 
+   3.714726008711244*^9, 3.7148438482824197`*^9, 3.781696401775626*^9, 
+   3.781696449620638*^9, 3.781696487021587*^9, {3.7816967514492216`*^9, 
+   3.7816967779822426`*^9}, 3.7816968530255375`*^9, 3.781696916434869*^9, 
+   3.781697445254411*^9, 3.7816975290153923`*^9, 3.7816982520913305`*^9, 
+   3.7819402516491776`*^9, 3.7819407161948867`*^9, 3.7820272350215063`*^9, 
+   3.782027388225359*^9, 3.7864333456600657`*^9, 3.786451711497856*^9},
+ CellLabel->
+  "Out[4]//TableForm=",ExpressionUUID->"224f5a01-a17b-408c-afd7-11a99928ebc0"],
+
+Cell["The meanings of the columns are as follows:", "Text",
+ CellChangeTimes->{{3.7874015061194363`*^9, 
+  3.787401526351408*^9}},ExpressionUUID->"a9515817-03c9-4c35-a635-\
+921481d1e8d2"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"\<\"ID\"\>", "\<\"Time\"\>", "\<\"TAmbient\"\>", "\<\"Ttc\"\>", "\<\"Vb\
+\"\>", "\<\"dV\"\>", "\<\"P1\"\>", "\<\"P2\"\>", "\<\"TInlet\"\>", \
+"\<\"TOutlet\"\>", "\<\"Detector\"\>", "\<\"TColumn\"\>", "\<\"Vcol\"\>", "\<\
+\"P1 Setpoint\"\>", "\<\"P2 Setpoint\"\>", "\<\"TInlet Setpoint\"\>", \
+"\<\"TOutlet Setpoint\"\>", "\<\"TColumn Setpoint\"\>"},
+    {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", 
+     "14", "15", "16", "17", "\<\"\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+    "ID", "Time", "TAmbient", "Ttc", "Vb", "dV", "P1", "P2", "TInlet", 
+     "TOutlet", "Detector", "TColumn", "Vcol", "P1 Setpoint", "P2 Setpoint", 
+     "TInlet Setpoint", "TOutlet Setpoint", "TColumn Setpoint"}, {1, 2, 3, 4, 
+    5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}}]]], "Output",
+ CellChangeTimes->{3.684662586489719*^9, 3.6857833577840047`*^9, 
+  3.705824851187436*^9, 3.705826630413202*^9, 3.7816969802142553`*^9},
+ CellLabel->
+  "Out[302]//TableForm=",ExpressionUUID->"da81bcf7-f57f-416b-8291-\
+3d83ad8abf35"],
+
+Cell["\<\
+The ID of the record indicates what is stored in that record. If the ID is 2, \
+then the record is a GC data point, for example. Evidently, in a \
+SFC\[Times]GC data set records have ID=2. ID=1 is the SFC run time for that \
+GC chromatogram, and ID=3 marks the end of the GC chromatogram. \
+\>", "Text",
+ CellChangeTimes->{{3.7874015377429085`*^9, 3.787401663741122*^9}, {
+  3.787401695194068*^9, 
+  3.787401829541006*^9}},ExpressionUUID->"caedb22a-2269-4731-a924-\
+cc65dbb3d3e9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Software", "Subsection",
+ CellChangeTimes->{{3.7854911183646555`*^9, 3.7854911245830636`*^9}, {
+  3.785566407342467*^9, 3.7855664077603908`*^9}, {3.7855746459247303`*^9, 
+  3.785574649197975*^9}, {3.786096586642401*^9, 3.786096587809275*^9}, {
+  3.7874007446947107`*^9, 
+  3.7874007477006197`*^9}},ExpressionUUID->"138d9c62-c966-489e-87ec-\
+d07fe67f64da"],
+
+Cell["\<\
+To calculate a data point for the virtual SFC chromatogram, all the FID \
+output values for the GC run is added together. In practice, when a FID value \
+is recorded, it is also added to a variable. In this way the variable \
+accumulates all the FID values for that GC run. This is accomplished by \
+reading the current ID during the data storage loop. If ID=2, then the FID \
+value is accumulated. When ID=3, which means that the GC has stopped \
+recording, the accumulated value is sent to the virtual SFC display, and the \
+accumulator is reset to 0. \
+\>", "Text",
+ CellChangeTimes->{{3.7855664096603127`*^9, 3.785566453273655*^9}, {
+   3.7855688519408875`*^9, 3.785568896176516*^9}, {3.7860966115098705`*^9, 
+   3.786096632020996*^9}, {3.7874007576919146`*^9, 3.787400801055007*^9}, {
+   3.7874018362180986`*^9, 3.7874022450992374`*^9}, 3.787402276041529*^9, {
+   3.787405379613552*^9, 
+   3.7874053804014463`*^9}},ExpressionUUID->"118762a6-a6d4-4b58-9526-\
+022a13f7bd6f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell["\<\
+By simulating an SFC\[Times]GC run, using the FID baseline zero adjustment as \
+a proxy for the FID signal, I was able to show that a virtual SFC \
+chromatogram can be displayed. \
+\>", "Text",
+ CellChangeTimes->{{3.787405025390362*^9, 
+  3.7874051612242913`*^9}},ExpressionUUID->"c2533f20-b6eb-4dd7-857a-\
+2110d8b4dc54"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+A virtual SFC chromatogram will help with determining the progress of an SFC\
+\[Times]GC run, and should be valuable when testing or developing methods. \
+\>", "Text",
+ CellChangeTimes->{{3.7874052050960245`*^9, 
+  3.7874053054318657`*^9}},ExpressionUUID->"59742c43-d10b-40c1-b3bc-\
+9e6697a81dca"],
+
+Cell["\<\
+At the moment the values for the virtual SFC chromatogram are not recorded in \
+a file, but only displayed on screen for use during chromatographic runs. \
+Such functionality could be added, but in general, if a virtual SFC \
+chromatogram is  required off - line, it can easily be calculated from the \
+data file. \
+\>", "Text",
+ CellChangeTimes->{{3.7874050194711833`*^9, 
+  3.7874050218099337`*^9}},ExpressionUUID->"c256edcb-6e60-4ef0-aa07-\
+2962245f1468"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.787405433823676*^9, 
+  3.7874054360656605`*^9}},ExpressionUUID->"e808d665-350c-47d6-a102-\
+ff59d6405bae"],
+
+Cell["\<\
+A virtual SFC chromatogram display was added to the front panel of the SFC\
+\[Times]GC VI. This should aid in SFC\[Times]GC method development. \
+\>", "Text",
+ CellChangeTimes->{{3.7874054383934355`*^9, 
+  3.7874055118331404`*^9}},ExpressionUUID->"44723bfb-9bb0-4480-8b2d-\
+89341bcc3139"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 565, 8, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1406, 38, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1564, 43, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1824, 52, 412, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2261, 62, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2423, 67, 2064, 30, 121, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4524, 102, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[CellGroupData[{
+Cell[4708, 109, 164, 3, 33, "Subsection",ExpressionUUID->"f2187147-11c9-4b6f-a710-19c1202d7fe4"],
+Cell[4875, 114, 286, 7, 33, "Text",ExpressionUUID->"cdffd5ee-c767-42a3-b7aa-f3a2af8ffc6d"],
+Cell[5164, 123, 5381, 83, 221, "Output",ExpressionUUID->"224f5a01-a17b-408c-afd7-11a99928ebc0"],
+Cell[10548, 208, 187, 3, 33, "Text",ExpressionUUID->"a9515817-03c9-4c35-a635-921481d1e8d2"],
+Cell[10738, 213, 1466, 29, 69, "Output",ExpressionUUID->"da81bcf7-f57f-416b-8291-3d83ad8abf35"],
+Cell[12207, 244, 490, 9, 55, "Text",ExpressionUUID->"caedb22a-2269-4731-a924-cc65dbb3d3e9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12734, 258, 361, 6, 33, "Subsection",ExpressionUUID->"138d9c62-c966-489e-87ec-d07fe67f64da"],
+Cell[13098, 266, 987, 16, 77, "Text",ExpressionUUID->"118762a6-a6d4-4b58-9526-022a13f7bd6f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14134, 288, 250, 4, 69, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[14387, 294, 331, 7, 33, "Text",ExpressionUUID->"c2533f20-b6eb-4dd7-857a-2110d8b4dc54"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14755, 306, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[14915, 311, 307, 6, 33, "Text",ExpressionUUID->"59742c43-d10b-40c1-b3bc-9e6697a81dca"],
+Cell[15225, 319, 468, 9, 55, "Text",ExpressionUUID->"c256edcb-6e60-4ef0-aa07-2962245f1468"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15730, 333, 157, 3, 69, "Section",ExpressionUUID->"e808d665-350c-47d6-a102-ff59d6405bae"],
+Cell[15890, 338, 298, 6, 33, "Text",ExpressionUUID->"44723bfb-9bb0-4480-8b2d-89341bcc3139"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

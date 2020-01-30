@@ -1,0 +1,37 @@
+GC column description:	Rxi-5Sil MS 0.250 mm x 1 m
+SFC flow rate:	0.800
+SFC temperature:	22.000
+GC flow rate: 	99.000
+Experiment title: 	Diesel PAH
+Sample name: 	7% RME in diesel Total 50 ppm
+Analysis type: 	Standard
+Concentration: 	9999.000
+Operator name: 	DM
+Detector sensitivity: 	1.0E-8
+FID H2 flow rate: 	36.700
+FID Air flow rate: 	300.000
+SFC pressure: 	20265000 Pa
+SFC dead time: 	540.000 s
+File name: 	C:\SFC-GC\Data\2020_01_24-154753.dat
+SFC gradient0:
+Rate: 	0 $1 s^-1
+Final:	0.000000 $1
+Time:	1050.000 s
+GC gradient0:
+Rate: 	0 $1 s^-1
+Final:	253.150000 $1
+Time:	0.000 s
+GC gradient1:
+Rate: 	133 $1 s^-1
+Final:	298.150000 $1
+Time:	0.000 s
+GC gradient2:
+Rate: 	33 $1 s^-1
+Final:	623.150000 $1
+Time:	2.500 s
+GC idle temperature:	343.100000 Cdeg
+GC purge temperature: 	473.150000 Cdeg
+GC sampling temperature: 	239.850000 Cdeg
+GC sampling time: 	2
+GC load time: 	3
+GC vent time: 	1

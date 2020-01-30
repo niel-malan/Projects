@@ -1,0 +1,300 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12260,        292]
+NotebookOptionsPosition[      9310,        229]
+NotebookOutlinePosition[     10294,        261]
+CellTagsIndexPosition[     10251,        258]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Coaxial heater reconstruction", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.789216643791821*^9, 
+   3.7892166488173685`*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["28 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.7892167897783194`*^9, 
+   3.78921679527063*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+A column broke off inside the coaxial heater, which means that the stainless \
+steel tube has to be replaced.\
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.789216662069916*^9, 
+   3.7892167045632534`*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell["\<\
+The stainless steel tube was desoldered from the brass block. In the process \
+the tail was overheated and it melted. A new tail and hook was constructed. \
+My some miracle a finished length of stainless steel tubing was available. \
+The mounting holes were drilled open to ensure easy fitting. Flux was applied \
+to all the parts, they were heated using a oxygen/LPG flame, and silver \
+solder was applied when the appropriate temperature was reached, \
+characterized by a dull red.  When both manifolds had been soldered and \
+cooled, they were ultrasonicated for 15 minutes in an acetic acid bath, \
+followed by rinsing with boiling water. Then the heater cartridge holes were \
+reamed, and the mounting hole blocked by the new tail drilled through. Then \
+the stainless steel tube was shaped to fit into the oven. The inlet-end \
+rails, which had become loose, were re-aligned. A capillary was threaded \
+through the assembly to test the fit. \
+\>", "Text",
+ CellChangeTimes->{{3.7892167158141613`*^9, 3.7892167220604525`*^9}, {
+  3.7892167682937837`*^9, 3.7892169183684006`*^9}, {3.7892187124135714`*^9, 
+  3.789218715614008*^9}, {3.7892187562772427`*^9, 3.789218799095708*^9}, {
+  3.7892189161226816`*^9, 3.789218972139842*^9}, {3.7892190148226748`*^9, 
+  3.789219275916308*^9}, {3.7892193124565506`*^9, 3.789219318820527*^9}, {
+  3.7892197061325274`*^9, 
+  3.789219771981391*^9}},ExpressionUUID->"1fca91cd-c6d4-436a-8ffb-\
+cf47c55ed430"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell["\<\
+Both manifold blocks were overheated during the soldering process, which \
+caused localized melting. Some of the melting left material in the heater \
+cartridge holes, which had to be removed. This should not affect the function \
+of the block.\
+\>", "Text",
+ CellChangeTimes->{{3.789216772559379*^9, 3.789216773129891*^9}, {
+  3.78921872368143*^9, 3.7892187363764715`*^9}, {3.7892192801988773`*^9, 
+  3.789219280557874*^9}, {3.7892193264291763`*^9, 3.7892194119254837`*^9}, {
+  3.7892194431908903`*^9, 
+  3.7892195055989723`*^9}},ExpressionUUID->"0b757b1f-ee30-4064-a9f0-\
+7633d2fde426"],
+
+Cell["\<\
+My first attempt at creating a new tail used the wrong material. I\
+\[CloseCurlyQuote]d assumed it to be brass rod, but it was probably some kind \
+of brazing rod, for it melted before silver soldering temperature was reached.\
+\>", "Text",
+ CellChangeTimes->{{3.7892195094865255`*^9, 3.789219537220344*^9}, {
+  3.7892197907980595`*^9, 
+  3.789219864540809*^9}},ExpressionUUID->"0f95c38b-0ac6-4cda-a36f-\
+27d546bd6eb1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+Shaping the stainless steel tube to an acceptable shape of coil that will fit \
+in the Varian 3300  is still a matter of trial-and-error. It might be a good \
+idea to coil the tube into a helix before the soldering: that might help a \
+bit. \
+\>", "Text",
+ CellChangeTimes->{{3.7892167290667124`*^9, 3.789216765570071*^9}, {
+  3.7892188142232904`*^9, 3.7892188994213953`*^9}, {3.7892200738509445`*^9, 
+  3.7892200747585125`*^9}},ExpressionUUID->"09a35911-4349-43d6-bbb4-\
+4be9bd19c7aa"],
+
+Cell["\<\
+The plastic protection clips worked excellently. Using them means one does \
+not have to worry about the tube bending at the soldered joint while \
+finishing the rest of the block. \
+\>", "Text",
+ CellChangeTimes->{{3.7892190857629185`*^9, 3.7892190961481853`*^9}, {
+  3.789219425877166*^9, 3.789219429456593*^9}, {3.789219543131528*^9, 
+  3.7892195612740393`*^9}, {3.789219641967164*^9, 3.78921969170811*^9}, {
+  3.7892200407754135`*^9, 
+  3.7892200595731277`*^9}},ExpressionUUID->"b04cb1cf-dca9-4090-874a-\
+51bf06a634c0"],
+
+Cell["\<\
+During the shaping of the stainless steel I dropped the assembly. Apart from \
+jerking, which partially straightened the coil, one of the blocks fell on the \
+tube and dented it. Its function was not affected, but if the damage was \
+worse it could have required the whole tube to be replaced. \
+\>", "Text",
+ CellChangeTimes->{{3.789219566129015*^9, 3.78921963691268*^9}, {
+   3.7892198856284037`*^9, 3.789219942046534*^9}, 3.7892200251103106`*^9, {
+   3.78922011154212*^9, 
+   3.7892201566923494`*^9}},ExpressionUUID->"8a855d7a-79b6-4ffa-bf66-\
+351710f07f32"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["\<\
+A new coaxial heater was successfully assembled. A new column can be \
+installed. \
+\>", "Text",
+ CellChangeTimes->{{3.7892199454374256`*^9, 3.789219955463605*^9}, {
+  3.7892200027690697`*^9, 
+  3.789220015077149*^9}},ExpressionUUID->"12fc6917-aeca-4c5f-afab-\
+abfb26f1a90a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell["\<\
+When heating a block for soldering, move the flame around so that one spot \
+does not overheat. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.789219876059997*^9, 3.789219878262109*^9}, {
+  3.78921996428505*^9, 
+  3.789219997853218*^9}},ExpressionUUID->"f0fcc6de-a839-48c9-97b9-\
+6a89004f0202"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 502, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1343, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1501, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1761, 51, 413, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2199, 61, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2361, 66, 1060, 17, 33, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3458, 88, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[3620, 93, 1454, 22, 121, "Text",ExpressionUUID->"1fca91cd-c6d4-436a-8ffb-cf47c55ed430"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5111, 120, 250, 4, 69, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[5364, 126, 598, 11, 55, "Text",ExpressionUUID->"0b757b1f-ee30-4064-a9f0-7633d2fde426"],
+Cell[5965, 139, 429, 8, 55, "Text",ExpressionUUID->"0f95c38b-0ac6-4cda-a36f-27d546bd6eb1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6431, 152, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[6591, 157, 496, 9, 55, "Text",ExpressionUUID->"09a35911-4349-43d6-bbb4-4be9bd19c7aa"],
+Cell[7090, 168, 533, 10, 33, "Text",ExpressionUUID->"b04cb1cf-dca9-4090-874a-51bf06a634c0"],
+Cell[7626, 180, 571, 10, 55, "Text",ExpressionUUID->"8a855d7a-79b6-4ffa-bf66-351710f07f32"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8234, 195, 254, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[8491, 201, 285, 7, 33, "Text",ExpressionUUID->"12fc6917-aeca-4c5f-afab-abfb26f1a90a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8813, 213, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[8980, 218, 302, 7, 27, "ItemNumbered",ExpressionUUID->"f0fcc6de-a839-48c9-97b9-6a89004f0202"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

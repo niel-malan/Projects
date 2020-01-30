@@ -1,0 +1,790 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     31999,        782]
+NotebookOptionsPosition[     26217,        667]
+NotebookOutlinePosition[     27372,        705]
+CellTagsIndexPosition[     27301,        700]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["FID Inspection", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.78818146174319*^9, 
+   3.788181469595234*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["16 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.788181472863445*^9, 
+   3.7881814817906027`*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+Having come to the conclusion that variations in the baseline are caused by \
+the detector, and not by chromatographic issues, I decided to check the FID.  \
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.7881814879919806`*^9, 3.78818149397298*^9}, {3.7881817688666835`*^9, 
+   3.7881818526515713`*^9}, {3.7881830167646227`*^9, 
+   3.7881830305458117`*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"],
+
+Cell["According to all the ", "Text",
+ CellChangeTimes->{{3.788183031783451*^9, 
+  3.7881830364878693`*^9}},ExpressionUUID->"ea3a16ed-dca1-43fd-a994-\
+db67abb29d80"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell[CellGroupData[{
+
+Cell["FID bias voltage", "Subsection",
+ CellChangeTimes->{{3.7881818579603715`*^9, 
+  3.788181871167049*^9}},ExpressionUUID->"bbfb2d80-af96-4fb7-8282-\
+901df3ed3d84"],
+
+Cell["\<\
+I measured the FID bias voltage using the Fluke 179 multimeter.\
+\>", "Text",
+ CellChangeTimes->{{3.7881828877965927`*^9, 3.7881830053472075`*^9}, {
+  3.788184259133412*^9, 
+  3.788184293944296*^9}},ExpressionUUID->"5e5e4f34-2fad-4ae0-af21-\
+bf1a5bdddb33"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Flow", "Subsection",
+ CellChangeTimes->{{3.7854911183646555`*^9, 3.7854911245830636`*^9}, {
+  3.785566407342467*^9, 3.7855664077603908`*^9}, {3.7855746459247303`*^9, 
+  3.785574649197975*^9}, {3.786096586642401*^9, 3.786096587809275*^9}, {
+  3.7881830552496834`*^9, 
+  3.788183057468747*^9}},ExpressionUUID->"138d9c62-c966-489e-87ec-\
+d07fe67f64da"],
+
+Cell["\<\
+I measured the flows through the FID using a bubble flow meter. \
+\>", "Text",
+ CellChangeTimes->{{3.7855664096603127`*^9, 3.785566453273655*^9}, {
+  3.7855688519408875`*^9, 3.785568896176516*^9}, {3.7860966115098705`*^9, 
+  3.786096632020996*^9}, {3.788183061613662*^9, 3.788183064577734*^9}, {
+  3.7881833506245995`*^9, 3.788183389723028*^9}, {3.7881841769422593`*^9, 
+  3.7881841828544445`*^9}},ExpressionUUID->"118762a6-a6d4-4b58-9526-\
+022a13f7bd6f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Leaks", "Subsection",
+ CellChangeTimes->{{3.7881841884016085`*^9, 
+  3.7881841917187357`*^9}},ExpressionUUID->"96cfdd0e-5a9f-4be8-bc69-\
+1b8822886840"],
+
+Cell["I tested for leaks using the conductivity leak detector.", "Text",
+ CellChangeTimes->{{3.788184195120669*^9, 3.7881842154582396`*^9}, {
+  3.7881842994016986`*^9, 
+  3.7881843022231526`*^9}},ExpressionUUID->"53522f57-d9ec-424b-9a39-\
+9812ec90aeb1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculations", "Section",
+ CellChangeTimes->{{3.7854911900001135`*^9, 3.7854912032646475`*^9}, {
+  3.785589805500736*^9, 3.7855898070067077`*^9}, {3.7860967323396125`*^9, 
+  3.7860967370230837`*^9}},ExpressionUUID->"313534f2-78b3-47e4-a3e5-\
+f406dd67943e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"flows", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\fskdm\\\\My \
+PhD\\\\Projects\\\\2020_01_16_FID_Test\\\\2020_01_16_FID_Flow.xlsx\>\"", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7881830709077992`*^9, 3.7881830974947186`*^9}, {
+  3.7881831387533236`*^9, 3.7881832031560555`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"4c0eaed1-6e8e-49c3-a10e-dc9c540f939b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"flows", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7881831726855593`*^9, 3.7881831813713264`*^9}, {
+  3.7881832478155985`*^9, 3.7881832582835984`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"13337286-9fa1-4622-8aa3-1590178d6f4f"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{RowBox[{"\"Thu 16 Jan 2020 00:00:00\"", 
+         StyleBox[
+          RowBox[{"\"GMT+\"", "\[InvisibleSpace]", 
+            StyleBox["2.`", NumberMarks -> False, StripOnInput -> False]}], 
+          FontColor -> GrayLevel[0.5]]}],RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             
+             RowBox[{"2020", ",", "1", ",", "16", ",", "0", ",", "0", ",", 
+               "0.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+           "2.`"}], "]"}]},
+      "DateObject",
+      Editable->False], 
+     TemplateBox[{RowBox[{"\"Tue 30 Nov -2 16:21:00\"", 
+         StyleBox[
+          RowBox[{"\"GMT+\"", "\[InvisibleSpace]", 
+            StyleBox["2.`", NumberMarks -> False, StripOnInput -> False]}], 
+          FontColor -> GrayLevel[0.5]]}],RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"-", "2"}], ",", "11", ",", "30", ",", "16", ",", "21",
+                ",", "0.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"",
+            ",", "2.`"}], "]"}]},
+      "DateObject",
+      Editable->
+       False], "\<\"FID flows\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Hydrogen: FID + Column\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", \
+"\<\"Time\"\>", "\<\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", \
+"\<\"ml/min\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "6.43`", "0.10716666666666666`", 
+     "93.3125972006221`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "6.33`", "0.1055`", 
+     "94.7867298578199`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "6.45`", "0.1075`", 
+     "93.02325581395348`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "7.1`", "0.11833333333333333`", 
+     "84.50704225352112`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "7.1`", "0.11833333333333333`", 
+     "84.50704225352112`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "6.98`", "0.11633333333333334`", 
+     "85.95988538681948`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "7.81`", "0.13016666666666665`", 
+     "76.8245838668374`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "7.77`", "0.1295`", 
+     "77.22007722007721`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "1.66`", "0.027666666666666666`", 
+     "361.44578313253015`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TemplateBox[{RowBox[{"\"Thu 16 Jan 2020 00:00:00\"", 
+         StyleBox[
+          RowBox[{"\"GMT+\"", "\[InvisibleSpace]", 
+            StyleBox["2.`", NumberMarks -> False, StripOnInput -> False]}], 
+          FontColor -> GrayLevel[0.5]]}],RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             
+             RowBox[{"2020", ",", "1", ",", "16", ",", "0", ",", "0", ",", 
+               "0.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+           "2.`"}], "]"}]},
+      "DateObject",
+      Editable->False], 
+     TemplateBox[{RowBox[{"\"Tue 30 Nov -2 16:21:00\"", 
+         StyleBox[
+          RowBox[{"\"GMT+\"", "\[InvisibleSpace]", 
+            StyleBox["2.`", NumberMarks -> False, StripOnInput -> False]}], 
+          FontColor -> GrayLevel[0.5]]}],RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"-", "2"}], ",", "11", ",", "30", ",", "16", ",", "21",
+                ",", "0.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"",
+            ",", "2.`"}], "]"}]},
+      "DateObject",
+      Editable->
+       False], "\<\"FID flows\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Hydrogen: Column 10 psi, FID = 0\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", \
+"\<\"Time\"\>", "\<\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", \
+"\<\"ml/min\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "2.`", "8.81`", "0.14683333333333334`", 
+     "13.62088535754824`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "2.`", "8.82`", "0.147`", 
+     "13.60544217687075`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "2.`", "8.77`", "0.14616666666666667`", 
+     "13.683010262257696`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "2.`", "8.76`", "0.146`", 
+     "13.698630136986303`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", 
+     "13.651991983415746`", "\<\"Average\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Preferred hydrogen flow:\"\>", "\<\"\"\>", \
+"\<\"\"\>", "30.`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Target combined FID + Column flow\"\>", "\<\
+\"\"\>", "\<\"\"\>", "43.65199198341575`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", \
+"\<\"Time\"\>", "\<\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", \
+"\<\"ml/min\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "13.`", "0.21666666666666667`", 
+     "46.15384615384615`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "1.`", "1.38`", "0.023`", 
+     "43.47826086956522`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "12.92`", "0.21533333333333332`", 
+     "46.43962848297214`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "14.02`", "0.23366666666666666`", 
+     "42.796005706134096`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "13.`", "0.21666666666666667`", 
+     "46.15384615384615`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "13.88`", "0.23133333333333334`", 
+     "43.22766570605187`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "14.38`", "0.23966666666666667`", 
+     "41.72461752433936`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "14.06`", "0.23433333333333334`", 
+     "42.67425320056899`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "13.99`", "0.23316666666666666`", 
+     "42.88777698355969`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "8.`", "11.38`", "0.18966666666666668`", 
+     "42.17926186291739`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "10.`", "14.139999999999999`", 
+     "0.23566666666666664`", "42.432814710042436`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Hydrogen flow: head pressure off\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", \
+"\<\"Time\"\>", "\<\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", \
+"\<\"ml/min\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "2.`", "4.28`", "0.07133333333333333`", 
+     "28.037383177570096`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "2.`", "4.49`", "0.07483333333333334`", 
+     "26.726057906458795`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "2.`", "4.32`", "0.07200000000000001`", 
+     "27.777777777777775`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "2.`", "4.27`", "0.07116666666666666`", 
+     "28.103044496487122`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "2.`", "4.34`", "0.07233333333333333`", 
+     "27.649769585253456`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Preferred air flow:\"\>", "\<\"\"\>", \
+"\<\"300 ml/min\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", \
+"\<\"Time\"\>", "\<\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", \
+"\<\"ml/min\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "20.`", "4.37`", "0.07283333333333333`", 
+     "274.5995423340961`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "30.`", "6.54`", "0.109`", 
+     "275.22935779816515`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "30.`", "6.59`", "0.10983333333333332`", 
+     "273.14112291350534`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "40.`", "8.7`", "0.145`", 
+     "275.86206896551727`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "50.`", "10.79`", "0.17983333333333332`", 
+     "278.035217794254`", "\<\"\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.7881832077826805`*^9, {3.7881832526347075`*^9, 3.7881832590307555`*^9}},
+ CellLabel->
+  "Out[7]//TableForm=",ExpressionUUID->"977e59ac-c5da-415b-88c9-52ac83b6726f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results & Discussion", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}, {3.78818423776058*^9, 
+  3.7881842401282454`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell[CellGroupData[{
+
+Cell["FID bias voltage.", "Subsection",
+ CellChangeTimes->{{3.788184315687137*^9, 
+  3.788184323061413*^9}},ExpressionUUID->"2b824a0f-419e-4ed4-8b4a-\
+35b2f6fd6836"],
+
+Cell["\<\
+The bias voltage for the FID was measured as 182.1 V. This is well within the \
+specification of 190 \[PlusMinus] 15 V. This voltage did not fluctuate when \
+the valve switched. \
+\>", "Text",
+ CellChangeTimes->{{3.788184307971776*^9, 3.7881843100731544`*^9}, {
+  3.7881851998790636`*^9, 
+  3.788185216209385*^9}},ExpressionUUID->"b175b389-6476-40f9-8ce4-\
+bc44057b02c6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Electrometer", "Subsection",
+ CellChangeTimes->{{3.788185228610211*^9, 
+  3.7881852310207634`*^9}},ExpressionUUID->"27f37f4c-4b8d-46f2-a893-\
+7bfdf3f75f9e"],
+
+Cell["\<\
+I did not check if the output of the electrometer. I did not find out how, \
+but I could have checked if the signal is zero if the input is \
+short-circuited. \
+\>", "Text",
+ CellChangeTimes->{{3.7881852347697363`*^9, 
+  3.788185311935334*^9}},ExpressionUUID->"21b311a5-bd8d-4053-b459-\
+f514f4b0babc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["FID gas flows.", "Subsection",
+ CellChangeTimes->{{3.78818433755664*^9, 
+  3.788184343477804*^9}},ExpressionUUID->"993f468c-fc23-46f9-8105-\
+59e8e0df4366"],
+
+Cell["\<\
+The first, astonishing result was that the hydrogen flow through the FID was \
+93 ml/min. This is much too high, about double the flow that it should be. \
+With hydrogen howling through the FID at this rate, it is no surprise that \
+the peaks are so small. \
+\>", "Text",
+ CellChangeTimes->{{3.7881834110490103`*^9, 3.788183435819718*^9}, {
+  3.7881834757838554`*^9, 3.7881835250430593`*^9}, {3.788183558729952*^9, 
+  3.7881835795433292`*^9}, {3.7881837915362797`*^9, 3.7881838298397746`*^9}, {
+  3.7881839703145924`*^9, 3.788183994292457*^9}, {3.788184068120206*^9, 
+  3.78818415349199*^9}, {3.7881845774300175`*^9, 
+  3.7881846303584423`*^9}},ExpressionUUID->"afeba55d-6ec2-4f83-8fa4-\
+96dd9f06896b"],
+
+Cell[TextData[{
+ "Once I figured out which valve regulates this flow, I brought it down to \
+much more reasonable levels. I followed Hinshaw's instructions",
+ ButtonBox[Cell[TextData[StyleBox[ButtonBox["1"],
+  FontVariations->{"CompatibilityType"->"Superscript"}]], "Citation",
+  Editable->False,
+  TaggingRules->{NoteData -> RowBox[{
+       RowBox[{"John", " ", 
+         RowBox[{"V", ".", " ", "Hinshaw"}]}], ",", " ", 
+       RowBox[{
+        "\"The Flame Ionization Detector\"", " ", "LCGC", " ", "North", " ", 
+         "America"}], ",", " ", 
+       RowBox[{"V", " ", "23"}], ",", " ", 
+       RowBox[{"Issue", " ", "12"}], ",", " ", 
+       RowBox[{
+         RowBox[{
+           RowBox[{"pg", " ", "1262"}], "-", 
+           RowBox[{"1272.", " ", 
+             RowBox[{"http", ":"}]}]}], "//", 
+         RowBox[{
+           RowBox[{"chromatographyonline", "/", "print"}], "/", 
+           "235613"}]}]}]},ExpressionUUID->
+  "78e4534b-d671-4a66-be85-64dfba773a34"],
+  BaseStyle->"Hyperlink",
+  ButtonData->"000078E0"],
+ ", but I forgot that those instructions assume helium as a carrier gas. "
+}], "Text",
+ CellChangeTimes->{{3.7881834110490103`*^9, 3.788183435819718*^9}, {
+  3.7881834757838554`*^9, 3.7881835250430593`*^9}, {3.788183558729952*^9, 
+  3.7881835795433292`*^9}, {3.7881837915362797`*^9, 3.7881838298397746`*^9}, {
+  3.7881839703145924`*^9, 3.788183994292457*^9}, {3.788184068120206*^9, 
+  3.78818415349199*^9}, {3.7881845774300175`*^9, 3.788184580356193*^9}, {
+  3.788185079032364*^9, 
+  3.7881850798840313`*^9}},ExpressionUUID->"15781dd5-c436-45e7-99d7-\
+cdadc1e9eba2"],
+
+Cell["\<\
+I did not adjust the air flow rate : it was about 10 times the hydrogen flow.\
+\>", "Text",
+ CellChangeTimes->{{3.788185074623105*^9, 
+  3.7881850772271385`*^9}},ExpressionUUID->"64f1ce7f-ccfb-44e2-b0d6-\
+b00fa3c7e0a6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["FID gas leaks.", "Subsection",
+ CellChangeTimes->{{3.7881843672033405`*^9, 
+  3.7881843794575624`*^9}},ExpressionUUID->"d04d5de6-15cf-407f-b89c-\
+7482bca35556"],
+
+Cell["\<\
+I found that there\[CloseCurlyQuote]s a hydrogen leak at the base of the \
+detector tower. This does explain why tightening a screw improved the \
+baseline stability so markedly. 
+I also discovered that other FIDs of the same design have longer tower \
+mounting screws. I thing using those would be good, because the shorter \
+version that I used up to now is starting to strip, and might be the cause \
+for the tower coming loose and starting to leak. \
+\>", "Text",
+ CellChangeTimes->{{3.7881843820885553`*^9, 3.7881844815714293`*^9}, {
+  3.788184556611707*^9, 3.7881845573358097`*^9}, {3.7881847501350594`*^9, 
+  3.788184847651252*^9}, {3.7881853303460846`*^9, 
+  3.788185344766559*^9}},ExpressionUUID->"2e07c7bd-6b12-4792-94f5-\
+ac58c682cfba"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["\<\
+The FID tower seal will have to be replaced. It is a good idea to use the \
+opportunity to clean the detector parts and all the electrical contacts. I \
+removed the tower and took it apart, ready for cleaning. \
+\>", "Text",
+ CellChangeTimes->{{3.788184522753314*^9, 3.78818454020858*^9}, {
+   3.788184645061145*^9, 3.788184736634205*^9}, 
+   3.7881851331056733`*^9},ExpressionUUID->"63bfbda0-2dd8-4382-916f-\
+6279288f99f9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell[CellGroupData[{
+
+Cell["Clean the FID parts. ", "ItemNumbered",
+ CellChangeTimes->{{3.788184020705828*^9, 3.7881841018320312`*^9}, {
+  3.7881845128776836`*^9, 3.7881845186223607`*^9}, {3.788184855173141*^9, 
+  3.788184865096586*^9}, {3.7881849032305517`*^9, 3.788184928123966*^9}, {
+  3.788185154398719*^9, 
+  3.7881851543997135`*^9}},ExpressionUUID->"722c1c2b-090d-44ca-a2f8-\
+f95babc0e891"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Use abrasives to clean the surfaces and the electrical contact areas. \
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.788184020705828*^9, 3.7881841018320312`*^9}, {
+  3.7881845128776836`*^9, 3.7881845186223607`*^9}, {3.788184855173141*^9, 
+  3.788184865096586*^9}, {3.7881849032305517`*^9, 3.788184928123966*^9}, {
+  3.788185156894041*^9, 
+  3.7881851568960357`*^9}},ExpressionUUID->"47cee1e6-b64e-44e6-8ee3-\
+93c806e983e9"],
+
+Cell["Sonicate the ceramic parts in methanol", "SubitemNumbered",
+ CellChangeTimes->{{3.788184020705828*^9, 3.7881841018320312`*^9}, {
+  3.7881845128776836`*^9, 3.7881845186223607`*^9}, {3.788184855173141*^9, 
+  3.788184865096586*^9}, {3.7881849032305517`*^9, 3.788184928123966*^9}, {
+  3.788185158120764*^9, 
+  3.788185185347979*^9}},ExpressionUUID->"346ed55d-5433-47ae-b3a5-\
+945019d2af42"]
+}, Open  ]],
+
+Cell["Devise a test for the electrometer and test it. ", "ItemNumbered",
+ CellChangeTimes->{{3.788184020705828*^9, 3.7881841018320312`*^9}, {
+  3.788185418132272*^9, 
+  3.7881854433288765`*^9}},ExpressionUUID->"3e5545ff-ad2e-4497-9a93-\
+220084165784"],
+
+Cell["Re-install the FID tower.", "ItemNumbered",
+ CellChangeTimes->{{3.788184020705828*^9, 3.788184098827069*^9}, {
+  3.788184742342948*^9, 3.788184742686985*^9}, {3.7881849331076355`*^9, 
+  3.7881849572490597`*^9}, {3.788185354125479*^9, 
+  3.7881853711828856`*^9}},ExpressionUUID->"849ba402-6b26-4a62-9600-\
+eb4e289c232c"],
+
+Cell[CellGroupData[{
+
+Cell["Use longer screws.", "SubitemNumbered",
+ CellChangeTimes->{{3.788184020705828*^9, 3.788184098827069*^9}, {
+  3.788184742342948*^9, 3.788184742686985*^9}, {3.7881849331076355`*^9, 
+  3.7881849572490597`*^9}, {3.788185354125479*^9, 
+  3.7881853805587726`*^9}},ExpressionUUID->"4ea2b354-7404-4131-9643-\
+80fa1c889acd"],
+
+Cell["Use graphite as a lubricant on the screws. ", "SubitemNumbered",
+ CellChangeTimes->{{3.788184020705828*^9, 3.788184098827069*^9}, {
+  3.788184742342948*^9, 3.788184742686985*^9}, {3.7881849331076355`*^9, 
+  3.7881849572490597`*^9}, {3.788185354125479*^9, 
+  3.7881854079774323`*^9}},ExpressionUUID->"10ca6a1c-1013-47fc-887b-\
+9b49b0df3bc5"],
+
+Cell["Use a new crunch washer when installing the FID. ", "SubitemNumbered",
+ CellChangeTimes->{{3.788184020705828*^9, 3.788184098827069*^9}, {
+  3.788184742342948*^9, 3.788184742686985*^9}, {3.7881849331076355`*^9, 
+  3.7881849572490597`*^9}, {3.788185354125479*^9, 3.7881853662430677`*^9}, {
+  3.788185422086692*^9, 
+  3.788185422086692*^9}},ExpressionUUID->"4c74cb7e-5ed7-4fe9-8370-\
+9aa95f6f67bf"]
+}, Open  ]],
+
+Cell["\<\
+Re-adjust FID flows to make total hydrogen flow = 30 ml/min, including \
+carrier flow. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.788184020705828*^9, 3.788184098827069*^9}, {
+   3.788184742342948*^9, 3.788184742686985*^9}, {3.7881849331076355`*^9, 
+   3.7881849572490597`*^9}, {3.788185354125479*^9, 3.7881853662430677`*^9}, 
+   3.7881854234460564`*^9},ExpressionUUID->"64d24780-bbd3-44a5-94cd-\
+dfbeff828d42"],
+
+Cell[TextData[{
+ "\t",
+ StyleBox["1",
+  FontVariations->{"CompatibilityType"->"Superscript"}],
+ "\t",
+ "John",
+ " ",
+ "V",
+ ".",
+ " ",
+ "Hinshaw",
+ ",",
+ " ",
+ "\"The Flame Ionization Detector\"",
+ " ",
+ "LCGC",
+ " ",
+ "North",
+ " ",
+ "America",
+ ",",
+ " ",
+ "V",
+ " ",
+ "23",
+ ",",
+ " ",
+ "Issue",
+ " ",
+ "12",
+ ",",
+ " ",
+ "pg",
+ " ",
+ "1262",
+ "-",
+ "1272.",
+ " ",
+ "http",
+ ":",
+ "//",
+ "chromatographyonline",
+ "/",
+ "print",
+ "/",
+ "235613"
+}], "Reference",
+ Editable->False,
+ TaggingRules->{ReferenceNoteData -> ""},
+ CellTags->"000078E0",ExpressionUUID->"b3132c0e-36c5-42d8-ab01-82332e7a1c25"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "000078E0"->{
+  Cell[25576, 613, 601, 49, 35, "Reference",ExpressionUUID->"b3132c0e-36c5-42d8-ab01-82332e7a1c25",
+   CellTags->"000078E0"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"000078E0", 27151, 694}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 484, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1325, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1483, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1743, 51, 414, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2182, 61, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2344, 66, 1210, 18, 33, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"],
+Cell[3557, 86, 165, 3, 33, "Text",ExpressionUUID->"ea3a16ed-dca1-43fd-a994-db67abb29d80"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3759, 94, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[CellGroupData[{
+Cell[3943, 101, 166, 3, 33, "Subsection",ExpressionUUID->"bbfb2d80-af96-4fb7-8282-901df3ed3d84"],
+Cell[4112, 106, 266, 6, 33, "Text",ExpressionUUID->"5e5e4f34-2fad-4ae0-af21-bf1a5bdddb33"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4415, 117, 355, 6, 33, "Subsection",ExpressionUUID->"138d9c62-c966-489e-87ec-d07fe67f64da"],
+Cell[4773, 125, 465, 8, 33, "Text",ExpressionUUID->"118762a6-a6d4-4b58-9526-022a13f7bd6f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5275, 138, 157, 3, 33, "Subsection",ExpressionUUID->"96cfdd0e-5a9f-4be8-bc69-1b8822886840"],
+Cell[5435, 143, 253, 4, 33, "Text",ExpressionUUID->"53522f57-d9ec-424b-9a39-9812ec90aeb1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5737, 153, 262, 4, 69, "Section",ExpressionUUID->"313534f2-78b3-47e4-a3e5-f406dd67943e"],
+Cell[6002, 159, 432, 10, 39, "Input",ExpressionUUID->"4c0eaed1-6e8e-49c3-a10e-dc9c540f939b"],
+Cell[CellGroupData[{
+Cell[6459, 173, 319, 6, 39, "Input",ExpressionUUID->"13337286-9fa1-4622-8aa3-1590178d6f4f"],
+Cell[6781, 181, 9317, 190, 1066, "Output",ExpressionUUID->"977e59ac-c5da-415b-88c9-52ac83b6726f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16147, 377, 313, 5, 69, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[CellGroupData[{
+Cell[16485, 386, 165, 3, 33, "Subsection",ExpressionUUID->"2b824a0f-419e-4ed4-8b4a-35b2f6fd6836"],
+Cell[16653, 391, 381, 8, 33, "Text",ExpressionUUID->"b175b389-6476-40f9-8ce4-bc44057b02c6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17071, 404, 162, 3, 33, "Subsection",ExpressionUUID->"27f37f4c-4b8d-46f2-a893-7bfdf3f75f9e"],
+Cell[17236, 409, 311, 7, 33, "Text",ExpressionUUID->"21b311a5-bd8d-4053-b459-f514f4b0babc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17584, 421, 161, 3, 33, "Subsection",ExpressionUUID->"993f468c-fc23-46f9-8105-59e8e0df4366"],
+Cell[17748, 426, 712, 12, 55, "Text",ExpressionUUID->"afeba55d-6ec2-4f83-8fa4-96dd9f06896b"],
+Cell[18463, 440, 1591, 34, 65, "Text",ExpressionUUID->"15781dd5-c436-45e7-99d7-cdadc1e9eba2"],
+Cell[20057, 476, 229, 5, 33, "Text",ExpressionUUID->"64f1ce7f-ccfb-44e2-b0d6-b00fa3c7e0a6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20323, 486, 166, 3, 33, "Subsection",ExpressionUUID->"d04d5de6-15cf-407f-b89c-7482bca35556"],
+Cell[20492, 491, 757, 13, 77, "Text",ExpressionUUID->"2e07c7bd-6b12-4792-94f5-ac58c682cfba"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21298, 510, 254, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[21555, 516, 434, 8, 33, "Text",ExpressionUUID->"63bfbda0-2dd8-4382-916f-6279288f99f9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22026, 529, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[CellGroupData[{
+Cell[22215, 536, 374, 6, 27, "ItemNumbered",ExpressionUUID->"722c1c2b-090d-44ca-a2f8-f95babc0e891"],
+Cell[CellGroupData[{
+Cell[22614, 546, 434, 8, 26, "SubitemNumbered",ExpressionUUID->"47cee1e6-b64e-44e6-8ee3-93c806e983e9"],
+Cell[23051, 556, 392, 6, 26, "SubitemNumbered",ExpressionUUID->"346ed55d-5433-47ae-b3a5-945019d2af42"]
+}, Open  ]],
+Cell[23458, 565, 251, 4, 27, "ItemNumbered",ExpressionUUID->"3e5545ff-ad2e-4497-9a93-220084165784"],
+Cell[23712, 571, 325, 5, 27, "ItemNumbered",ExpressionUUID->"849ba402-6b26-4a62-9600-eb4e289c232c"],
+Cell[CellGroupData[{
+Cell[24062, 580, 321, 5, 26, "SubitemNumbered",ExpressionUUID->"4ea2b354-7404-4131-9643-80fa1c889acd"],
+Cell[24386, 587, 346, 5, 26, "SubitemNumbered",ExpressionUUID->"10ca6a1c-1013-47fc-887b-9b49b0df3bc5"],
+Cell[24735, 594, 401, 6, 26, "SubitemNumbered",ExpressionUUID->"4c74cb7e-5ed7-4fe9-8370-9aa95f6f67bf"]
+}, Open  ]],
+Cell[25151, 603, 422, 8, 27, "ItemNumbered",ExpressionUUID->"64d24780-bbd3-44a5-94cd-dfbeff828d42"],
+Cell[25576, 613, 601, 49, 35, "Reference",ExpressionUUID->"b3132c0e-36c5-42d8-ab01-82332e7a1c25",
+ CellTags->"000078E0"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

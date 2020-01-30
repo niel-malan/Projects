@@ -1,0 +1,350 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13815,        342]
+NotebookOptionsPosition[     10191,        267]
+NotebookOutlinePosition[     11175,        299]
+CellTagsIndexPosition[     11132,        296]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Column replacement", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.789126897051566*^9, 
+   3.789126903631962*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["27 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.789126907155594*^9, 
+   3.789126915962988*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+The GC column broke between the GC inlet and the inlet-end manifold, and \
+needs to be replaced.\
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.789126978124755*^9, 3.7891269917542987`*^9}, {3.789127095369569*^9, 
+   3.789127114729783*^9}, {3.7891288042701936`*^9, 3.789128828485423*^9}, {
+   3.789132043367119*^9, 
+   3.78913205223244*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Removal", "Subsection"]], "Subsection",
+ CellChangeTimes->{{3.7891270062708826`*^9, 3.7891270683788013`*^9}, {
+  3.789128834927241*^9, 3.789128838607345*^9}, {3.7891320594361315`*^9, 
+  3.789132060795495*^9}},ExpressionUUID->"6143170a-e125-44b2-b63c-\
+8154e5f073ec"],
+
+Cell["\<\
+The removal of the column was uneventful. The inlet-end rails was not as \
+fixed as they should be, but I can\[CloseCurlyQuote]t tell if any movement \
+caused the breakage. I believe not. \
+\>", "Text",
+ CellChangeTimes->{{3.7891320658070903`*^9, 3.7891320874352384`*^9}, {
+  3.7891326202320952`*^9, 
+  3.7891326617340827`*^9}},ExpressionUUID->"ceeb40c3-ec23-4a7d-94ae-\
+b405ba9a4982"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inspection", "Subsection",
+ CellChangeTimes->{{3.7854911183646555`*^9, 3.7854911245830636`*^9}, {
+  3.785566407342467*^9, 3.7855664077603908`*^9}, {3.7855746459247303`*^9, 
+  3.785574649197975*^9}, {3.786096586642401*^9, 3.786096587809275*^9}, {
+  3.7891321100856524`*^9, 
+  3.789132112371537*^9}},ExpressionUUID->"138d9c62-c966-489e-87ec-\
+d07fe67f64da"],
+
+Cell["\<\
+The column broke off near, or inside, the \[Mu]-union. A short portion \
+protruded from the inlet stem ferrule.  When I pulled the \[Mu]-union ferrule \
+the column broke off deep inside the manifold. On the detector-end manifold \
+the column broke off  inside the manifold, just past the  \[Mu]-union. At \
+both ends the ferrules stuck to the nuts, which probably means that I \
+overtightened them.\
+\>", "Text",
+ CellChangeTimes->{{3.7855664096603127`*^9, 3.785566453273655*^9}, {
+  3.7855688519408875`*^9, 3.785568896176516*^9}, {3.7860966115098705`*^9, 
+  3.786096632020996*^9}, {3.7891321167159166`*^9, 3.7891323634738846`*^9}, {
+  3.789132430725996*^9, 3.789132457420617*^9}, {3.789132672970027*^9, 
+  3.7891327141319237`*^9}},ExpressionUUID->"118762a6-a6d4-4b58-9526-\
+022a13f7bd6f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell["\<\
+The portion of the column I retrieved from the inlet-end manifold showed a \
+brown color, darker towards the ferrule end. This seems to say that the \
+manifold got too hot. \
+\>", "Text",
+ CellChangeTimes->{{3.7891324728912086`*^9, 3.7891326178624773`*^9}, 
+   3.789132668179844*^9},ExpressionUUID->"ef0cea9c-bf28-4787-87e2-\
+cc680ed0f995"],
+
+Cell["The column broke off inside the coaxial heater.", "Text",
+ CellChangeTimes->{{3.789132383019596*^9, 3.7891323966501365`*^9}, {
+  3.789132464946458*^9, 
+  3.7891324677050867`*^9}},ExpressionUUID->"1e4bebcb-1235-43b9-8fbd-\
+39a0d37098e5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+I tried removing the column by blowing carbon dioxide through the coaxial \
+heater, but that made no difference. In fact, I believe the column fragmented \
+further. \
+\>", "Text",
+ CellChangeTimes->{{3.7891327254366946`*^9, 
+  3.7891328149941792`*^9}},ExpressionUUID->"647fd9d1-b4c5-40e3-a377-\
+982a3d1e9728"],
+
+Cell["\<\
+The cause of the breakage is probably yesterday\[CloseCurlyQuote]s \
+experiments with manifold heating. In previous cases where I used fairly high \
+temperatures I could see no heating damage. What was different yesterday was \
+that there was no hydrogen flow through the column. \
+\>", "Text",
+ CellChangeTimes->{{3.789132879146539*^9, 3.789132931227229*^9}, {
+  3.789132979350505*^9, 
+  3.78913301843896*^9}},ExpressionUUID->"b93ab352-6a49-443d-bfd2-\
+1162ba19daf3"],
+
+Cell["\<\
+From experience I know that it is not possible to remove an overheated, \
+broken column from the coaxial heater.\
+\>", "Text",
+ CellChangeTimes->{{3.7891330765435333`*^9, 
+  3.7891331111280565`*^9}},ExpressionUUID->"c9b8d959-ac29-4fc8-b487-\
+cbe59d52e410"],
+
+Cell["\<\
+I desoldered the stainless steel tube of the coaxial heater from the brass \
+blocks of the manifolds before I left for the day. They will be cool tomorrow \
+morning, so that I can insert a new tube. \
+\>", "Text",
+ CellChangeTimes->{{3.7891331983158164`*^9, 
+  3.78913331861607*^9}},ExpressionUUID->"02609401-26ce-450a-872f-\
+b7ab328ebfc6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["\<\
+The possible cause of the column breaking is overheating. The column broke \
+off inside the coaxial heater assembly during removal, which means that the \
+stainless steel tube of the coaxial heater will have to be replaced.\
+\>", "Text",
+ CellChangeTimes->{{3.7891330549802103`*^9, 3.789133072472435*^9}, {
+  3.7891331143354435`*^9, 3.789133123512898*^9}, {3.789133336808429*^9, 
+  3.7891334129537516`*^9}},ExpressionUUID->"6d68a6ea-d9c1-40aa-9cb8-\
+ae56b2fbcbbe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Replace the thin-walled stainless steel tube of the coaxial heater. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.7891328445081997`*^9, 3.7891328619146323`*^9}, {
+  3.7891329350719423`*^9, 
+  3.7891329350759325`*^9}},ExpressionUUID->"7683608a-a420-4381-936b-\
+522e60d98df6"],
+
+Cell["\<\
+Do not keep the manifolds at high temperatures for extended periods.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.7891328445081997`*^9, 3.7891328619146323`*^9}, {
+  3.789132936085233*^9, 
+  3.7891329752784443`*^9}},ExpressionUUID->"bf92cf64-cd1a-4deb-b879-\
+0bef811bdce0"],
+
+Cell["\<\
+Always ensure that there is hydrogen flowing through the column before \
+switching on the manifold heaters.  \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.7891328445081997`*^9, 3.7891328619146323`*^9}, {
+  3.789132936085233*^9, 3.7891329722305527`*^9}, {3.789133027774988*^9, 
+  3.7891330337888913`*^9}, {3.7891331267452497`*^9, 
+  3.789133183839528*^9}},ExpressionUUID->"1bb114c8-b18d-46c1-adaa-\
+c9ed31c4d32f"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 489, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1330, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1488, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1748, 51, 412, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2185, 61, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2347, 66, 1194, 19, 33, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3578, 90, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[CellGroupData[{
+Cell[3762, 97, 290, 4, 33, "Subsection",ExpressionUUID->"6143170a-e125-44b2-b63c-8154e5f073ec"],
+Cell[4055, 103, 395, 8, 33, "Text",ExpressionUUID->"ceeb40c3-ec23-4a7d-94ae-b405ba9a4982"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4487, 116, 361, 6, 33, "Subsection",ExpressionUUID->"138d9c62-c966-489e-87ec-d07fe67f64da"],
+Cell[4851, 124, 799, 13, 55, "Text",ExpressionUUID->"118762a6-a6d4-4b58-9526-022a13f7bd6f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5699, 143, 250, 4, 69, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[5952, 149, 350, 7, 33, "Text",ExpressionUUID->"ef0cea9c-bf28-4787-87e2-cc680ed0f995"],
+Cell[6305, 158, 242, 4, 33, "Text",ExpressionUUID->"1e4bebcb-1235-43b9-8fbd-39a0d37098e5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6584, 167, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[6744, 172, 319, 7, 33, "Text",ExpressionUUID->"647fd9d1-b4c5-40e3-a377-982a3d1e9728"],
+Cell[7066, 181, 478, 9, 55, "Text",ExpressionUUID->"b93ab352-6a49-443d-bfd2-1162ba19daf3"],
+Cell[7547, 192, 266, 6, 33, "Text",ExpressionUUID->"c9b8d959-ac29-4fc8-b487-cbe59d52e410"],
+Cell[7816, 200, 350, 7, 33, "Text",ExpressionUUID->"02609401-26ce-450a-872f-b7ab328ebfc6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8203, 212, 254, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[8460, 218, 474, 8, 55, "Text",ExpressionUUID->"6d68a6ea-d9c1-40aa-9cb8-ae56b2fbcbbe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8971, 231, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[CellGroupData[{
+Cell[9160, 238, 283, 6, 27, "ItemNumbered",ExpressionUUID->"7683608a-a420-4381-936b-522e60d98df6"],
+Cell[9446, 246, 281, 6, 27, "ItemNumbered",ExpressionUUID->"bf92cf64-cd1a-4deb-b879-0bef811bdce0"],
+Cell[9730, 254, 421, 8, 27, "ItemNumbered",ExpressionUUID->"1bb114c8-b18d-46c1-adaa-c9ed31c4d32f"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

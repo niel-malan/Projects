@@ -1,0 +1,313 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13239,        305]
+NotebookOptionsPosition[     10206,        241]
+NotebookOutlinePosition[     11190,        273]
+CellTagsIndexPosition[     11147,        270]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Solving earth leakage fault ", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.7875694115935965`*^9, 
+   3.787569425611117*^9}, {3.7875731467039223`*^9, 
+   3.7875731601610045`*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["09 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.7875694358876476`*^9, 
+   3.7875694428749695`*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["Yesterday an earth leakage trip halted my experiments. ", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.787569447313162*^9, 
+   3.7875694935265837`*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell["\<\
+As reported yesterday, plugging in the transformer feed plug caused a trip. I \
+could measure no untoward conductivities in the transformer, but to make \
+doubly sure I connected the transformer directly to the mains supply. This \
+did not trip the power, and all the transformer output voltages were as \
+expected.\
+\>", "Text",
+ CellChangeTimes->{{3.78756952831061*^9, 
+  3.787569727977913*^9}},ExpressionUUID->"6865e763-1641-4a8d-a2de-\
+dd7eee0f7029"],
+
+Cell["\<\
+The power tripped even when there was no power on the system. This told me \
+that it was a neutral to earth leakage. The earth of the control unit was not \
+disconnected when the transformer was unplugged. With the power off, I \
+plugged in the transformer plug part-way, and measured the resistance between \
+earth and the transformer windings. There was a resistance of around 100 k\
+\[CapitalOmega], not very stable. There was no such conductance between the \
+secondary windings and earth. Since I knew this path did not exist within the \
+transformer, I concluded that it had to be on the control unit side, and not \
+on the transformer side. But also, nothing in the box used 220 V power, \
+except the solid state relays, and they worked fine when the transformer was \
+not plugged in.  \
+\>", "Text",
+ CellChangeTimes->{{3.787573258158013*^9, 3.7875734923640018`*^9}, {
+  3.787573524540992*^9, 3.7875735769778304`*^9}, {3.7875736072608986`*^9, 
+  3.787573740949546*^9}, {3.7875737729719553`*^9, 
+  3.7875738973754325`*^9}},ExpressionUUID->"000c773c-f8c9-47d1-91af-\
+5b5814bf6cb4"],
+
+Cell["\<\
+When I looked closely at the connector inside the control unit, and inspected \
+the wiring diagram, I saw that there was a pair of conductors that supply \
+110V. These were connected to the primary winding of the transformer, as an \
+autotransformer. They power the cryo shut-off valve.  When I disconnected \
+power to the shut-off valve, the trip was eliminated. Upon inspection I found \
+that the insulation of the wire powering the cryo shut-off valve had \
+partially melted.\
+\>", "Text",
+ CellChangeTimes->{{3.7875748107105875`*^9, 
+  3.787575202169191*^9}},ExpressionUUID->"a1832f4c-1961-4441-a2e1-\
+5c6e84d6ff99"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results & Discussion", "Section",
+ CellChangeTimes->{{3.7854911900001135`*^9, 3.7854912032646475`*^9}, {
+  3.785589805500736*^9, 3.7855898070067077`*^9}, {3.7860967323396125`*^9, 
+  3.7860967370230837`*^9}, {3.7875735959212055`*^9, 3.7875735976226664`*^9}, {
+  3.787575205671832*^9, 
+  3.787575208321748*^9}},ExpressionUUID->"313534f2-78b3-47e4-a3e5-\
+f406dd67943e"],
+
+Cell[TextData[{
+ " I was getting ready to do a FID check when the power tripped. In an FID \
+check I set the column at a moderate temperature and inject a test compound \
+in the GC inlet. If I get a peak I know that the column is intact and that \
+the FID works. This is the final check before an SFC",
+ StyleBox["\[Times]GC run. Normally I\[CloseCurlyQuote]d use the coaxial \
+heater, but I thought I\[CloseCurlyQuote]d simultaneously do a temperature \
+calibration check of the coaxial heater. I set the Varian 3300\
+\[CloseCurlyQuote]s oven at 200 \[Degree]C. During this time the power wires \
+to the cryo shut-off valve started softening and melting. When one of the \
+conductors touched the manifold rails, the power tripped. ",
+  FontSize->16]
+}], "Text",
+ CellChangeTimes->{{3.7875737442108893`*^9, 3.7875737460279713`*^9}, {
+  3.7875752141342554`*^9, 3.787575220768489*^9}, {3.787575256039235*^9, 
+  3.787575634963044*^9}},ExpressionUUID->"88bdfcaf-99c8-4ce0-be42-\
+3c477e6e49c1"],
+
+Cell["\<\
+This is not the first time I heat the oven. But the previous valve I used \
+(Red Hat brand) had high-temperature feed wires, so this never happened.\
+\>", "Text",
+ CellChangeTimes->{{3.7875756807725997`*^9, 3.787575739406926*^9}, {
+  3.7875758177415457`*^9, 3.7875758262448034`*^9}, {3.7875758571331997`*^9, 
+  3.7875758676600685`*^9}},ExpressionUUID->"898eae1e-fc53-4238-a921-\
+c89bfa92c167"],
+
+Cell["\<\
+I am grateful for the safety offered by earth-leakage protection. If the \
+valve had been powered in this state it could have caused injury or damaged. \
+\>", "Text",
+ CellChangeTimes->{{3.7875759462909417`*^9, 
+  3.787576049817172*^9}},ExpressionUUID->"8813ea27-da26-42ef-b1b6-\
+d28380c84817"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Actions", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 3.785569649894513*^9}, {
+  3.7875756475105076`*^9, 
+  3.7875756484799232`*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+I removed the damaged cable and replaced it with a glass-isolated one. The \
+portion of the cable between the ceramic connector block and the valve \
+solenoid is still plastic, but I\[CloseCurlyQuote]ve added a glass-fibre \
+sleeve. This should prevent a recurrence of the problem. \
+\>", "Text",
+ CellChangeTimes->{{3.787575652167059*^9, 3.787575677564234*^9}, {
+  3.787575749979667*^9, 3.787575768725564*^9}, {3.7875758312963085`*^9, 
+  3.7875758412785783`*^9}, {3.787576141439272*^9, 
+  3.7875761946191397`*^9}},ExpressionUUID->"fcff746b-8634-4e3e-bf10-\
+7d4b6c1993de"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Summary", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}, {3.7875758535747585`*^9, 
+  3.787575854403496*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["\<\
+The power tripped because the isolation of the wires of the cryo-shut off \
+valve melted and touched an earthed part of the instrument. They were \
+replaced by glass-insulated stainless steel wires. \
+\>", "Text",
+ CellChangeTimes->{{3.7875752238442607`*^9, 3.7875752252864027`*^9}, {
+  3.7875758497499876`*^9, 3.7875759395898004`*^9}, {3.787576060697091*^9, 
+  3.7875760801720343`*^9}},ExpressionUUID->"fcf6b879-aabc-4590-8ebc-\
+109113150c15"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell["\<\
+Do not use high temperatures in the Varian 3300 oven when a plastic valve or \
+PVC-insulated wire is installed. Always keep temperature limits of conductors \
+in mind.  \
+\>", "Text",
+ CellChangeTimes->{{3.7875752287980146`*^9, 3.7875752535329456`*^9}, {
+  3.7875757768368263`*^9, 3.7875757954789953`*^9}, {3.7875760921589932`*^9, 
+  3.787576132388466*^9}},ExpressionUUID->"d2009730-c725-4e59-a172-\
+dd0ba5e7c53d"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 555, 8, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1396, 38, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1554, 43, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1814, 52, 416, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2255, 62, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2417, 67, 998, 14, 33, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3452, 86, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[3614, 91, 464, 9, 55, "Text",ExpressionUUID->"6865e763-1641-4a8d-a2de-dd7eee0f7029"],
+Cell[4081, 102, 1097, 17, 99, "Text",ExpressionUUID->"000c773c-f8c9-47d1-91af-5b5814bf6cb4"],
+Cell[5181, 121, 630, 11, 77, "Text",ExpressionUUID->"a1832f4c-1961-4441-a2e1-5c6e84d6ff99"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5848, 137, 372, 6, 69, "Section",ExpressionUUID->"313534f2-78b3-47e4-a3e5-f406dd67943e"],
+Cell[6223, 145, 989, 16, 102, "Text",ExpressionUUID->"88bdfcaf-99c8-4ce0-be42-3c477e6e49c1"],
+Cell[7215, 163, 403, 7, 33, "Text",ExpressionUUID->"898eae1e-fc53-4238-a921-c89bfa92c167"],
+Cell[7621, 172, 304, 6, 33, "Text",ExpressionUUID->"8813ea27-da26-42ef-b1b6-d28380c84817"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7962, 183, 207, 4, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[8172, 189, 582, 10, 55, "Text",ExpressionUUID->"fcff746b-8634-4e3e-bf10-7d4b6c1993de"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8791, 204, 302, 5, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[9096, 211, 454, 8, 33, "Text",ExpressionUUID->"fcf6b879-aabc-4590-8ebc-109113150c15"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9587, 224, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[9754, 229, 424, 8, 33, "Text",ExpressionUUID->"d2009730-c725-4e59-a172-dd0ba5e7c53d"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

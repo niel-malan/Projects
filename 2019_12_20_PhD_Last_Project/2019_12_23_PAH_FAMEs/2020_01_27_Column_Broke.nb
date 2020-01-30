@@ -1,0 +1,347 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13827,        339]
+NotebookOptionsPosition[     10062,        264]
+NotebookOutlinePosition[     11046,        296]
+CellTagsIndexPosition[     11003,        293]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Broken column", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.7891158926319942`*^9, 
+   3.7891158993789597`*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["27 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.7891159046598268`*^9, 
+   3.789115912095933*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["The GC column broke and will have to be replaced.", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.7891159182484765`*^9, 
+   3.789115953387494*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell["\<\
+My intention was to do an SFC\[Times]GC run of Total\[Trademark] 50 ppm \
+diesel, using higher temperatures in the transfer line. \
+\>", "Text",
+ CellChangeTimes->{{3.7891159618698463`*^9, 
+  3.7891160261817737`*^9}},ExpressionUUID->"659e6fc5-68b3-4de5-9dc4-\
+a81b34181e6d"],
+
+Cell["\<\
+Instrument startup was normal. I started the Varian 3300 GC from cold: \
+yesterday there was no hydrogen, so after I\[CloseCurlyQuote]d done my \
+experiments I switched it off.\
+\>", "Text",
+ CellChangeTimes->{{3.7891160402830515`*^9, 3.789116048018409*^9}, {
+  3.7891160819396377`*^9, 
+  3.7891161381642447`*^9}},ExpressionUUID->"ea70c22f-707d-4ba5-9cd9-\
+cccd577f6691"],
+
+Cell["\<\
+When there were no peaks after 10 SFC minutes, I started adjusting parameters \
+to see if I could find an effect.  \
+\>", "Text",
+ CellChangeTimes->{{3.7891163106039896`*^9, 
+  3.7891163802556777`*^9}},ExpressionUUID->"b7ac2bbd-9dcb-45d7-a071-\
+6230b33f772e"],
+
+Cell["\<\
+When no peaks appeared, even with 30 second collection periods, I stopped the \
+run.\
+\>", "Text",
+ CellChangeTimes->{{3.7891203783156366`*^9, 
+  3.7891203797148933`*^9}},ExpressionUUID->"c9185eee-ddc6-4fc5-b63c-\
+e03ea3b0f2c5"],
+
+Cell["\<\
+I measured the flow of the SFC with a stopwatch and a bubble flow meter. \
+\>", "Text",
+ CellChangeTimes->{{3.7891167628891926`*^9, 3.789116780879073*^9}, {
+  3.7891822487393417`*^9, 
+  3.7891822696573944`*^9}},ExpressionUUID->"88af5131-21c9-416b-b6de-\
+70869cdbfb21"],
+
+Cell["\<\
+I used a hydrogen leak detector to look for leaks in the GC.  \
+\>", "Text",
+ CellChangeTimes->{{3.789116998357356*^9, 3.7891169998523636`*^9}, {
+  3.7891203763279457`*^9, 3.789120383462864*^9}, {3.789182228677101*^9, 
+  3.789182312169689*^9}},ExpressionUUID->"93b23a81-dd7a-4da3-a4ed-\
+8bcd9627551a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculations", "Section",
+ CellChangeTimes->{{3.7854911900001135`*^9, 3.7854912032646475`*^9}, {
+  3.785589805500736*^9, 3.7855898070067077`*^9}, {3.7860967323396125`*^9, 
+  3.7860967370230837`*^9}},ExpressionUUID->"313534f2-78b3-47e4-a3e5-\
+f406dd67943e"],
+
+Cell["I calculated the SFC flow using an Excel spreadsheet. ", "Text",
+ CellChangeTimes->{{3.789116784062557*^9, 3.789116809966273*^9}, {
+  3.7891169289689655`*^9, 
+  3.789116950248049*^9}},ExpressionUUID->"254aec18-0bd2-4351-9997-\
+3996911e8ff5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell["\<\
+The first indication of a problem was that when the SFC was equilibrating, \
+the GC column head pressure was not very high. When the GC runs started, the \
+usual increase in the baseline was very small. The rise in the column head \
+pressure during collection was not as large a usual.  There was no \
+corresponding increase in the FID signal.\
+\>", "Text",
+ CellChangeTimes->{{3.789116143855012*^9, 3.78911630601431*^9}, {
+  3.789116734524069*^9, 3.789116747380719*^9}, {3.7891168169077024`*^9, 
+  3.789116820241785*^9}},ExpressionUUID->"14d7d81c-e484-420e-9b2d-\
+f2218b755f19"],
+
+Cell["\<\
+The hydrogen leak detector showed that there was a serious hydrogen leak \
+between the inlet stem and the manifold.\
+\>", "Text",
+ CellChangeTimes->{{3.7891203926891837`*^9, 3.789120419667054*^9}, {
+  3.7891204579147234`*^9, 
+  3.7891205035038166`*^9}},ExpressionUUID->"2732d9d1-de45-4ea2-b0e5-\
+07f58a4c832a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+It is interesting how one sticks to a working hypothesis. I wondered if a \
+restrictor was blocked, until I measured the SFC flow, which contradicted \
+that hypothesis. The leak detector showed that there was a big hydrogen leak, \
+which is a sure symptom of a broken column. I was not not actually inspecting \
+the column for breaks: I wondered if the column had broken inside the coaxial \
+heater, even though I was pretty sure it hadn\[CloseCurlyQuote]t. Such events \
+always blow out the flame immediately. \
+\>", "Text",
+ CellChangeTimes->{{3.789117009922429*^9, 3.789117048282811*^9}, {
+  3.7891170783963113`*^9, 3.7891171708150663`*^9}, {3.7891205135578785`*^9, 
+  3.789120644211398*^9}},ExpressionUUID->"bb3a6914-3563-4a9c-9a6b-\
+83ab5d163024"],
+
+Cell["\<\
+Do not yet know why the column broke. I\[CloseCurlyQuote]ll have more \
+information when I take it apart.\
+\>", "Text",
+ CellChangeTimes->{{3.789117182622473*^9, 
+  3.7891172178253164`*^9}},ExpressionUUID->"1705528e-5a34-48ff-89a7-\
+3f38a5be7536"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["The column broke, for reasons unknown. ", "Text",
+ CellChangeTimes->{{3.789117063286677*^9, 3.789117073238062*^9}, {
+  3.7891171772568293`*^9, 3.78911717952975*^9}, {3.789117220441313*^9, 
+  3.7891172275822153`*^9}},ExpressionUUID->"20736115-a613-4037-983d-\
+74dba89fae75"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell[CellGroupData[{
+
+Cell["Do an FID check before the start of work, every day. ", "ItemNumbered",
+ CellChangeTimes->{{3.78911640918032*^9, 3.789116422962449*^9}, {
+  3.7891172333577952`*^9, 
+  3.7891172333587937`*^9}},ExpressionUUID->"8abba99b-0575-47af-82d6-\
+1f0a6ce03235"],
+
+Cell["Measure SFC flow before the start of work, every day. ", "ItemNumbered",
+ CellChangeTimes->{{3.78911640918032*^9, 3.789116422962449*^9}, {
+  3.7891172402134256`*^9, 3.78911725638118*^9}, {3.7891204685123672`*^9, 
+  3.789120468513363*^9}},ExpressionUUID->"1b8b366c-06aa-4cd2-b487-\
+68c6e2dec35e"],
+
+Cell["\<\
+Inspect the column to see if it broke, and replace it if necessary. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.78911640918032*^9, 3.789116422962449*^9}, {
+  3.7891172402134256`*^9, 3.78911725638118*^9}, {3.789120473904941*^9, 
+  3.7891204799138775`*^9}, {3.7891206533350477`*^9, 
+  3.7891206795289664`*^9}},ExpressionUUID->"abc74af4-c6e3-43cb-a00b-\
+827669070631"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 488, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1329, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1487, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1747, 51, 414, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2186, 61, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2348, 66, 992, 14, 33, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3377, 85, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[3539, 90, 284, 6, 33, "Text",ExpressionUUID->"659e6fc5-68b3-4de5-9dc4-a81b34181e6d"],
+Cell[3826, 98, 381, 8, 33, "Text",ExpressionUUID->"ea70c22f-707d-4ba5-9cd9-cccd577f6691"],
+Cell[4210, 108, 269, 6, 33, "Text",ExpressionUUID->"b7ac2bbd-9dcb-45d7-a071-6230b33f772e"],
+Cell[4482, 116, 238, 6, 33, "Text",ExpressionUUID->"c9185eee-ddc6-4fc5-b63c-e03ea3b0f2c5"],
+Cell[4723, 124, 278, 6, 33, "Text",ExpressionUUID->"88af5131-21c9-416b-b6de-70869cdbfb21"],
+Cell[5004, 132, 311, 6, 33, "Text",ExpressionUUID->"93b23a81-dd7a-4da3-a4ed-8bcd9627551a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5352, 143, 262, 4, 69, "Section",ExpressionUUID->"313534f2-78b3-47e4-a3e5-f406dd67943e"],
+Cell[5617, 149, 247, 4, 33, "Text",ExpressionUUID->"254aec18-0bd2-4351-9997-3996911e8ff5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5901, 158, 250, 4, 69, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[6154, 164, 589, 10, 55, "Text",ExpressionUUID->"14d7d81c-e484-420e-9b2d-f2218b755f19"],
+Cell[6746, 176, 320, 7, 33, "Text",ExpressionUUID->"2732d9d1-de45-4ea2-b0e5-07f58a4c832a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7103, 188, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[7263, 193, 762, 12, 77, "Text",ExpressionUUID->"bb3a6914-3563-4a9c-9a6b-83ab5d163024"],
+Cell[8028, 207, 257, 6, 33, "Text",ExpressionUUID->"1705528e-5a34-48ff-89a7-3f38a5be7536"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8322, 218, 254, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[8579, 224, 279, 4, 33, "Text",ExpressionUUID->"20736115-a613-4037-983d-74dba89fae75"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8895, 233, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[CellGroupData[{
+Cell[9084, 240, 255, 4, 27, "ItemNumbered",ExpressionUUID->"8abba99b-0575-47af-82d6-1f0a6ce03235"],
+Cell[9342, 246, 301, 4, 27, "ItemNumbered",ExpressionUUID->"1b8b366c-06aa-4cd2-b487-68c6e2dec35e"],
+Cell[9646, 252, 376, 7, 27, "ItemNumbered",ExpressionUUID->"abc74af4-c6e3-43cb-a00b-827669070631"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,554 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21661,        546]
+NotebookOptionsPosition[     16260,        442]
+NotebookOutlinePosition[     17245,        474]
+CellTagsIndexPosition[     17202,        471]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["SFC Mass flow", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+  3.7848935968348985`*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["5 December 2019", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 
+  3.784548396079321*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+The aim of this project is to learn to calculate the carbon dioxide mass flow \
+from its volume flow. To calculate the amount of modifier to add, it is \
+necessary to know the mass flow rate of the carbon dioxide mobile phase. \
+Since the mass that goes in at a certain rate must come out at the same rate \
+(assuming no leaks and no absorption), the mass flow after the restrictor \
+must be the same as the mass flow in the column. If one knows the pressure \
+and the temperature of the gas coming out of the restrictor, then one can \
+calculate the mass flow.\
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell["\<\
+We measured the flow through the static restrictor with a bubble flow meter \
+and found it to be in the range of 420-500 ml/min, at ambient temperature and \
+pressure. \
+\>", "Text",
+ CellChangeTimes->{{3.7845447032826395`*^9, 3.7845447375699205`*^9}, {
+   3.7845447780526657`*^9, 3.784544780590834*^9}, {3.784545117225002*^9, 
+   3.784545117246967*^9}, {3.784545177837859*^9, 3.784545591819417*^9}, {
+   3.784545698764329*^9, 3.784545698801231*^9}, {3.784545733725852*^9, 
+   3.784545740190511*^9}, {3.7845457967053275`*^9, 3.784545796733254*^9}, {
+   3.7845458308480263`*^9, 3.784545830874921*^9}, 3.784548480290043*^9, {
+   3.7845496721607475`*^9, 3.7845496722046304`*^9}, {3.784893648220479*^9, 
+   3.7848937511861186`*^9}, {3.78489410418298*^9, 3.7848942260869713`*^9}, {
+   3.7848942815024133`*^9, 3.784894335434184*^9}, {3.7848945099045973`*^9, 
+   3.784894524265192*^9}},ExpressionUUID->"c003f25a-a865-432b-b82d-\
+ed3a6e6694c4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculations", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 
+  3.7848946159839106`*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["Start with the Universal Gas Law.", "Text",
+ CellChangeTimes->{{3.78489461784892*^9, 3.7848946395818014`*^9}, {
+  3.78489467521152*^9, 3.7848946792507143`*^9}, {3.7848948761014595`*^9, 
+  3.7848948775196695`*^9}},ExpressionUUID->"75dbe897-5d62-4c06-8d3e-\
+6551f4fad33b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p", " ", "V"}], " ", "==", " ", 
+  RowBox[{"n", " ", "R", " ", "T"}]}]], "Input",
+ CellChangeTimes->{{3.784894645307491*^9, 3.7848946518589673`*^9}, {
+  3.784894689739667*^9, 3.784894709940639*^9}, {3.7848947609828095`*^9, 
+  3.7848947613996944`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"a8a16a98-971f-4e64-989e-d61cf19db420"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p", " ", "V"}], "\[Equal]", 
+  RowBox[{"n", " ", "R", " ", "T"}]}]], "Output",
+ CellChangeTimes->{3.7848946640364017`*^9, 3.7848947623431377`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"3150fe7c-f8c9-4d41-b0a5-95e413b96c50"]
+}, Open  ]],
+
+Cell["The mass rate is proportional to the number rate. ", "Text",
+ CellChangeTimes->{{3.784894882893297*^9, 
+  3.784894946653783*^9}},ExpressionUUID->"84b2e6c9-318a-40eb-93bc-\
+e1a762324f40"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p", " ", "V"}], " ", "\[Equal]", " ", 
+  RowBox[{"n", " ", "R", " ", "T"}]}]], "Input",
+ CellChangeTimes->{{3.784896678391449*^9, 
+  3.7848967034175253`*^9}},ExpressionUUID->"02a8e1c4-7e0f-4e9c-bc8c-\
+7bcab2f88c76"],
+
+Cell[BoxData[
+ RowBox[{
+  TemplateBox[{"45.585`",RowBox[{
+      SuperscriptBox["\"m\"", "3"], "\[InvisibleSpace]", "\"Pa\""}],
+    "meter cubed pascals",RowBox[{
+      SuperscriptBox["\"Meters\"", "3"], " ", "\"Pascals\""}]},
+   "Quantity"], "\[Equal]", 
+  RowBox[{"n", " ", 
+   RowBox[{"(", 
+    TemplateBox[{
+     "2453.8770999999997`",
+      RowBox[{"\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        "\"mol\""}],"joules per mole",FractionBox["\"Joules\"", "\"Moles\""]},
+     "Quantity"], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.7848966884117546`*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"faebfc1c-08a5-49b3-9822-88ae128b36ab"]
+}, Open  ]],
+
+Cell["\<\
+We worked at atmospheric pressure. I\[CloseCurlyQuote]m taking 1 bar as the \
+pressure. The elevation is about 1300 m above sea level, so it will be lower. \
+\>", "Text",
+ CellChangeTimes->{{3.7848965465390835`*^9, 
+  3.7848966006423807`*^9}},ExpressionUUID->"c82c0f19-488d-4bbe-aa12-\
+269cb89fba0a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"p", " ", "=", " ", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    RowBox[{"101.3", "*", 
+     RowBox[{"10", "^", "3"}]}], ",", " ", "\"\<Pascals\>\""}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7848952032914953`*^9, 3.784895272719823*^9}, {
+  3.784895733952893*^9, 3.7848957477669563`*^9}, {3.784895840790212*^9, 
+  3.784895842140566*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"fb1b4a0f-cd20-4a25-8047-719b7e862333"],
+
+Cell[BoxData[
+ TemplateBox[{"101300.`","\"Pa\"","pascals","\"Pascals\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{
+  3.7848952519433866`*^9, {3.7848957434694448`*^9, 3.7848957505973883`*^9}, 
+   3.78489584346303*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"dae96577-183f-46d5-b979-6f8c00fcb4a5"]
+}, Open  ]],
+
+Cell["The measure volume flow was about 450 ml/min", "Text",
+ CellChangeTimes->{{3.7848966095594993`*^9, 
+  3.784896624018831*^9}},ExpressionUUID->"c2a921aa-8f6d-41a3-918c-\
+b85f68220c41"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"V", "=", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    RowBox[{"450.", "*", 
+     RowBox[{"10", "^", 
+      RowBox[{"-", "6"}]}]}], ",", 
+    RowBox[{"\"\<Meters\>\"", "^", "3"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.784895763090968*^9, 3.7848958129167194`*^9}, {
+  3.7848959535556417`*^9, 3.784895986165432*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"8125212d-5825-4406-96bb-1f9f4ca71437"],
+
+Cell[BoxData[
+ TemplateBox[{"0.00045`",RowBox[{
+     SuperscriptBox["\"m\"", "3"]}],"meters cubed",SuperscriptBox[
+   "\"Meters\"", "3"]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.7848959782615395`*^9, 3.7848959866650724`*^9}},
+ CellLabel->"Out[11]=",ExpressionUUID->"b30e2d6b-a02a-4bde-9fa0-7dc551be4c2d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"R", " ", "=", " ", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{"8.314", ",", " ", 
+    RowBox[{
+     RowBox[{"\"\<Joules\>\"", "/", "\"\<Kelvins\>\""}], "/", 
+     "\"\<Moles\>\""}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.784896018102991*^9, 3.7848960976253214`*^9}, {
+  3.784896174979455*^9, 3.784896197502266*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"5be92a44-40d3-4a0f-b6a9-73bf722383ea"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "8.314`",RowBox[{
+    "\"J\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"K\"", 
+     "\[ThinSpace]", "\"mol\"", "\[InvisibleSpace]", "\")\""}],
+   "joules per kelvin mole",FractionBox["\"Joules\"", 
+    RowBox[{"\"Kelvins\"", " ", "\"Moles\""}]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.784896198428746*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"568ff990-3874-409e-b16f-3e14b9b4c48c"]
+}, Open  ]],
+
+Cell["\<\
+The room is air-conditioned, so the temperature is close to 22 \[Degree]C. \
+\>", "Text",
+ CellChangeTimes->{{3.784896630370846*^9, 
+  3.7848966657282877`*^9}},ExpressionUUID->"86b53451-cbde-4885-a4c3-\
+c056feafbff4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"T", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{"Quantity", "[", 
+     RowBox[{"22.0", ",", " ", "\"\<DegreesCelsius\>\""}], "]"}], ",", " ", 
+    "\"\<Kelvins\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.784896228820467*^9, 3.7848962626001296`*^9}, {
+  3.7848963067210937`*^9, 3.784896334617778*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"657848fd-b2bd-4289-9278-5a17012defab"],
+
+Cell[BoxData[
+ TemplateBox[{"295.15`","\"K\"","kelvins","\"Kelvins\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{
+  3.784896264403309*^9, {3.7848963234955273`*^9, 3.78489633527602*^9}},
+ CellLabel->"Out[16]=",ExpressionUUID->"f9477f99-ca94-4cba-856c-513e7353ff81"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"soln", " ", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"p", " ", "V"}], " ", "\[Equal]", " ", 
+     RowBox[{"n", " ", "R", " ", "T"}]}], ",", " ", "n"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7848947188268747`*^9, 3.7848947232171345`*^9}, {
+  3.784894931044526*^9, 3.784894956314945*^9}, {3.784896364498867*^9, 
+  3.784896370727209*^9}, {3.784896405666771*^9, 3.784896411995846*^9}, {
+  3.7848967401931453`*^9, 3.7848967432409945`*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"5ab66326-b89d-481a-9b95-db3514483633"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"n", "\[Rule]", 
+    TemplateBox[{"0.018576724971270976`","\"mol\"","moles","\"Moles\""},
+     "Quantity"]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.78489495992529*^9, 3.784896372708909*^9, {3.78489640643372*^9, 
+   3.7848964209369698`*^9}, 3.784896744343047*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"248ae463-ccbf-480b-aea0-56c54236311c"]
+}, Open  ]],
+
+Cell["The molecular mass of  carbon dioxide is ", "Text",
+ CellChangeTimes->{{3.7848967549287395`*^9, 3.7848967645340776`*^9}, {
+  3.7848968802584066`*^9, 
+  3.784896883753034*^9}},ExpressionUUID->"adf5f800-a6b8-456a-88aa-\
+5d5e57c93c88"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mr", " ", "=", " ", 
+  RowBox[{"ChemicalData", "[", 
+   RowBox[{"\"\<CarbonDioxide\>\"", ",", " ", "\"\<\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.784896734589136*^9, 3.784896737440508*^9}, {
+  3.7848967848602676`*^9, 3.784896818334018*^9}, {3.78489686117347*^9, 
+  3.784896876691918*^9}},ExpressionUUID->"3384ea17-648b-410b-91ae-\
+6fa169fc6484"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{
+  3.784896820987894*^9, {3.7848968658748455`*^9, 3.7848968724692116`*^9}},
+ CellLabel->"Out[24]=",ExpressionUUID->"af60c6f4-3031-4890-be03-63f33d61ff6e"]
+}, Open  ]],
+
+Cell["This didn\[CloseCurlyQuote]t work because the internet is off at the \
+moment. ", "Text",
+ CellChangeTimes->{{3.7848968912709293`*^9, 
+  3.784896905257529*^9}},ExpressionUUID->"77163a32-11d8-4549-ade8-\
+0f4f28cdbfab"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mr", " ", "=", " ", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    RowBox[{"12.0", "+", "16", "+", "16"}], ",", 
+    RowBox[{"\"\<Grams\>\"", "/", "\"\<Moles\>\""}]}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.7848970544505367`*^9, 3.784897188557894*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"d54c760e-c029-464a-a4d6-4dbbe9ebc1a5"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "44.`",RowBox[{
+    "\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"mol\""}],
+   "grams per mole",FractionBox["\"Grams\"", "\"Moles\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.7848971392587347`*^9, 3.7848971892350826`*^9}},
+ CellLabel->"Out[28]=",ExpressionUUID->"84071df9-aec2-4390-af92-53fff4d18df7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mr", " ", "n"}], " ", "/.", " ", "soln"}]], "Input",
+ CellChangeTimes->{{3.784897207093357*^9, 3.784897242494651*^9}, {
+  3.7848974473976793`*^9, 
+  3.7848974606642013`*^9}},ExpressionUUID->"8fe46bf5-5874-42f7-97f5-\
+28a62c226b3c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TemplateBox[{"0.817375898735923`","\"g\"","grams","\"Grams\""},
+   "Quantity"], "}"}]], "Output",
+ CellChangeTimes->{3.7848972431498985`*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"7342dcce-9032-4f32-80ee-9c681e45188d"]
+}, Open  ]],
+
+Cell["\<\
+This means that 0.817 grams of carbon dioxide occupies a volume of 450 ml at \
+the given temperature and pressure. It looks about right: half a teaspoon of \
+dry ice will create about half a litre of gas.\
+\>", "Text",
+ CellChangeTimes->{{3.7848972741590214`*^9, 3.7848973378107796`*^9}, {
+  3.7848973714916754`*^9, 3.7848974325922723`*^9}, {3.784897503208423*^9, 
+  3.7848975080016375`*^9}},ExpressionUUID->"c198d708-906c-462c-ba74-\
+fb1b42e66a0e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"mr", " ", "n"}], " ", "/.", " ", "soln"}], ")"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "/", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{"1", ",", " ", "\"\<Minutes\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7848974690677257`*^9, 3.784897472135522*^9}, {
+  3.78489751372829*^9, 3.784897570959238*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"dd0f3bc3-c19d-4caf-b038-77cd37fcf3a0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "0.817375898735923`",
+   RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     "\"min\""}],"grams per minute",FractionBox["\"Grams\"", "\"Minutes\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.78489754986066*^9, 3.784897573669145*^9}},
+ CellLabel->"Out[31]=",ExpressionUUID->"714debc7-290f-41b4-942a-21b19482326b"]
+}, Open  ]],
+
+Cell["This is the mass flow of the carbon dioxide. ", "Text",
+ CellChangeTimes->{{3.784897577450925*^9, 
+  3.7848975895604925`*^9}},ExpressionUUID->"da53be47-58ee-4102-ba5c-\
+9dc4dca16dcf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellChangeTimes->{{3.784546171807171*^9, 
+  3.7845461927621284`*^9}},ExpressionUUID->"06ca1751-f302-4a81-b981-\
+11163571b006"],
+
+Cell["\<\
+I put this calculation on the front panel of the main SFC\[Times]GC VI. So \
+now one can calculate the mass flow from bubble flow meter measurements. \
+Previously the value was hard-coded, and was 0.76 g/min. Or perhaps even \
+ml/min, which is approximately the same thing. \
+\>", "Text",
+ CellChangeTimes->{{3.784546199739424*^9, 3.784546411515896*^9}, {
+   3.7845485210370474`*^9, 3.784548540243668*^9}, {3.7845495449540434`*^9, 
+   3.784549611117047*^9}, 3.7848945876158113`*^9, {3.7849011384157763`*^9, 
+   3.78490113857535*^9}, {3.784901425776987*^9, 
+   3.784901613051161*^9}},ExpressionUUID->"1f2e32db-c870-4f55-83d5-\
+c95d89d268d8"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 260, 4, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1101, 34, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1259, 39, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1519, 48, 159, 3, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[1703, 55, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[1865, 60, 1178, 18, 77, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3080, 83, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[3242, 88, 946, 15, 33, "Text",ExpressionUUID->"c003f25a-a865-432b-b82d-ed3a6e6694c4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4225, 108, 208, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[4436, 114, 276, 4, 33, "Text",ExpressionUUID->"75dbe897-5d62-4c06-8d3e-6551f4fad33b"],
+Cell[CellGroupData[{
+Cell[4737, 122, 364, 7, 39, "Input",ExpressionUUID->"a8a16a98-971f-4e64-989e-d61cf19db420"],
+Cell[5104, 131, 259, 5, 39, "Output",ExpressionUUID->"3150fe7c-f8c9-4d41-b0a5-95e413b96c50"]
+}, Open  ]],
+Cell[5378, 139, 192, 3, 33, "Text",ExpressionUUID->"84b2e6c9-318a-40eb-93bc-e1a762324f40"],
+Cell[CellGroupData[{
+Cell[5595, 146, 250, 6, 39, "Input",ExpressionUUID->"02a8e1c4-7e0f-4e9c-bc8c-7bcab2f88c76"],
+Cell[5848, 154, 655, 15, 53, "Output",ExpressionUUID->"faebfc1c-08a5-49b3-9822-88ae128b36ab"]
+}, Open  ]],
+Cell[6518, 172, 310, 6, 33, "Text",ExpressionUUID->"c82c0f19-488d-4bbe-aa12-269cb89fba0a"],
+Cell[CellGroupData[{
+Cell[6853, 182, 443, 10, 39, "Input",ExpressionUUID->"fb1b4a0f-cd20-4a25-8047-719b7e862333"],
+Cell[7299, 194, 299, 6, 47, "Output",ExpressionUUID->"dae96577-183f-46d5-b979-6f8c00fcb4a5"]
+}, Open  ]],
+Cell[7613, 203, 188, 3, 33, "Text",ExpressionUUID->"c2a921aa-8f6d-41a3-918c-b85f68220c41"],
+Cell[CellGroupData[{
+Cell[7826, 210, 421, 10, 39, "Input",ExpressionUUID->"8125212d-5825-4406-96bb-1f9f4ca71437"],
+Cell[8250, 222, 313, 6, 51, "Output",ExpressionUUID->"b30e2d6b-a02a-4bde-9fa0-7dc551be4c2d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8600, 233, 419, 9, 39, "Input",ExpressionUUID->"5be92a44-40d3-4a0f-b6a9-73bf722383ea"],
+Cell[9022, 244, 438, 9, 50, "Output",ExpressionUUID->"568ff990-3874-409e-b16f-3e14b9b4c48c"]
+}, Open  ]],
+Cell[9475, 256, 227, 5, 33, "Text",ExpressionUUID->"86b53451-cbde-4885-a4c3-c056feafbff4"],
+Cell[CellGroupData[{
+Cell[9727, 265, 425, 9, 39, "Input",ExpressionUUID->"657848fd-b2bd-4289-9278-5a17012defab"],
+Cell[10155, 276, 268, 5, 47, "Output",ExpressionUUID->"f9477f99-ca94-4cba-856c-513e7353ff81"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10460, 286, 568, 11, 39, "Input",ExpressionUUID->"5ab66326-b89d-481a-9b95-db3514483633"],
+Cell[11031, 299, 408, 9, 50, "Output",ExpressionUUID->"248ae463-ccbf-480b-aea0-56c54236311c"]
+}, Open  ]],
+Cell[11454, 311, 238, 4, 33, "Text",ExpressionUUID->"adf5f800-a6b8-456a-88aa-5d5e57c93c88"],
+Cell[CellGroupData[{
+Cell[11717, 319, 377, 7, 39, "Input",ExpressionUUID->"3384ea17-648b-410b-91ae-6fa169fc6484"],
+Cell[12097, 328, 208, 3, 39, "Output",ExpressionUUID->"af60c6f4-3031-4890-be03-63f33d61ff6e"]
+}, Open  ]],
+Cell[12320, 334, 223, 4, 33, "Text",ExpressionUUID->"77163a32-11d8-4549-ade8-0f4f28cdbfab"],
+Cell[CellGroupData[{
+Cell[12568, 342, 360, 7, 39, "Input",ExpressionUUID->"d54c760e-c029-464a-a4d6-4dbbe9ebc1a5"],
+Cell[12931, 351, 358, 7, 50, "Output",ExpressionUUID->"84071df9-aec2-4390-af92-53fff4d18df7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13326, 363, 266, 6, 39, "Input",ExpressionUUID->"8fe46bf5-5874-42f7-97f5-28a62c226b3c"],
+Cell[13595, 371, 251, 5, 49, "Output",ExpressionUUID->"7342dcce-9032-4f32-80ee-9c681e45188d"]
+}, Open  ]],
+Cell[13861, 379, 459, 8, 33, "Text",ExpressionUUID->"c198d708-906c-462c-ba74-fb1b42e66a0e"],
+Cell[CellGroupData[{
+Cell[14345, 391, 464, 11, 39, "Input",ExpressionUUID->"dd0f3bc3-c19d-4caf-b038-77cd37fcf3a0"],
+Cell[14812, 404, 372, 7, 50, "Output",ExpressionUUID->"714debc7-290f-41b4-942a-21b19482326b"]
+}, Open  ]],
+Cell[15199, 414, 189, 3, 33, "Text",ExpressionUUID->"da53be47-58ee-4102-ba5c-9dc4dca16dcf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15425, 422, 154, 3, 69, "Section",ExpressionUUID->"06ca1751-f302-4a81-b981-11163571b006"],
+Cell[15582, 427, 650, 11, 55, "Text",ExpressionUUID->"1f2e32db-c870-4f55-83d5-c95d89d268d8"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

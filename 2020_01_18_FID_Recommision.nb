@@ -1,0 +1,792 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33427,        784]
+NotebookOptionsPosition[     27838,        674]
+NotebookOutlinePosition[     28822,        706]
+CellTagsIndexPosition[     28779,        703]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["FID Recomissioning", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.788326545734683*^9, 
+   3.7883265553739014`*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["18 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.788326533185252*^9, 
+   3.788326541202855*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+After the repair of the FID tower mounting, which might have been responsible \
+for an unacceptable leak at the base of the tower, it is time to re-install \
+the detector.\
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.788337392030365*^9, 3.788337402623031*^9}, {3.7883374520877185`*^9, 
+   3.788337522757687*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell[CellGroupData[{
+
+Cell["FID cleaning", "Subsection",
+ CellChangeTimes->{{3.7883373633840322`*^9, 3.788337378723955*^9}, 
+   3.7883375572633963`*^9},ExpressionUUID->"5811aa73-4190-42ce-8cb8-\
+f670a665f5c5"],
+
+Cell["I cleaned the FID as instructed in the manual. ", "Text",
+ CellChangeTimes->{{3.788337576678505*^9, 
+  3.7883375864064565`*^9}},ExpressionUUID->"fdf1691d-902a-43b6-a6c7-\
+11accc001418"],
+
+Cell[CellGroupData[{
+
+Cell["I burnished the collection tube.", "ItemNumbered",
+ CellChangeTimes->{{3.788337382176722*^9, 3.7883373822625227`*^9}, {
+  3.7883375253387856`*^9, 3.7883375613195763`*^9}, {3.78833770513151*^9, 
+  3.7883377202949495`*^9}},ExpressionUUID->"f4983c95-bcee-47e8-bd5f-\
+1e43378e3346"],
+
+Cell["\<\
+I ultrasonicated the collector tube and the ceramic insulator in distilled \
+water for 15 minutes, rinsed them in methanol and let them air dry. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.788337382176722*^9, 3.7883373822625227`*^9}, {
+  3.7883375253387856`*^9, 3.7883375613195763`*^9}, {3.78833770513151*^9, 
+  3.7883377663807096`*^9}, {3.7883378617565994`*^9, 
+  3.788337882232814*^9}},ExpressionUUID->"06bc15f4-fb35-44e5-8aa7-\
+d6b9f35f2d71"],
+
+Cell["\<\
+I burnished the inside of the tower and rinsed it with methanol\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.788337382176722*^9, 3.7883373822625227`*^9}, {
+  3.7883375253387856`*^9, 3.7883375613195763`*^9}, {3.78833770513151*^9, 
+  3.7883378253758774`*^9}},ExpressionUUID->"b95eafe0-d777-4adf-8c91-\
+9ea75922c68a"],
+
+Cell["I polished the electrical contacts on the probes.", "ItemNumbered",
+ CellChangeTimes->{{3.788337382176722*^9, 3.7883373822625227`*^9}, {
+  3.7883375253387856`*^9, 3.7883375613195763`*^9}, {3.78833770513151*^9, 
+  3.7883378472843213`*^9}},ExpressionUUID->"e6bc1064-8dfd-4946-97d8-\
+5ad7e70c17b5"],
+
+Cell["\<\
+I wiped the ceramic insulators of the probes with methanol and let them air \
+dry.
+\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.788337382176722*^9, 3.7883373822625227`*^9}, {
+  3.7883375253387856`*^9, 3.7883375613195763`*^9}, {3.78833770513151*^9, 
+  3.7883377634036517`*^9}, {3.7883378183676257`*^9, 3.7883378198915815`*^9}, {
+  3.788337855090393*^9, 
+  3.788337892291892*^9}},ExpressionUUID->"95606c75-ea42-472e-9d17-\
+c9e45d593ff0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["FID leak test", "Subsection",
+ CellChangeTimes->{{3.7883375430474157`*^9, 
+  3.7883375508266077`*^9}},ExpressionUUID->"f73d1101-12c1-4951-a97c-\
+0d3836addc9a"],
+
+Cell["\<\
+To test for hydrogen leaks at the base of the detector tower, I plugged in \
+the flow meter adapter, to guide normal exhaust gas away from the vicinity, \
+and plugged in the probes. I probed around the base of the tower, to detect \
+hydrogen leaking through the aluminium seal. \
+\>", "Text",
+ CellChangeTimes->{{3.788345097608429*^9, 
+  3.7883453367926984`*^9}},ExpressionUUID->"deea7d82-ba49-4ef5-9984-\
+07bb94a3bc82"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Electrometer test", "Subsection",
+ CellChangeTimes->{{3.7854911183646555`*^9, 3.7854911245830636`*^9}, {
+  3.785566407342467*^9, 3.7855664077603908`*^9}, {3.7855746459247303`*^9, 
+  3.785574649197975*^9}, {3.786096586642401*^9, 3.786096587809275*^9}, {
+  3.7883370471842957`*^9, 
+  3.7883370575764985`*^9}},ExpressionUUID->"138d9c62-c966-489e-87ec-\
+d07fe67f64da"],
+
+Cell["\<\
+I did some basic evaluation about the functioning of the electrometer. \
+\>", "Text",
+ CellChangeTimes->{{3.7855664096603127`*^9, 3.785566453273655*^9}, {
+  3.7855688519408875`*^9, 3.785568896176516*^9}, {3.7860966115098705`*^9, 
+  3.786096632020996*^9}, {3.788337061454163*^9, 3.788337096409626*^9}, {
+  3.7884512782605276`*^9, 
+  3.7884512870859156`*^9}},ExpressionUUID->"118762a6-a6d4-4b58-9526-\
+022a13f7bd6f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculations", "Section",
+ CellChangeTimes->{{3.7854911900001135`*^9, 3.7854912032646475`*^9}, {
+  3.785589805500736*^9, 3.7855898070067077`*^9}, {3.7860967323396125`*^9, 
+  3.7860967370230837`*^9}},ExpressionUUID->"313534f2-78b3-47e4-a3e5-\
+f406dd67943e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"flowdatafile", "=", " ", 
+  "\"\<C:\\\\Users\\\\fskdm\\\\My PhD\\\\Projects\\\\2019_12_06_SFCxGC \
+Recomissioning\\\\2020_01_19_FID_Flow.xlsx\>\""}]], "Input",
+ CellChangeTimes->{
+  3.7884524771357183`*^9, {3.788452741694448*^9, 3.788452745845354*^9}, {
+   3.78845278791028*^9, 3.7884527891599493`*^9}, {3.788453664269664*^9, 
+   3.7884536964076967`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"1189d1ec-5e26-42f0-adf7-229314336dd2"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\fskdm\\\\My \
+PhD\\\\Projects\\\\2019_12_06_SFCxGC \
+Recomissioning\\\\2020_01_19_FID_Flow.xlsx\"\>"], "Output",
+ CellChangeTimes->{
+  3.7884527913011746`*^9, {3.788453669708265*^9, 3.788453697888734*^9}},
+ CellLabel->"Out[4]=",ExpressionUUID->"32c0eb5d-0e1a-4c0d-ab9a-cb400cc72a10"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"flowdata", " ", "=", " ", 
+  RowBox[{"Import", "[", "flowdatafile", "]"}]}]], "Input",
+ CellChangeTimes->{{3.7884527943899145`*^9, 3.7884527952615843`*^9}, {
+  3.7884537064383745`*^9, 3.788453719942284*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"3cc09d18-7497-4dee-ada1-f56859efaaeb"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       TemplateBox[{RowBox[{"\"Sun 19 Jan 2020 17:10:00\"", 
+           StyleBox[
+            RowBox[{"\"GMT+\"", "\[InvisibleSpace]", 
+              StyleBox["2.`", NumberMarks -> False, StripOnInput -> False]}], 
+            FontColor -> GrayLevel[0.5]]}],RowBox[{"DateObject", "[", 
+           RowBox[{
+             RowBox[{"{", 
+               
+               RowBox[{
+                "2020", ",", "1", ",", "19", ",", "17", ",", "10", ",", 
+                 "0.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+             ",", "2.`"}], "]"}]},
+        "DateObject",
+        Editable->False], ",", "\<\"FID flows\"\>", ",", "\<\"\"\>", 
+       ",", "\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "\<\"Hydrogen: FID + Column\"\>", 
+       ",", "\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "\<\"Volume of gas\"\>", ",", "\<\"Time\"\>", 
+       ",", "\<\"Time\"\>", ",", "\<\"Flow\"\>", ",", "\<\"\"\>"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "\<\"ml\"\>", ",", "\<\"s\"\>", 
+       ",", "\<\"min\"\>", ",", "\<\"ml/min\"\>", ",", "\<\"\"\>"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "2.`", ",", "4.27`", ",", 
+       "0.07116666666666666`", ",", "28.103044496487122`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "2.`", ",", "4.18`", ",", 
+       "0.06966666666666667`", ",", "28.708133971291865`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "2.`", ",", "4.13`", ",", 
+       "0.06883333333333333`", ",", "29.055690072639226`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "2.`", ",", "4.26`", ",", "0.071`", ",", 
+       "28.169014084507044`", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "10.`", ",", "19.52`", ",", 
+       "0.3253333333333333`", ",", "30.73770491803279`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "8.`", ",", "15.84`", ",", "0.264`", ",", 
+       "30.3030303030303`", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "8.`", ",", "15.54`", ",", "0.259`", ",", 
+       "30.888030888030887`", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "2.`", ",", "4.06`", ",", 
+       "0.06766666666666667`", ",", "29.55665024630542`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "8.`", ",", "15.68`", ",", 
+       "0.2613333333333333`", ",", "30.612244897959187`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>", 
+       ",", "29.570393764253758`", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>", 
+       ",", "\<\"\"\>", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       TemplateBox[{RowBox[{"\"Sun 19 Jan 2020 17:21:00\"", 
+           StyleBox[
+            RowBox[{"\"GMT+\"", "\[InvisibleSpace]", 
+              StyleBox["2.`", NumberMarks -> False, StripOnInput -> False]}], 
+            FontColor -> GrayLevel[0.5]]}],RowBox[{"DateObject", "[", 
+           RowBox[{
+             RowBox[{"{", 
+               
+               RowBox[{
+                "2020", ",", "1", ",", "19", ",", "17", ",", "21", ",", 
+                 "0.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+             ",", "2.`"}], "]"}]},
+        "DateObject",
+        Editable->False], ",", "\<\"FID flows\"\>", ",", "\<\"\"\>", 
+       ",", "\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "\<\"Air\"\>", ",", "\<\"\"\>", 
+       ",", "\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "\<\"Volume of gas\"\>", ",", "\<\"Time\"\>", 
+       ",", "\<\"Time\"\>", ",", "\<\"Flow\"\>", ",", "\<\"\"\>"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "\<\"ml\"\>", ",", "\<\"s\"\>", 
+       ",", "\<\"min\"\>", ",", "\<\"ml/min\"\>", ",", "\<\"\"\>"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "40.`", ",", "8.629999999999999`", ",", 
+       "0.1438333333333333`", ",", "278.0996523754346`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "40.`", ",", "8.`", ",", 
+       "0.13333333333333333`", ",", "300.`", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "40.`", ",", "7.94`", ",", 
+       "0.13233333333333333`", ",", "302.2670025188917`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "30.`", ",", "6.01`", ",", 
+       "0.10016666666666667`", ",", "299.5008319467554`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "40.`", ",", "7.98`", ",", "0.133`", ",", 
+       "300.7518796992481`", ",", "\<\"\"\>"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "40.`", ",", "7.81`", ",", 
+       "0.13016666666666665`", ",", "307.2983354673496`", ",", "\<\"\"\>"}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>", 
+       ",", "297.98628366794657`", ",", "\<\"Average\"\>"}], "}"}]}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"{", "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", "}"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.788453721743436*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"4861e101-6fc8-40bd-a2ea-132219fa84ac"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"flowdata", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.7884537278560877`*^9, 3.7884537362327085`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"b9af864f-766b-4d1d-8f8f-aa261bf5fbab"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{RowBox[{"\"Sun 19 Jan 2020 17:10:00\"", 
+         StyleBox[
+          RowBox[{"\"GMT+\"", "\[InvisibleSpace]", 
+            StyleBox["2.`", NumberMarks -> False, StripOnInput -> False]}], 
+          FontColor -> GrayLevel[0.5]]}],RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             
+             RowBox[{"2020", ",", "1", ",", "19", ",", "17", ",", "10", ",", 
+               "0.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+           "2.`"}], "]"}]},
+      "DateObject",
+      Editable->
+       False], "\<\"FID flows\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+    {"\<\"\"\>", "\<\"Hydrogen: FID + Column\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", "\<\"Time\"\>", "\<\
+\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", "\<\"ml/min\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "4.27`", "0.07116666666666666`", 
+     "28.103044496487122`", "\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "4.18`", "0.06966666666666667`", 
+     "28.708133971291865`", "\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "4.13`", "0.06883333333333333`", 
+     "29.055690072639226`", "\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "4.26`", "0.071`", "28.169014084507044`", "\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "19.52`", "0.3253333333333333`", 
+     "30.73770491803279`", "\<\"\"\>"},
+    {"\<\"\"\>", "8.`", "15.84`", "0.264`", "30.3030303030303`", "\<\"\"\>"},
+    {"\<\"\"\>", "8.`", "15.54`", "0.259`", "30.888030888030887`", "\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "4.06`", "0.06766666666666667`", 
+     "29.55665024630542`", "\<\"\"\>"},
+    {"\<\"\"\>", "8.`", "15.68`", "0.2613333333333333`", 
+     "30.612244897959187`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", 
+     "29.570393764253758`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {
+     TemplateBox[{RowBox[{"\"Sun 19 Jan 2020 17:21:00\"", 
+         StyleBox[
+          RowBox[{"\"GMT+\"", "\[InvisibleSpace]", 
+            StyleBox["2.`", NumberMarks -> False, StripOnInput -> False]}], 
+          FontColor -> GrayLevel[0.5]]}],RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             
+             RowBox[{"2020", ",", "1", ",", "19", ",", "17", ",", "21", ",", 
+               "0.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+           "2.`"}], "]"}]},
+      "DateObject",
+      Editable->
+       False], "\<\"FID flows\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+    {"\<\"\"\>", "\<\"Air\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", "\<\"Time\"\>", "\<\
+\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", "\<\"ml/min\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "40.`", "8.629999999999999`", "0.1438333333333333`", 
+     "278.0996523754346`", "\<\"\"\>"},
+    {"\<\"\"\>", "40.`", "8.`", "0.13333333333333333`", "300.`", "\<\"\"\>"},
+    {"\<\"\"\>", "40.`", "7.94`", "0.13233333333333333`", 
+     "302.2670025188917`", "\<\"\"\>"},
+    {"\<\"\"\>", "30.`", "6.01`", "0.10016666666666667`", 
+     "299.5008319467554`", "\<\"\"\>"},
+    {"\<\"\"\>", "40.`", "7.98`", "0.133`", "300.7518796992481`", "\<\"\"\>"},
+    {"\<\"\"\>", "40.`", "7.81`", "0.13016666666666665`", 
+     "307.2983354673496`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", 
+     "297.98628366794657`", "\<\"Average\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.788453736765253*^9},
+ CellLabel->
+  "Out[6]//TableForm=",ExpressionUUID->"d51d5ab8-e201-489d-b252-3e2d2cc8d044"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell[CellGroupData[{
+
+Cell["FID assembly", "Subsection",
+ CellChangeTimes->{{3.7883455352623425`*^9, 
+  3.788345545744258*^9}},ExpressionUUID->"45931b25-8f25-44e9-80e4-\
+507e5d783ed5"],
+
+Cell["\<\
+The assembly of the FID went without remarkable events. Using a tower that \
+matches the washer makes a snug fit when the tower is first mounted, before \
+the screws are inserted.  The long screws holding the tower down do have a \
+longer length of engagement with the threaded holes.\
+\>", "Text",
+ CellChangeTimes->{{3.7883455482834673`*^9, 3.788345555521107*^9}, {
+  3.7883456009176764`*^9, 3.788345651676903*^9}, {3.788452162139288*^9, 
+  3.7884522556651187`*^9}},ExpressionUUID->"d22676a4-bb84-4263-90ea-\
+d71ad9d631f3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["FID leak test", "Subsection",
+ CellChangeTimes->{{3.7883375430474157`*^9, 
+  3.7883375508266077`*^9}},ExpressionUUID->"d531d87a-9579-4056-bba0-\
+47f5660a743f"],
+
+Cell["\<\
+I could not, by tightening the tower screws, get a null result on leak \
+testing on the first day. Not having done this before, I have no idea what \
+the acceptable leak rate should be. On the second day there was no detectable \
+leak at the base of the tower. I suspect that the aluminium washers is \
+subject to creep: after some time has passed it is possible to tighten the \
+screws a little bit more. \
+\>", "Text",
+ CellChangeTimes->{{3.7883450409383755`*^9, 3.7883450509466057`*^9}, {
+  3.788345089856166*^9, 3.788345090794689*^9}, {3.7883451932117057`*^9, 
+  3.788345193590691*^9}, {3.788345369368513*^9, 3.788345396351345*^9}, {
+  3.788345450422738*^9, 3.7883454795379133`*^9}, {3.7883455633511605`*^9, 
+  3.7883455983684993`*^9}, {3.788452036306909*^9, 3.7884521502311745`*^9}, {
+  3.7884522685386877`*^9, 
+  3.788452421099608*^9}},ExpressionUUID->"bf3d71cb-569e-4a59-911d-\
+139e505ee231"],
+
+Cell["\<\
+There is a detectable leak at the end of the probe towers. I have never \
+checked for a leak here before, but I suspect that this is normal : an old O \
+- ring is the only seal. \
+\>", "Text",
+ CellChangeTimes->{{3.788452422803055*^9, 
+  3.7884524282495403`*^9}},ExpressionUUID->"34f5878e-e28e-4d3f-a8d2-\
+044ed531d244"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Electrometer test", "Subsection",
+ CellChangeTimes->{{3.7854911183646555`*^9, 3.7854911245830636`*^9}, {
+  3.785566407342467*^9, 3.7855664077603908`*^9}, {3.7855746459247303`*^9, 
+  3.785574649197975*^9}, {3.786096586642401*^9, 3.786096587809275*^9}, {
+  3.7883370471842957`*^9, 
+  3.7883370575764985`*^9}},ExpressionUUID->"a9f7cd13-4e1a-4f0d-a8bc-\
+92623e4d731e"],
+
+Cell[BoxData[Cell[TextData[{
+  "The electrometer does not give a zero output when the ends of a long cable \
+are shorted. But the output is stable, and small changes can be seen when the \
+connectors are moved on the skin. An open circuit gives a negative reading of \
+-4.41 at AMPS FULL SCALE ",
+  Cell[BoxData[
+   FormBox[
+    SuperscriptBox["10", 
+     RowBox[{"-", "9"}]], TraditionalForm]],
+   FormatType->"TraditionalForm",ExpressionUUID->
+   "022889f3-aa1c-4a80-bec8-f916b3a15000"],
+  ". On the second day I connected a short, short-circuited, Teflon coaxial \
+cable. At AMPS FULL SCALE of ",
+  Cell[BoxData[
+   FormBox[
+    SuperscriptBox["10", 
+     RowBox[{"-", "5"}]], TraditionalForm]],
+   FormatType->"TraditionalForm",ExpressionUUID->
+   "b9263c8a-b2a9-41d0-b9e9-508a2b77af3c"],
+  " the reading on the dial was around 5. The reading was not quite stable. \
+Physcially tapping the enclosure seemed to cause some movement in the needle. \
+I have no documentation on the electrometer, so I have no idea what impact \
+this would have at ",
+  Cell[BoxData[
+   FormBox[
+    SuperscriptBox["10", 
+     RowBox[{"-", "9"}]], TraditionalForm]],
+   FormatType->"TraditionalForm",ExpressionUUID->
+   "b4059bff-1a15-4244-825f-10a4f7ce979a"],
+  ". I opened the enclosure and brushed the high-impedance area with a brush. \
+There are also three potentiometers inside the enclosure, probably used for \
+calibration. I adjusted them forward and back, to exercise the wipers. Only \
+one seemed to make a noticable difference to the movement of the needle, so I \
+turned it until the reading was exactly 5. I could confirm that the \
+electrometer works: heating (with a cigar lighter) or cooling (with \
+evaporating acetone)  the short-circuted end of the cable produced a decrease \
+or increase in the reading. I attribute this to the Seebeck effect: for a \
+very sensitive detector the slight difference in alloy for the inner and \
+outer conductors would provide a detectable potential difference. "
+ }], "Text",
+  CellChangeTimes->{{3.7883265648016825`*^9, 3.788326711323759*^9}},
+  ExpressionUUID->"8fa7c26a-98a9-4c5b-a3cf-d8ef2176ca18"]], "Text",
+ CellChangeTimes->{{3.788345418903062*^9, 3.788345427952844*^9}, {
+  3.7884500102936215`*^9, 3.7884500102936215`*^9}, {3.7884511445392156`*^9, 
+  3.788451271783849*^9}, {3.788451306551849*^9, 3.788451742320239*^9}, {
+  3.788451838363383*^9, 
+  3.788452001400242*^9}},ExpressionUUID->"939b0cbd-ff38-484c-a7bf-\
+aac846c84e6f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Misalignment", "Subsection",
+ CellChangeTimes->{{3.7883456587150764`*^9, 
+  3.7883456744181166`*^9}},ExpressionUUID->"31ee4532-1ccd-4245-8e10-\
+2814e20db16d"],
+
+Cell["\<\
+The reinstallation of the FID and the tightening of the screws changed the \
+angle at which the FID stem pokes out of the roof of the oven. This movement \
+broke the column between the manifold and the detector stem. \
+\>", "Text",
+ CellChangeTimes->{{3.788345676474573*^9, 3.7883457432369947`*^9}, {
+  3.788346727219242*^9, 3.788346738897004*^9}, {3.788452012662115*^9, 
+  3.788452025496786*^9}},ExpressionUUID->"d2a6c81a-ce85-41c7-b1cd-\
+814ea5e5a388"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Flow", "Subsection",
+ CellChangeTimes->{{3.78845398086433*^9, 
+  3.7884539860763874`*^9}},ExpressionUUID->"c9a55085-ac9c-4cc1-9217-\
+47170ea8ecdf"],
+
+Cell["\<\
+I set the flow of hydrogen to 29.6 ml/min, and the flow of air to 298 ml/min, \
+according to the recommendations of the Varian manual and Hinshaw\
+\[CloseCurlyQuote]s article. When I started the experiments, I found that the \
+flame would not light at these flows. A slight increase in head pressure or \
+flame hydrogen flow made in possible to light the flame with no problem. I \
+stuck with a head pressure of 10 psi, and added a little bit of flame gas, so \
+I don\[CloseCurlyQuote]t know exactly what it is. \
+\>", "Text",
+ CellChangeTimes->{{3.7884539903938413`*^9, 3.788454170331541*^9}, {
+  3.7884544961278896`*^9, 
+  3.78845453778941*^9}},ExpressionUUID->"16b137b3-82ba-4b2c-b4f3-\
+8a76704a7713"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+Although I\[CloseCurlyQuote]ve taken great care to make the mounting of the \
+coaxial heater as stiff as possible, it is now much stiffer than the oven it \
+is mounted in. The result is that when I installed the cleaned FID detector \
+tower, the flexing of the structure ca\
+\>", "Text",
+ CellChangeTimes->{{3.78845378543511*^9, 3.788453793088643*^9}, {
+  3.788453844976838*^9, 3.7884539739647846`*^9}, {3.788454549610797*^9, 
+  3.7884545557952504`*^9}, {3.788454596736739*^9, 
+  3.7884545991822333`*^9}},ExpressionUUID->"cebe126a-6a58-4322-99d1-\
+9f027a77873c"]
+}, Open  ]],
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell["\<\
+Design an integrally system of inlet, coaxial heater, coolant inlet, and \
+detector.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.7884538156991243`*^9, 3.7884538358661747`*^9}, {
+  3.788454558629665*^9, 3.7884545836916304`*^9}, {3.788458545701778*^9, 
+  3.7884585608333435`*^9}},ExpressionUUID->"8f6312d7-fcff-483f-88c0-\
+8dd29bbdcdae"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 491, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1332, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1490, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1750, 51, 412, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2187, 61, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2349, 66, 1168, 18, 33, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3554, 89, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[CellGroupData[{
+Cell[3738, 96, 187, 3, 33, "Subsection",ExpressionUUID->"5811aa73-4190-42ce-8cb8-f670a665f5c5"],
+Cell[3928, 101, 191, 3, 33, "Text",ExpressionUUID->"fdf1691d-902a-43b6-a6c7-11accc001418"],
+Cell[CellGroupData[{
+Cell[4144, 108, 284, 4, 27, "ItemNumbered",ExpressionUUID->"f4983c95-bcee-47e8-bd5f-1e43378e3346"],
+Cell[4431, 114, 456, 8, 27, "ItemNumbered",ExpressionUUID->"06bc15f4-fb35-44e5-8aa7-d6b9f35f2d71"],
+Cell[4890, 124, 323, 6, 27, "ItemNumbered",ExpressionUUID->"b95eafe0-d777-4adf-8c91-9ea75922c68a"],
+Cell[5216, 132, 301, 4, 27, "ItemNumbered",ExpressionUUID->"e6bc1064-8dfd-4946-97d8-5ad7e70c17b5"],
+Cell[5520, 138, 445, 10, 47, "ItemNumbered",ExpressionUUID->"95606c75-ea42-472e-9d17-c9e45d593ff0"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6014, 154, 165, 3, 33, "Subsection",ExpressionUUID->"f73d1101-12c1-4951-a97c-0d3836addc9a"],
+Cell[6182, 159, 430, 8, 55, "Text",ExpressionUUID->"deea7d82-ba49-4ef5-9984-07bb94a3bc82"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6649, 172, 370, 6, 33, "Subsection",ExpressionUUID->"138d9c62-c966-489e-87ec-d07fe67f64da"],
+Cell[7022, 180, 424, 8, 33, "Text",ExpressionUUID->"118762a6-a6d4-4b58-9526-022a13f7bd6f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7495, 194, 262, 4, 69, "Section",ExpressionUUID->"313534f2-78b3-47e4-a3e5-f406dd67943e"],
+Cell[CellGroupData[{
+Cell[7782, 202, 457, 8, 39, "Input",ExpressionUUID->"1189d1ec-5e26-42f0-adf7-229314336dd2"],
+Cell[8242, 212, 316, 5, 39, "Output",ExpressionUUID->"32c0eb5d-0e1a-4c0d-ab9a-cb400cc72a10"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8595, 222, 309, 5, 39, "Input",ExpressionUUID->"3cc09d18-7497-4dee-ada1-f56859efaaeb"],
+Cell[8907, 229, 5902, 132, 173, "Output",ExpressionUUID->"4861e101-6fc8-40bd-a2ea-132219fa84ac"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14846, 366, 265, 5, 39, "Input",ExpressionUUID->"b9af864f-766b-4d1d-8f8f-aa261bf5fbab"],
+Cell[15114, 373, 4181, 91, 505, "Output",ExpressionUUID->"d51d5ab8-e201-489d-b252-3e2d2cc8d044"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19344, 470, 250, 4, 69, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[CellGroupData[{
+Cell[19619, 478, 162, 3, 33, "Subsection",ExpressionUUID->"45931b25-8f25-44e9-80e4-507e5d783ed5"],
+Cell[19784, 483, 535, 9, 55, "Text",ExpressionUUID->"d22676a4-bb84-4263-90ea-d71ad9d631f3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20356, 497, 165, 3, 33, "Subsection",ExpressionUUID->"d531d87a-9579-4056-bba0-47f5660a743f"],
+Cell[20524, 502, 909, 15, 55, "Text",ExpressionUUID->"bf3d71cb-569e-4a59-911d-139e505ee231"],
+Cell[21436, 519, 330, 7, 33, "Text",ExpressionUUID->"34f5878e-e28e-4d3f-a8d2-044ed531d244"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21803, 531, 370, 6, 33, "Subsection",ExpressionUUID->"a9f7cd13-4e1a-4f0d-a8bc-92623e4d731e"],
+Cell[22176, 539, 2472, 47, 167, "Text",ExpressionUUID->"939b0cbd-ff38-484c-a7bf-aac846c84e6f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24685, 591, 164, 3, 33, "Subsection",ExpressionUUID->"31ee4532-1ccd-4245-8e10-2814e20db16d"],
+Cell[24852, 596, 464, 8, 55, "Text",ExpressionUUID->"d2a6c81a-ce85-41c7-b1cd-814ea5e5a388"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25353, 609, 153, 3, 33, "Subsection",ExpressionUUID->"c9a55085-ac9c-4cc1-9217-47170ea8ecdf"],
+Cell[25509, 614, 714, 12, 77, "Text",ExpressionUUID->"16b137b3-82ba-4b2c-b4f3-8a76704a7713"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26272, 632, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[26432, 637, 572, 10, 55, "Text",ExpressionUUID->"cebe126a-6a58-4322-99d1-9f027a77873c"]
+}, Open  ]],
+Cell[27019, 650, 254, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[CellGroupData[{
+Cell[27298, 658, 164, 3, 55, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[27465, 663, 345, 7, 27, "ItemNumbered",ExpressionUUID->"8f6312d7-fcff-483f-88c0-8dd29bbdcdae"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

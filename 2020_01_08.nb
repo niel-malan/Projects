@@ -1,0 +1,244 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9629,        236]
+NotebookOptionsPosition[      7094,        179]
+NotebookOutlinePosition[      8078,        211]
+CellTagsIndexPosition[      8035,        208]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Fault-finding: earth leakage fault.", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.787496065934619*^9, 
+   3.7874960701802683`*^9}, {3.7874961762415915`*^9, 
+   3.787496183203979*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["08 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.787496074183568*^9, 
+   3.787496083284243*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+I was preparing the SFC\[Times]GC for a run today. Everything was proceeding \
+as normal, following the checklist. I was preparing for an FID check when the \
+earth leakage tripped. This fault needs to be repaired before experiments can \
+continue.\
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.7874960883627157`*^9, 
+   3.7874962668863006`*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell["\<\
+The relevant trip switch feeds the (at least) the two benches on which I \
+work. I was quickly able to confirm which multiplug causes the trip, and then \
+which plug in the multiplug. It is the plug feeding the SFC\[Times]GC control \
+unit that caused the trip. The relevant plug is an aging \
+\[OpenCurlyDoubleQuote]Snapper\[CloseCurlyDoubleQuote] brand plug with a \
+broken cable restraint, but if the power cable is not plugged into the \
+control unit there is no trip. Unplugging the transformer feed cable from the \
+control unit eliminates the trip.
+If the heater cartridges of the heated manifolds are unplugged the fault is \
+not eliminated. \
+\>", "Text",
+ CellChangeTimes->{{3.7874962737290554`*^9, 3.78749638848827*^9}, {
+   3.787496421688527*^9, 3.7874967508726435`*^9}, {3.7874968148596296`*^9, 
+   3.7874970410470285`*^9}, {3.7874970828762217`*^9, 
+   3.7874971225820932`*^9}, {3.787497240151868*^9, 3.7874972910607595`*^9}, 
+   3.7874973483536234`*^9},ExpressionUUID->"06c20476-b9d8-4595-aaa1-\
+46c0942cc5e1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+ I could not find any suspect low resistances on the connector of the \
+transformer feed cable, which suggest that the problem is not with the \
+transformer. But this also means that either (1) the earth lead gets \
+disconnected when the transformer feed cable is unplugged or (2) there is a \
+separate earth conductor inside the control unit where the fault occurs. \
+(Unless the transformer is at fault, of course.)\
+\>", "Text",
+ CellChangeTimes->{{3.787497350667487*^9, 
+  3.7874973523549814`*^9}},ExpressionUUID->"3fc86a07-5be6-40fe-ade0-\
+c25053f1354b"],
+
+Cell["\<\
+This fault came at the end of a long day, and I am too tired to carry on. \
+\>", "Text",
+ CellChangeTimes->{{3.7874971393842225`*^9, 
+  3.787497179165851*^9}},ExpressionUUID->"cbdf2b55-5c75-4a4e-b3ff-\
+5ea0b9fbb105"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Summary", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}, {3.787497517115533*^9, 
+  3.7874975191680455`*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["\<\
+An earth leakage fault caused a halt to the day\[CloseCurlyQuote]s work. Some \
+progress has been made in narrowing it down it to the power supply of the SFC\
+\[Times]GC control unit. \
+\>", "Text",
+ CellChangeTimes->{{3.787497181939435*^9, 3.7874972351651993`*^9}, {
+  3.787497366607829*^9, 3.787497409609889*^9}, {3.787497444090722*^9, 
+  3.7874974904567933`*^9}},ExpressionUUID->"a0ad7aa6-9d10-4867-b8b2-\
+2422d7244a00"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell["\<\
+I am going home to rest, and come back tomorrow with fresh ideas.\
+\>", "Text",
+ CellChangeTimes->{{3.787497423107808*^9, 3.787497439196803*^9}, 
+   3.7874975269602313`*^9},ExpressionUUID->"2d6303c3-581d-4572-9bd0-\
+b991dbdea8ad"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 560, 8, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1401, 38, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1559, 43, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1819, 52, 412, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2256, 62, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2418, 67, 1201, 19, 55, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3656, 91, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[3818, 96, 1034, 17, 99, "Text",ExpressionUUID->"06c20476-b9d8-4595-aaa1-46c0942cc5e1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4889, 118, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[5049, 123, 569, 10, 55, "Text",ExpressionUUID->"3fc86a07-5be6-40fe-ade0-c25053f1354b"],
+Cell[5621, 135, 226, 5, 33, "Text",ExpressionUUID->"cbdf2b55-5c75-4a4e-b3ff-5ea0b9fbb105"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5884, 145, 302, 5, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[6189, 152, 433, 8, 33, "Text",ExpressionUUID->"a0ad7aa6-9d10-4867-b8b2-2422d7244a00"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6659, 165, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[6826, 170, 240, 5, 33, "Text",ExpressionUUID->"2d6303c3-581d-4572-9bd0-b991dbdea8ad"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

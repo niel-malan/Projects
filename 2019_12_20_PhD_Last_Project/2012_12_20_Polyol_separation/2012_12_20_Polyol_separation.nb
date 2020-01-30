@@ -1,0 +1,327 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11929,        319]
+NotebookOptionsPosition[     10870,        293]
+NotebookOutlinePosition[     11213,        308]
+CellTagsIndexPosition[     11170,        305]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["From Salvador e.a. 1997 J Chrom A V785 p195-204", "Text",
+ CellChangeTimes->{{3.785828666266531*^9, 
+  3.7858287121687765`*^9}},ExpressionUUID->"76d0fe4a-a105-4d0f-8e22-\
+5db05f8f3e87"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", " ", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<Compoud\>\"", ",", " ", "\"\<Class\>\"", ",", "\"\<k'\>\"", ",", 
+      " ", "\"\<OHn\>\""}], "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<L-Rhamnose\>\"", ",", " ", "\"\<MS\>\"", ",", " ", "2.3", ",", " ", 
+      "4"}], "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<o-Ribose\>\"", ",", " ", "\"\<MS\>\"", ",", "2.1", ",", " ", "4"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<D-Xylose\>\"", ",", " ", "\"\<MS\>\"", ",", "2.5", ",", "4"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<L-Arabinose\>\"", ",", " ", "\"\<MS\>\"", ",", "2.5", ",", "4"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<Fructose\>\"", ",", " ", "\"\<MS\>\"", ",", "3.3", ",", "5"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<Sorbose\>\"", ",", " ", "\"\<MS\>\"", ",", "3.4", ",", "5"}], "}"}],
+     "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<D-Mannose\>\"", ",", " ", "\"\<MS\>\"", ",", "3.7", ",", "5"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<D-Galactose\>\"", ",", " ", "\"\<MS\>\"", ",", "4.3", ",", "5"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<D-Glucose\>\"", ",", " ", "\"\<MS\>\"", ",", "4.3", ",", "5"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<m-Erythritol\>\"", ",", " ", "\"\<PO\>\"", ",", "2.4", ",", "4"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<Xylitol\>\"", ",", " ", "\"\<PO\>\"", ",", "3.7", ",", "5"}], "}"}],
+     "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<Mannitol\>\"", ",", " ", "\"\<PO\>\"", ",", "5.5", ",", "6"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<MGDG\>\"", ",", " ", "\"\<GL\>\"", ",", "2.1", ",", "4"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<GSS\>\"", ",", " ", "\"\<GL\>\"", ",", "2.7", ",", "3"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<GalCer1\>\"", ",", " ", "\"\<GL\>\"", ",", "6", ",", "5"}], 
+     "}"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<DGDG\>\"", ",", " ", "\"\<GL\>\"", ",", "14", ",", "7"}], 
+     "}"}]}], "\[IndentingNewLine]", "}"}]}]], "Input",
+ CellChangeTimes->{{3.785828725014409*^9, 3.785829155208458*^9}, {
+  3.785829394531226*^9, 3.785829531720172*^9}, {3.7858315885811377`*^9, 
+  3.785831591036618*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"bad34ff9-2a68-4b0a-997c-017fbd213361"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Compoud\"\>", ",", "\<\"Class\"\>", ",", "\<\"k'\"\>", 
+     ",", "\<\"OHn\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"L-Rhamnose\"\>", ",", "\<\"MS\"\>", ",", "2.3`", ",", "4"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"o-Ribose\"\>", ",", "\<\"MS\"\>", ",", "2.1`", ",", "4"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"D-Xylose\"\>", ",", "\<\"MS\"\>", ",", "2.5`", ",", "4"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"L-Arabinose\"\>", ",", "\<\"MS\"\>", ",", "2.5`", ",", "4"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Fructose\"\>", ",", "\<\"MS\"\>", ",", "3.3`", ",", "5"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Sorbose\"\>", ",", "\<\"MS\"\>", ",", "3.4`", ",", "5"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"D-Mannose\"\>", ",", "\<\"MS\"\>", ",", "3.7`", ",", "5"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"D-Galactose\"\>", ",", "\<\"MS\"\>", ",", "4.3`", ",", "5"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"D-Glucose\"\>", ",", "\<\"MS\"\>", ",", "4.3`", ",", "5"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"m-Erythritol\"\>", ",", "\<\"PO\"\>", ",", "2.4`", ",", 
+     "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Xylitol\"\>", ",", "\<\"PO\"\>", ",", "3.7`", ",", "5"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Mannitol\"\>", ",", "\<\"PO\"\>", ",", "5.5`", ",", "6"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MGDG\"\>", ",", "\<\"GL\"\>", ",", "2.1`", ",", "4"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GSS\"\>", ",", "\<\"GL\"\>", ",", "2.7`", ",", "3"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GalCer1\"\>", ",", "\<\"GL\"\>", ",", "6", ",", "5"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DGDG\"\>", ",", "\<\"GL\"\>", ",", "14", ",", "7"}], "}"}]}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.7858291593933144`*^9, 3.7858295372962537`*^9, 
+  3.7858315917606297`*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"45bccb62-d1a8-492f-ac08-d78bdd472429"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", " ", "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.785829145270095*^9, 3.7858291679962454`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"dbf079e8-fc7f-4541-ad95-e3c4d91a6bd5"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Compoud\"\>", "\<\"Class\"\>", "\<\"k'\"\>", "\<\"OHn\"\>"},
+    {"\<\"L-Rhamnose\"\>", "\<\"MS\"\>", "2.3`", "4"},
+    {"\<\"o-Ribose\"\>", "\<\"MS\"\>", "2.1`", "4"},
+    {"\<\"D-Xylose\"\>", "\<\"MS\"\>", "2.5`", "4"},
+    {"\<\"L-Arabinose\"\>", "\<\"MS\"\>", "2.5`", "4"},
+    {"\<\"Fructose\"\>", "\<\"MS\"\>", "3.3`", "5"},
+    {"\<\"Sorbose\"\>", "\<\"MS\"\>", "3.4`", "5"},
+    {"\<\"D-Mannose\"\>", "\<\"MS\"\>", "3.7`", "5"},
+    {"\<\"D-Galactose\"\>", "\<\"MS\"\>", "4.3`", "5"},
+    {"\<\"D-Glucose\"\>", "\<\"MS\"\>", "4.3`", "5"},
+    {"\<\"m-Erythritol\"\>", "\<\"PO\"\>", "2.4`", "4"},
+    {"\<\"Xylitol\"\>", "\<\"PO\"\>", "3.7`", "5"},
+    {"\<\"Mannitol\"\>", "\<\"PO\"\>", "5.5`", "6"},
+    {"\<\"MGDG\"\>", "\<\"GL\"\>", "2.1`", "4"},
+    {"\<\"GSS\"\>", "\<\"GL\"\>", "2.7`", "3"},
+    {"\<\"GalCer1\"\>", "\<\"GL\"\>", "6", "5"},
+    {"\<\"DGDG\"\>", "\<\"GL\"\>", "14", "7"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.7858291684410563`*^9, 3.785829541630657*^9, 
+  3.785831595946434*^9},
+ CellLabel->
+  "Out[16]//TableForm=",ExpressionUUID->"e783f0d1-05dd-4639-9ee9-\
+ffca57a7eecb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Select", "[", 
+     RowBox[{"data", ",", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "==", " ", "\"\<MS\>\""}], "&"}]}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "3"}], "}"}]}], "]"}], "]"}], "\[IndentingNewLine]", 
+   ",", " ", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], "\[IndentingNewLine]", ",", " ", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<OH number\>\"", ",", "\"\<Capacity factor\>\""}], "}"}]}], 
+   "\[IndentingNewLine]", ",", " ", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<\>\""}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7858291735952673`*^9, 3.78582930347779*^9}, {
+  3.785829341834177*^9, 3.785829356075077*^9}, {3.7858295565816607`*^9, 
+  3.785829581221783*^9}, {3.7858311696958323`*^9, 3.785831210616311*^9}, {
+  3.7858312407496943`*^9, 3.785831260865879*^9}, {3.785831298939019*^9, 
+  3.7858313232848873`*^9}, {3.7858313801059074`*^9, 3.785831443816428*^9}, {
+  3.785831547073186*^9, 3.7858315533563757`*^9}, {3.785831608048057*^9, 
+  3.785831608378174*^9}, {3.7858430961515036`*^9, 3.7858430963430367`*^9}, {
+  3.785843141013484*^9, 
+  3.785843153099154*^9}},ExpressionUUID->"503704b7-93dd-40b3-89c8-\
+8319adf14c59"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{4., 2.3}, {4., 2.1}, {4., 2.5}, {4., 2.5}, {5., 3.3}, {5., 
+      3.4}, {5., 3.7}, {5., 4.3}, {5., 4.3}}]}, {}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"OH number\"", TraditionalForm], 
+    FormBox["\"Capacity factor\"", TraditionalForm]},
+  AxesOrigin->{3.9843750000000004`, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->{546., Automatic},
+  ImageSizeRaw->Automatic,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{4., 5.}, {0, 4.3}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7858313911104655`*^9, {3.785831436556849*^9, 3.785831444596342*^9}, 
+   3.785831554043536*^9, 3.785831609628827*^9, 3.785843097020213*^9, 
+   3.785843131843051*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"99f7cc18-6ca7-46ee-8503-b3af2273c07a"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7858291778638477`*^9, 
+  3.785829178625812*^9}},ExpressionUUID->"d9c3a46e-7b03-40db-8b4d-\
+42a4792b2460"]
+},
+WindowSize->{759, 601},
+WindowMargins->{{Automatic, 295}, {24, Automatic}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 191, 3, 34, "Text",ExpressionUUID->"76d0fe4a-a105-4d0f-8e22-5db05f8f3e87"],
+Cell[CellGroupData[{
+Cell[774, 27, 2838, 71, 352, "Input",ExpressionUUID->"bad34ff9-2a68-4b0a-997c-017fbd213361"],
+Cell[3615, 100, 2122, 56, 128, "Output",ExpressionUUID->"45bccb62-d1a8-492f-ac08-d78bdd472429"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5774, 161, 213, 3, 28, "Input",ExpressionUUID->"dbf079e8-fc7f-4541-ad95-e3c4d91a6bd5"],
+Cell[5990, 166, 1600, 36, 317, "Output",ExpressionUUID->"e783f0d1-05dd-4639-9ee9-ffca57a7eecb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7627, 207, 1399, 32, 105, "Input",ExpressionUUID->"503704b7-93dd-40b3-89c8-8319adf14c59"],
+Cell[9029, 241, 1668, 44, 325, "Output",ExpressionUUID->"99f7cc18-6ca7-46ee-8503-b3af2273c07a"]
+}, Open  ]],
+Cell[10712, 288, 154, 3, 28, "Input",ExpressionUUID->"d9c3a46e-7b03-40db-8b4d-42a4792b2460"]
+}
+]
+*)
+

@@ -1,0 +1,324 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13167,        316]
+NotebookOptionsPosition[      9960,        247]
+NotebookOutlinePosition[     10944,        279]
+CellTagsIndexPosition[     10901,        276]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Manifold Design", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.7870512337173*^9, 
+   3.787051237755503*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["3 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.7870512435480156`*^9, 
+   3.7870512514858007`*^9}, {3.787051298743063*^9, 3.7870513195464478`*^9}, {
+   3.7870533883173394`*^9, 3.787053392577943*^9}, {3.787053868708295*^9, 
+   3.7870538763947425`*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+This is a report on an old project. The date today is 3 January 2019, but I \
+want to collect all the papers regarding this project in a single file.\
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.7870513107479687`*^9, 
+   3.7870513751657953`*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"],
+
+Cell["\<\
+After breaking too many columns, I decided that the manifolds needed to be \
+re-designed. In the previous design, based on the brass Carlo Erba 4-unions, \
+each entry into the manifold needed a seal. Tightening seals while the \
+manifolds were in the machine were a recipe for breaking the column. But the \
+greater problem might have been the short lives of the 200 watt heater \
+cartridges. According to the specifications they needed a press fit. I had a \
+screw-clamping system, but they still failed regularly. They also did not \
+provide enough power to keep the manifolds hot. \
+\>", "Text",
+ CellChangeTimes->{{3.7870513841697245`*^9, 3.787051430828023*^9}, {
+  3.7870516113724737`*^9, 3.7870517250206556`*^9}, {3.78705179324334*^9, 
+  3.78705192288976*^9}},ExpressionUUID->"fa6f8011-b351-48b2-a288-\
+6aa14c2fc1dc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell[CellGroupData[{
+
+Cell["Monoblock", "Subsection",
+ CellChangeTimes->{{3.7854911183646555`*^9, 3.7854911245830636`*^9}, {
+  3.785566407342467*^9, 3.7855664077603908`*^9}, {3.7855746459247303`*^9, 
+  3.785574649197975*^9}, {3.786096586642401*^9, 3.786096587809275*^9}, {
+  3.7870519698861895`*^9, 3.787051972482213*^9}, {3.787052830766133*^9, 
+  3.7870528362464247`*^9}},ExpressionUUID->"138d9c62-c966-489e-87ec-\
+d07fe67f64da"],
+
+Cell["\<\
+I started a design process. I spoke to as many people as I could. I have \
+notes that I spoke to Andrew Savage of Leco, Mark Pieterse of Microsep (?), \
+and Leon Engelbrecht. 
+I have a sketch dated 11 July 2016, where I drew a concept of the monoblock \
+design that I currently use. The micro-union ferrules I put into the block \
+were ordered on 2 September 2016. Nico van Vuuren machined the blocks.\
+\>", "Text",
+ CellChangeTimes->{{3.7855664096603127`*^9, 3.785566453273655*^9}, {
+   3.7855688519408875`*^9, 3.785568896176516*^9}, {3.7860966115098705`*^9, 
+   3.786096632020996*^9}, {3.787051975520093*^9, 3.7870521488677397`*^9}, {
+   3.7870522041878695`*^9, 3.7870522239939394`*^9}, 3.7870527607612*^9, {
+   3.7870527908198957`*^9, 3.787052825416427*^9}, {3.7870528676375756`*^9, 
+   3.787052874809392*^9}, {3.7870531391224165`*^9, 
+   3.787053171192729*^9}},ExpressionUUID->"118762a6-a6d4-4b58-9526-\
+022a13f7bd6f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Rails", "Subsection",
+ CellChangeTimes->{{3.787052846173896*^9, 
+  3.787052850555236*^9}},ExpressionUUID->"855e373a-3e7b-4e0b-8c95-\
+9c31ca09c40d"],
+
+Cell["\<\
+The blocks were a success, but the system was still not stiff enough. The \
+column still regularly broke between the manifold and the inlet or the \
+detector. After a considerable amount of thinking and observing I realized \
+that the old, thin rails were simply not stiff enough. The could hold the \
+weight, but the least motion could cause the column to break. So I designed a \
+stainless steel rail system to hold  The rails drawing is dated 22 February \
+2017.\
+\>", "Text",
+ CellChangeTimes->{{3.787052855082127*^9, 3.787052953496069*^9}, {
+  3.7870529937989025`*^9, 3.787053132995826*^9}, {3.787053178463288*^9, 
+  3.787053182198282*^9}},ExpressionUUID->"73a33b22-8e14-4a7e-bbe0-\
+26c0693a2988"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Prism", "Subsection",
+ CellChangeTimes->{{3.7870530749040613`*^9, 
+  3.7870530761059027`*^9}},ExpressionUUID->"e92cab45-67ad-4ff6-9c92-\
+ed5d933effec"],
+
+Cell["\<\
+The rails  were stiff enough, but they were not easy to install. They could \
+twist out of place rather easily, because one diagonal was always longer than \
+the other. I therefore upgraded the design so that three points pressed \
+against the floor and the roof of the oven. The drawing for this \
+\[OpenCurlyQuote]prism\[CloseCurlyQuote] (as in geometric figure) design is \
+dated 19 July 2017. \
+\>", "Text",
+ CellChangeTimes->{{3.787053079439946*^9, 3.787053079868801*^9}, {
+  3.7870531111262426`*^9, 3.787053113216664*^9}, {3.787053191238118*^9, 
+  3.787053481228993*^9}, {3.787053512655985*^9, 
+  3.787053574766972*^9}},ExpressionUUID->"0bbfee3a-ae03-4fab-afe3-\
+31e99043db6e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell["\<\
+It takes a bit of  juggling to get the rails of the prism design in  exactly \
+the right spot, but once it\[CloseCurlyQuote]s in it keeps the column safe \
+and steady. This stability allowed me to collect a good set of data for \
+Analitika 2018. This data is also in the Review of Scientific Instruments \
+publication, recently submitted. \
+\>", "Text",
+ CellChangeTimes->{{3.787053546540413*^9, 3.787053671482462*^9}, {
+  3.787053740317463*^9, 
+  3.787053859104994*^9}},ExpressionUUID->"072c4898-759c-40c1-8f80-\
+9aabaa0e776f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+The prism design is still a hack that allows us to install the fast GC in a \
+conventional oven, but it' s a fairly satisfactory one.\
+\>", "Text",
+ CellChangeTimes->{{3.787053742680148*^9, 
+  3.787053744277883*^9}},ExpressionUUID->"ac64ba52-4d25-40c0-845e-\
+08a370827af4"],
+
+Cell["\<\
+This report is intended to be the cover sheet for a stack of paper notes and \
+drawings. \
+\>", "Text",
+ CellChangeTimes->{{3.787053691337393*^9, 
+  3.7870537199659023`*^9}},ExpressionUUID->"39b388f3-7bde-4a8e-85fd-\
+89670a72f818"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell["\<\
+It would be better if the fast GC with the coaxial heater were re-designed so \
+that the hack of heated manifold blocks that has to carefully mounted can be \
+avoided.\
+\>", "Text",
+ CellChangeTimes->{{3.7870538950219603`*^9, 3.787053949733712*^9}, {
+  3.7870539941490016`*^9, 
+  3.787054069058773*^9}},ExpressionUUID->"65d0c7be-9353-4ba3-a757-\
+b7091f986175"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 484, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1325, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1483, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1743, 51, 567, 8, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2335, 63, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2497, 68, 1102, 17, 33, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"],
+Cell[3602, 87, 833, 13, 77, "Text",ExpressionUUID->"fa6f8011-b351-48b2-a288-6aa14c2fc1dc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4472, 105, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[CellGroupData[{
+Cell[4656, 112, 408, 6, 33, "Subsection",ExpressionUUID->"138d9c62-c966-489e-87ec-d07fe67f64da"],
+Cell[5067, 120, 932, 15, 77, "Text",ExpressionUUID->"118762a6-a6d4-4b58-9526-022a13f7bd6f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6036, 140, 153, 3, 33, "Subsection",ExpressionUUID->"855e373a-3e7b-4e0b-8c95-9c31ca09c40d"],
+Cell[6192, 145, 712, 12, 77, "Text",ExpressionUUID->"73a33b22-8e14-4a7e-bbe0-26c0693a2988"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6941, 162, 157, 3, 33, "Subsection",ExpressionUUID->"e92cab45-67ad-4ff6-9c92-ed5d933effec"],
+Cell[7101, 167, 693, 12, 55, "Text",ExpressionUUID->"0bbfee3a-ae03-4fab-afe3-31e99043db6e"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7843, 185, 250, 4, 69, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[8096, 191, 538, 10, 55, "Text",ExpressionUUID->"072c4898-759c-40c1-8f80-9aabaa0e776f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8671, 206, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[8831, 211, 283, 6, 33, "Text",ExpressionUUID->"ac64ba52-4d25-40c0-845e-08a370827af4"],
+Cell[9117, 219, 241, 6, 33, "Text",ExpressionUUID->"39b388f3-7bde-4a8e-85fd-89670a72f818"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9395, 230, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[9562, 235, 370, 8, 33, "Text",ExpressionUUID->"65d0c7be-9353-4ba3-a757-b7091f986175"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
