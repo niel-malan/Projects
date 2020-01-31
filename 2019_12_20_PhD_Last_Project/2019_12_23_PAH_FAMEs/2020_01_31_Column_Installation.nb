@@ -1,0 +1,333 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13158,        325]
+NotebookOptionsPosition[      9712,        252]
+NotebookOutlinePosition[     10696,        284]
+CellTagsIndexPosition[     10653,        281]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Column installation", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.7893889057721605`*^9, 
+   3.789388915392252*^9}, {3.7894778979468155`*^9, 
+   3.7894779029184856`*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["31 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.78947787914226*^9, 
+   3.789477886670947*^9}, {3.7894779385062943`*^9, 
+   3.789477938924176*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+After reconstructing the coaxial heater, it is now being installed. \
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.789477910471283*^9, 3.7894779420907526`*^9}, {3.7894780773000727`*^9, 
+   3.789478091430247*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell[CellGroupData[{
+
+Cell["Column threading and sealing ", "Subsection",
+ CellChangeTimes->{{3.7894693298776217`*^9, 
+  3.7894693452355423`*^9}},ExpressionUUID->"b4b61627-ed22-4a47-998e-\
+736cc5b06eff"],
+
+Cell["\<\
+Because there are no more spare ferrules left, and the reported waiting time  \
+for new ones is 4 - 6 weeks, used ones were recycled. Also, in a previous \
+observation, the ferrules don\[CloseCurlyQuote]t need to \
+\[OpenCurlyDoubleQuote]bite\[CloseCurlyDoubleQuote] into the column to form \
+an adequate seal against liquid carbon dioxide. (This might not be the case \
+for helium or hydrogen in a GC oven, the intended use.) Used ferrules, that \
+did not have pieces of broken-off column in them, were drilled open using a \
+0.4 mm twist drill. The same drilling procedure was used as is used to drill \
+open the ferrules so that the column can be threaded through them: the drill \
+is held in the chuck from the tailstock of the lathe, and the ferrule is held \
+in a pin vice. The chuck is held on the bench with the dominant hand, while \
+the non-dominant hand is used to bring the ferrule in the pin vice to the \
+drill bit, and twist it. No power tools are used.   \
+\>", "Text",
+ CellChangeTimes->{{3.7894683686601896`*^9, 3.789468717907009*^9}, {
+  3.789468784226615*^9, 3.7894689397735863`*^9}, {3.7894690204881897`*^9, 
+  3.789469076754713*^9}},ExpressionUUID->"aef1693c-4b8b-4d0e-9475-\
+3272e4aacca0"],
+
+Cell["\<\
+To determine the required torque on the \[Mu]-union nuts that will create an \
+adequate seal, the cryogen leak test setup was used, and the nuts were \
+tightened until there were no visible leaks. Leaks are readily observable as \
+a white jet emerging from around the column. \
+\>", "Text",
+ CellChangeTimes->{{3.7894683490067854`*^9, 3.7894683629654226`*^9}, {
+  3.789469085296871*^9, 3.7894691806597567`*^9}, {3.7894692300875483`*^9, 
+  3.789469307386781*^9}},ExpressionUUID->"22680b53-3407-4aee-a7c4-\
+9e868569c9fc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Cryo leak test", "Subsection",
+ CellChangeTimes->{{3.789478436087345*^9, 
+  3.7894784487295265`*^9}},ExpressionUUID->"04f68c25-e334-43a0-9fc3-\
+56416a92f6b3"],
+
+Cell["\<\
+A cryogen leak test was performed: the metering valve was fully opened and \
+then the feed valve was opened. Visual inspection showed no significant \
+leaks.   \
+\>", "Text",
+ CellChangeTimes->{{3.789478450368143*^9, 
+  3.7894785444245834`*^9}},ExpressionUUID->"590c1e09-abc4-45aa-a8f1-\
+fb653552b5a6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Electrical connection", "Subsection",
+ CellChangeTimes->{{3.7894693513651795`*^9, 
+  3.7894693546832714`*^9}},ExpressionUUID->"0e3714d9-fdb8-40aa-ae84-\
+2305acc55ca4"],
+
+Cell["\<\
+The eyelets I used to make the connection between the coaxial heater\
+\[CloseCurlyQuote]s power feed conductor became desoldered, so I removed them \
+and formed a hook in the wire instead. When tinned with solder they are \
+rigid. \
+\>", "Text",
+ CellChangeTimes->{{3.7894676116069374`*^9, 3.7894678086219425`*^9}, {
+  3.789469360651306*^9, 
+  3.7894693948278894`*^9}},ExpressionUUID->"9b6a66be-2ea8-4106-8e89-\
+6511ce98a442"],
+
+Cell["\<\
+I did not use the 100 W soldering iron to make the pure lead solder joints. \
+As in my previous experiences, high-powered soldering irons without \
+temperature control yields a too-high temperature, which means that the \
+surface of the soldering iron oxidizes too rapidly and the flux burns away \
+too quickly. This makes . Instead I used the temperature-controlled \
+electronics soldering iron at maximum heat, applying the base of the conical \
+tip to the joint. This has enough heat capacity to melt the lead  without \
+losing temperature. \
+\>", "Text",
+ CellChangeTimes->{{3.789467950923064*^9, 3.7894683392638206`*^9}, {
+  3.7894694057297287`*^9, 
+  3.7894694144743853`*^9}},ExpressionUUID->"6f7c772e-2020-4ef1-b813-\
+6a9d78b9b202"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+The assembly has been mounted and bolted down, a leak test conducted, and the \
+feed conductors have been soldered on. \
+\>", "Text",
+ CellChangeTimes->{{3.789478369798655*^9, 3.7894784150067587`*^9}, {
+  3.7894785610072017`*^9, 
+  3.78947857673214*^9}},ExpressionUUID->"276e3b19-434a-4244-8910-\
+49cd298f588a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["\<\
+The installation of the coaxial heater assembly is continuing.\
+\>", "Text",
+ CellChangeTimes->{{3.789478137741371*^9, 
+  3.789478161221593*^9}},ExpressionUUID->"9ce2768a-9757-4892-8395-\
+0d7e4fc35c53"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Do a cryogen leak test during during tightening of the the micro-union nuts \
+to ensure optimum compression of the ferrules. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.7894781801669216`*^9, 
+  3.7894783431389914`*^9}},ExpressionUUID->"8e6d9e1f-fb2c-4a18-b179-\
+21fb3b082890"],
+
+Cell["Build a proper cryogen leak test bench. ", "ItemNumbered",
+ CellChangeTimes->{{3.7894781801669216`*^9, 3.7894782583008933`*^9}, {
+  3.7894783518118033`*^9, 
+  3.7894783535591383`*^9}},ExpressionUUID->"276bb341-2bfb-4a5e-9b79-\
+153c2e07c206"],
+
+Cell["\<\
+Use a temperature-controlled soldering iron when soldering the electrical \
+connections. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.7894781801669216`*^9, 3.789478212121416*^9}, 
+   3.789478358262514*^9},ExpressionUUID->"70beddb4-14d9-4e4d-81ad-\
+558fb02aeff1"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 546, 8, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1387, 38, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1545, 43, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1805, 52, 463, 7, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2293, 63, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2455, 68, 1067, 16, 33, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3559, 89, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[CellGroupData[{
+Cell[3743, 96, 181, 3, 33, "Subsection",ExpressionUUID->"b4b61627-ed22-4a47-998e-736cc5b06eff"],
+Cell[3927, 101, 1222, 18, 121, "Text",ExpressionUUID->"aef1693c-4b8b-4d0e-9475-3272e4aacca0"],
+Cell[5152, 121, 529, 9, 55, "Text",ExpressionUUID->"22680b53-3407-4aee-a7c4-9e868569c9fc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5718, 135, 164, 3, 33, "Subsection",ExpressionUUID->"04f68c25-e334-43a0-9fc3-56416a92f6b3"],
+Cell[5885, 140, 312, 7, 33, "Text",ExpressionUUID->"590c1e09-abc4-45aa-a8f1-fb653552b5a6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6234, 152, 173, 3, 33, "Subsection",ExpressionUUID->"0e3714d9-fdb8-40aa-ae84-2305acc55ca4"],
+Cell[6410, 157, 436, 9, 55, "Text",ExpressionUUID->"9b6a66be-2ea8-4106-8e89-6511ce98a442"],
+Cell[6849, 168, 749, 13, 77, "Text",ExpressionUUID->"6f7c772e-2020-4ef1-b813-6a9d78b9b202"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7647, 187, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[7807, 192, 321, 7, 33, "Text",ExpressionUUID->"276e3b19-434a-4244-8910-49cd298f588a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8165, 204, 254, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[8422, 210, 212, 5, 33, "Text",ExpressionUUID->"9ce2768a-9757-4892-8395-0d7e4fc35c53"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8671, 220, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[CellGroupData[{
+Cell[8860, 227, 287, 6, 27, "ItemNumbered",ExpressionUUID->"8e6d9e1f-fb2c-4a18-b179-21fb3b082890"],
+Cell[9150, 235, 247, 4, 27, "ItemNumbered",ExpressionUUID->"276bb341-2bfb-4a5e-9b79-153c2e07c206"],
+Cell[9400, 241, 272, 6, 27, "ItemNumbered",ExpressionUUID->"70beddb4-14d9-4e4d-81ad-558fb02aeff1"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
