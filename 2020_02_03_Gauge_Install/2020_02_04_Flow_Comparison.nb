@@ -1,0 +1,3676 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    166844,       3668]
+NotebookOptionsPosition[    160009,       3538]
+NotebookOutlinePosition[    161017,       3571]
+CellTagsIndexPosition[    160974,       3568]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Flow calibration comparison", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.789802079073125*^9, 
+   3.789802084029869*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["04 January 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.789802090775826*^9, 
+   3.7898020988831377`*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+The flow in the GC depends on the head pressure. It is difficult to measure \
+the average linear flow rate, because the short column and high flow does not \
+allow the traditional manual  measurement of the elution time of an \
+unretained compound. If the pressure gauge changed and indicates a different \
+pressure from the previous gauge, the flow will be different.\
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.789802108723852*^9, 
+   3.7898023350713367`*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell["\<\
+I measured the flow on 17 December 2019, and again on 3 February 2020, after \
+installation of a new gauge.\
+\>", "Text",
+ CellChangeTimes->{{3.789803121766791*^9, 3.789803197233895*^9}, {
+  3.7898033796160097`*^9, 
+  3.789803381536915*^9}},ExpressionUUID->"58017d69-3afa-41b2-8673-\
+1b5e1d4c2e55"],
+
+Cell["\<\
+The column lengths were not identical. The column used in December was \
+probably shorter than the column used in February. \
+\>", "Text",
+ CellChangeTimes->{{3.7898031986521015`*^9, 3.7898032178766794`*^9}, {
+  3.789803362895733*^9, 
+  3.789803412735411*^9}},ExpressionUUID->"d500d134-6242-4d65-9a05-\
+5552b52d09e4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculations", "Section",
+ CellChangeTimes->{{3.7854911900001135`*^9, 3.7854912032646475`*^9}, {
+  3.785589805500736*^9, 3.7855898070067077`*^9}, {3.7860967323396125`*^9, 
+  3.7860967370230837`*^9}},ExpressionUUID->"313534f2-78b3-47e4-a3e5-\
+f406dd67943e"],
+
+Cell["The data for the previous gauge:", "Text",
+ CellChangeTimes->{{3.789802443761545*^9, 
+  3.78980245713477*^9}},ExpressionUUID->"3c284fc6-367b-4722-9de9-\
+07b33c753d3b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"olddata", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\fskdm\\\\My \
+PhD\\\\Projects\\\\2019_12_20_PhD_Last_Project\\\\2019_12_17_Flow_measurement.\
+xlsx\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.789802350275632*^9, 3.7898024024739947`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"9a92db0c-faec-4781-8bf4-e596b14f4dd6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", "olddata", "]"}]], "Input",
+ CellChangeTimes->{{3.7898023923221827`*^9, 3.789802392676244*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"79d5d048-8166-4e4e-a664-4235839b31db"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {"\<\"Head pressure (psi)\"\>"},
+       {"\<\"Volume (ml)\"\>"},
+       {"\<\"Time (s)\"\>"},
+       {"\<\"Time (min)\"\>"},
+       {"\<\"Flow (ml/min)\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"8.`"},
+       {"2.`"},
+       {"11.2`"},
+       {"0.18666666666666665`"},
+       {"10.714285714285715`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"8.`"},
+       {"2.`"},
+       {"11.11`"},
+       {"0.18516666666666665`"},
+       {"10.801080108010803`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"8.`"},
+       {"1.5`"},
+       {"8.31`"},
+       {"0.1385`"},
+       {"10.830324909747292`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"8.`"},
+       {"2.`"},
+       {"10.99`"},
+       {"0.18316666666666667`"},
+       {"10.91901728844404`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.58`"},
+       {"0.059666666666666666`"},
+       {"33.5195530726257`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.63`"},
+       {"0.0605`"},
+       {"33.057851239669425`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.61`"},
+       {"0.06016666666666667`"},
+       {"33.2409972299169`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.7`"},
+       {"0.06166666666666667`"},
+       {"32.432432432432435`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"12.`"},
+       {"2.`"},
+       {"3.75`"},
+       {"0.0625`"},
+       {"32.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"2.`"},
+       {"2.13`"},
+       {"0.0355`"},
+       {"56.33802816901409`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"10.`"},
+       {"9.91`"},
+       {"0.16516666666666666`"},
+       {"60.54490413723512`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"10.`"},
+       {"11.88`"},
+       {"0.198`"},
+       {"50.505050505050505`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"2.`"},
+       {"2.07`"},
+       {"0.034499999999999996`"},
+       {"57.97101449275363`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"16.`"},
+       {"2.`"},
+       {"1.99`"},
+       {"0.033166666666666664`"},
+       {"60.30150753768845`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"8.`"},
+       {"5.31`"},
+       {"0.0885`"},
+       {"90.3954802259887`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"8.`"},
+       {"5.38`"},
+       {"0.08966666666666666`"},
+       {"89.2193308550186`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"8.`"},
+       {"5.33`"},
+       {"0.08883333333333333`"},
+       {"90.0562851782364`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"8.`"},
+       {"5.32`"},
+       {"0.08866666666666667`"},
+       {"90.22556390977444`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"20.`"},
+       {"10.`"},
+       {"6.73`"},
+       {"0.11216666666666668`"},
+       {"89.15304606240713`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.79`"},
+       {"0.1465`"},
+       {"6.825938566552901`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.55`"},
+       {"0.14250000000000002`"},
+       {"7.017543859649122`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.46`"},
+       {"0.14100000000000001`"},
+       {"7.092198581560283`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.46`"},
+       {"0.14100000000000001`"},
+       {"7.092198581560283`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {"7.`"},
+       {"1.`"},
+       {"8.35`"},
+       {"0.13916666666666666`"},
+       {"7.185628742514971`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{{
+     "Head pressure (psi)", "Volume (ml)", "Time (s)", "Time (min)", 
+      "Flow (ml/min)"}, {8., 2., 11.2, 0.18666666666666665`, 
+     10.714285714285715`}, {8., 2., 11.11, 0.18516666666666665`, 
+     10.801080108010803`}, {8., 1.5, 8.31, 0.1385, 10.830324909747292`}, {8., 
+     2., 10.99, 0.18316666666666667`, 10.91901728844404}, {12., 2., 3.58, 
+     0.059666666666666666`, 33.5195530726257}, {12., 2., 3.63, 0.0605, 
+     33.057851239669425`}, {12., 2., 3.61, 0.06016666666666667, 
+     33.2409972299169}, {12., 2., 3.7, 0.06166666666666667, 
+     32.432432432432435`}, {12., 2., 3.75, 0.0625, 32.}, {16., 2., 2.13, 
+     0.0355, 56.33802816901409}, {16., 10., 9.91, 0.16516666666666666`, 
+     60.54490413723512}, {16., 10., 11.88, 0.198, 50.505050505050505`}, {16., 
+     2., 2.07, 0.034499999999999996`, 57.97101449275363}, {16., 2., 1.99, 
+     0.033166666666666664`, 60.30150753768845}, {20., 8., 5.31, 0.0885, 
+     90.3954802259887}, {20., 8., 5.38, 0.08966666666666666, 
+     89.2193308550186}, {20., 8., 5.33, 0.08883333333333333, 
+     90.0562851782364}, {20., 8., 5.32, 0.08866666666666667, 
+     90.22556390977444}, {20., 10., 6.73, 0.11216666666666668`, 
+     89.15304606240713}, {7., 1., 8.79, 0.1465, 6.825938566552901}, {7., 1., 
+     8.55, 0.14250000000000002`, 7.017543859649122}, {7., 1., 8.46, 
+     0.14100000000000001`, 7.092198581560283}, {7., 1., 8.46, 
+     0.14100000000000001`, 7.092198581560283}, {7., 1., 8.35, 
+     0.13916666666666666`, 7.185628742514971}}, {{}}, {{}}}]]], "Output",
+ CellChangeTimes->{{3.7898023944535484`*^9, 3.7898024053971653`*^9}},
+ CellLabel->
+  "Out[7]//TableForm=",ExpressionUUID->"c570f525-257f-423e-a5cd-8eb39729caff"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"oldline", " ", "=", " ", 
+  RowBox[{"Fit", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"olddata", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{
+       RowBox[{"2", ";;"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "5"}], "}"}]}], "]"}], "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "x"}], "}"}], ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.789802423562582*^9, 3.789802429429937*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"2d37b734-c6e9-411b-ad1a-2ec14a692504"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "39.77549946625027`"}], "+", 
+  RowBox[{"6.293326542638903`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{{3.789802424537961*^9, 3.7898024313367724`*^9}},
+ CellLabel->"Out[9]=",ExpressionUUID->"a7aff1cd-fdf4-44fa-878b-52d6cfd51461"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plotolddata", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"olddata", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{
+     RowBox[{"2", ";;"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "5"}], "}"}]}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.789802861604805*^9, 3.789802888947613*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"937baa8c-6c65-42da-912c-5a9af9d0e281"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"8.`", ",", "10.714285714285715`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8.`", ",", "10.801080108010803`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8.`", ",", "10.830324909747292`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8.`", ",", "10.91901728844404`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12.`", ",", "33.5195530726257`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12.`", ",", "33.057851239669425`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12.`", ",", "33.2409972299169`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12.`", ",", "32.432432432432435`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12.`", ",", "32.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"16.`", ",", "56.33802816901409`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"16.`", ",", "60.54490413723512`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"16.`", ",", "50.505050505050505`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"16.`", ",", "57.97101449275363`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"16.`", ",", "60.30150753768845`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"20.`", ",", "90.3954802259887`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"20.`", ",", "89.2193308550186`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"20.`", ",", "90.0562851782364`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"20.`", ",", "90.22556390977444`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"20.`", ",", "89.15304606240713`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7.`", ",", "6.825938566552901`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7.`", ",", "7.017543859649122`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7.`", ",", "7.092198581560283`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7.`", ",", "7.092198581560283`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7.`", ",", "7.185628742514971`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.789802889761425*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"1c3c9fbf-6217-4520-ac5b-86aaf00809fb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\[IndentingNewLine]", "\t", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"plotolddata", "\[IndentingNewLine]", ",", " ", 
+     RowBox[{"PlotLabel", "\[Rule]", " ", "\"\<Flow calibration\>\""}], 
+     "\[IndentingNewLine]", ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Inlet pressure (psi)\>\"", ",", "\"\<Flow (ml/min)\>\""}],
+        "}"}]}], " ", "\[IndentingNewLine]", ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}], 
+   "\[IndentingNewLine]", "\t", ",", " ", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"line", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "0", ",", " ", "20"}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.789802463821883*^9, 3.789802464123065*^9}, {
+  3.7898028818186765`*^9, 3.7898029053696775`*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"c52b73cb-e088-4a13-8b5e-cd2304770c15"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxTTMoPSmViYGCQAGIQDQEKDne25d7elqvqAOPfPcykoz4Lwc+8tiNCYSWC
+f3KZTH7nNRhfwyFqN//2hkMOcP5Tk/jV6e0I/o5Sr/835iH4Zc2anyLNEXwI
+DeMbOGS2nm100faB8xcVmGTvd/WD86cxba1b6uAJ51/U+Gjs9Qeh3uN915np
+ajD1Jg4tpt49/jPD4PwDwR4tnH4I/vSPqrqzmhH85y9mL87vQ/DrTLY1nvaE
+8WUcrNLeXzvkKw3nyx+sZfkuKAPnf1QX8suMw82fbsRZJrpPxgEAaN5asg==
+
+       "]]}, {}}, {}, {}, {}, {}}, {{{}, {}, 
+     TagBox[
+      {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+       Opacity[1.], LineBox[CompressedData["
+1:eJwVxX041AcAB/ArRUNzaCJz7kyO89LpVxt5ua+79Uri3C9PRzUvoVORp3sm
+x1IRCjFKmLdQTymV6cWEXyh5u5JGDSUyi4x2XVzZbtsfn+fDCo4S7llIo9G2
+/uf/i34I1nQMLXRvy4iTCUYFVGsv08ufeZg3nR1zUvhCQKkfNB5nMtN4xmcl
++UHPBVQRlWG+mJnP21ssvn3kkYDa5ybdP2t+iad7bZ2ivl5A9X6KyJ0xr+MJ
+H3+UrMkVUFoDI+wp83bekIFMvHK9gCrrKDk4af6cp8iTOWtd5FPV19IG9jlM
+8E41u+909PGgwnk9+W9jFDz5Ra98QzqoA2M2o7XVKl6pdUFd3BU3SpuVxH7p
+REM831y3UMOFyqR3csq+00B1j/Np21QnKnhA1KTRpYlbZc+GUvvXUgfvJwVH
+sbXBSwx0kRIEdSNa189481KYPZW299zlUmWyyAmuPx2lPVYbPrDsqGMl877v
+3+qjZixdbLOSTdF6h3E3zhAPjRrS4zwsKKtDYbEizheg50xWdfxuQr1W5m3X
+aTDCTHcNLYhGp7aMSRJ+PGiMUq7d55eXKZu8X2fZMhgrUPona85dT8mbaAlO
+fHjVFNzA9DgDh8/hoN9nJthtBu5QTKZekwm0ecqgQQUDsQMVmZefsbBxSjxr
+QTJx5YFWE+HKxrPm0AViOxaGc0t7ik/Y4WZq6y6mkoU1rin3ltVzEbZYOiyX
+W4A5Vee9NIJASIzspm7BV7hj7V91ZnwtVoXbyr2CLPGY1FNlip3wyMBOR+q8
+EnS+QFa/0AX11ccK7TSsMH/nVdf3CW6QLeD4dA1ZIXU24dLPRoD2YNymA7Vs
+CE8Zj4VEeGDsAiu3JN4a0aERSwLL+ci1NllUR9rA0uzD/ak5AbIKwtqCmBxw
+TZ0j275ZD3HuTrnuOAdz2Z+l7YjegLlvK1UljbbY/sdyj+SWjRgd48c2p9hB
+O2lgeE69CefdHE27g+whVA+u0PTfgqvJUv1wewfMNOW4BuR5IoUM8dRQOsBb
+1d8X0eOFtYNll1K6V4FvINahW3njnE3h1W5PLk5GZ7PVIdtwhMo451nHxRp/
+jWnBLh9sNSUrOywdcbQm6USoli88DrQF6Kc54vD1YX2bSl+UfBls2aV0hGtx
+gGSdjxCWLRfPegesxmWHG7emp4XIsm/mPGlcjVjZVt7RdD+EKRb1tHMI0O8s
+ObP7axGCb/zFTDtNQJhX/OLVUxH2HfOb35JN4CjkFZX9Ikj9avt1cwhUv/lb
+svc3EVKV0sysswS0XXfOzrwUodpZ9SmviEDzsCmdNimC6p6670IVAS4n34Ox
+gETWE92M1jYCeg05FWJ7EgXl+yNOtBNwC2uRMLgkyg/JBZs6CUTqKbgjq0nc
+Msr62Ckn0BYkbNjrRGJQbBjR+yuBI5r6fbECEuxRE8HIKIGpbZlaeTtIcGvj
+GBVjBFaoGrrFgSTWJQ+o9owT2Hx+Koexm4QXu+j6mwkC5e+9mBdCScREMhnv
+3hEIyNdxvhlFIt71qKpGQeAk30UdG0MieenI00NKArcnJfddpSTOXSs/NTdH
+wNC9w7c1jsT5xEXhv3wkwB9XLU9NIFHlu4cfP08gKsvmhWciiVqLB2bu/xD4
+yXlHhd5xEo0KK5VaTaBzJFXSm0ziXxfELAs=
+        "]]},
+      Annotation[#, "Charting`Private`Tag$13010#1"]& ]}, {}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"Inlet pressure (psi)\"", TraditionalForm], 
+    FormBox["\"Flow (ml/min)\"", TraditionalForm]},
+  AxesOrigin->{6.796875, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->Large,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox["\"Flow calibration\"", TraditionalForm],
+  PlotRange->{{7., 20.}, {0, 90.3954802259887}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.789802906059863*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"02bbe66b-63c3-4675-90b9-93d5991e3908"]
+}, Open  ]],
+
+Cell["Data for the new gauge:", "Text",
+ CellChangeTimes->{{3.7898024752961855`*^9, 
+  3.789802480618984*^9}},ExpressionUUID->"aba6bdd6-a9af-444c-9aa3-\
+8407d4967303"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"newdata", " ", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<C:\\\\Users\\\\fskdm\\\\My \
+PhD\\\\Projects\\\\2020_02_03_Gauge_Install\\\\2020_02_03_Column_Flow.xlsx\>\"\
+", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7898025083976364`*^9, 3.7898025217898407`*^9}, {
+  3.7898025546619196`*^9, 3.7898025695740285`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"b8e65ef5-50ec-4e0e-87a9-d16195033dc0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"newdata", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.789802591405613*^9, 3.7898025917008257`*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"4be98d2d-4406-470f-b258-71b497602a85"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{RowBox[{"\"Mon 3 Feb 2020 15:30:00\"", 
+         StyleBox[
+          RowBox[{"\"GMT+\"", "\[InvisibleSpace]", 
+            StyleBox["2.`", NumberMarks -> False, StripOnInput -> False]}], 
+          FontColor -> GrayLevel[0.5]]}],RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             
+             RowBox[{"2020", ",", "2", ",", "3", ",", "15", ",", "30", ",", 
+               "0.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+           "2.`"}], "]"}]},
+      "DateObject",
+      Editable->
+       False], "\<\"Column flow\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\
+\"\"\>"},
+    {"\<\"\"\>", "\<\"Room temperature: 22\[Degree]C\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Pressure:\"\>", 
+     "1.4`", "\<\"kg/cm^2\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", "\<\"Time\"\>", "\<\
+\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", "\<\"ml/min\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "8.`", "7.5`", "0.125`", "64.`", "\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "9.7`", "0.16166666666666665`", 
+     "61.85567010309279`", "\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "9.740000000000002`", "0.16233333333333336`", 
+     "61.60164271047227`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", 
+     "62.48577093785502`", "\<\"Average\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Pressure:\"\>", 
+     "1.2`", "\<\"kg/cm^2\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", "\<\"Time\"\>", "\<\
+\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", "\<\"ml/min\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "11.6`", "0.19333333333333333`", 
+     "51.724137931034484`", "\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "12.02`", "0.20033333333333334`", 
+     "49.91680532445923`", "\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "11.55`", "0.1925`", 
+     "51.94805194805195`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", 
+     "51.19633173451522`", "\<\"Average\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Pressure:\"\>", 
+     "1.`", "\<\"kg/cm^2\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", "\<\"Time\"\>", "\<\
+\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", "\<\"ml/min\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "15.06`", "0.251`", "39.8406374501992`", "\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "15.17`", "0.25283333333333335`", 
+     "39.55174686882004`", "\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "15.19`", "0.25316666666666665`", 
+     "39.49967083607637`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", 
+     "39.63068505169854`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Pressure:\"\>", 
+     "0.8`", "\<\"kg/cm^2\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", "\<\"Time\"\>", "\<\
+\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", "\<\"ml/min\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "10.`", "20.58`", "0.34299999999999997`", 
+     "29.15451895043732`", "\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "4.09`", "0.06816666666666667`", 
+     "29.339853300733495`", "\<\"\"\>"},
+    {"\<\"\"\>", "8.`", "16.24`", "0.27066666666666667`", 
+     "29.55665024630542`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", 
+     "29.35034083249208`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Pressure:\"\>", 
+     "0.6`", "\<\"kg/cm^2\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", "\<\"Time\"\>", "\<\
+\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", "\<\"ml/min\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "5.79`", "0.0965`", "20.72538860103627`", "\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "5.79`", "0.0965`", "20.72538860103627`", "\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "5.7`", "0.095`", "21.05263157894737`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", 
+     "20.8344695936733`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Pressure:\"\>", 
+     "0.4`", "\<\"kg/cm^2\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"Volume of gas\"\>", "\<\"Time\"\>", "\<\"Time\"\>", "\<\
+\"Flow\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"ml\"\>", "\<\"s\"\>", "\<\"min\"\>", "\<\"ml/min\"\>", \
+"\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "9.65`", "0.16083333333333333`", 
+     "12.435233160621761`", "\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "9.66`", "0.161`", "12.422360248447205`", "\<\"\"\>"},
+    {"\<\"\"\>", "2.`", "9.64`", "0.16066666666666668`", 
+     "12.448132780082986`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", 
+     "12.435242063050651`", "\<\"\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.7898025870322657`*^9, 3.78980259237298*^9}},
+ CellLabel->
+  "Out[14]//TableForm=",ExpressionUUID->"77276327-1fa8-447e-9d79-\
+46714d167a07"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"averagelines", " ", "=", " ", 
+  RowBox[{"1", "+", 
+   RowBox[{
+    RowBox[{"Range", "[", "6", "]"}], "*", "8"}]}]}]], "Input",
+ CellChangeTimes->{{3.789727253586175*^9, 3.7897273484154563`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"102a5a02-4822-4e00-a4d1-bd6e2601c1e1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"9", ",", "17", ",", "25", ",", "33", ",", "41", ",", "49"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.789727324449563*^9, 3.7897273490786753`*^9}, 
+   3.7897274802258396`*^9, 3.7898018316819286`*^9, 3.789802627015306*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"40554a29-d749-432e-a899-21183b442f56"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"newflows", " ", "=", " ", 
+  RowBox[{"newdata", "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "averagelines", ",", "5"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.789727122108855*^9, 3.7897272382412252`*^9}, {
+  3.7897273577724285`*^9, 3.78972735987679*^9}, {3.7897278219155984`*^9, 
+  3.789727824599451*^9}, {3.789802630248661*^9, 3.7898026400634003`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"b10d306c-d8ea-4c67-bb33-34e4222c4323"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "62.48577093785502`", ",", "51.19633173451522`", ",", "39.63068505169854`", 
+   ",", "29.35034083249208`", ",", "20.8344695936733`", ",", 
+   "12.435242063050651`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7897271778667407`*^9, {3.789727209637699*^9, 3.7897272389235*^9}, 
+   3.7897273608174133`*^9, 3.7897274861140895`*^9, 3.789727830857671*^9, 
+   3.7898018351466603`*^9, 3.7898026430324593`*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"5dd7e337-d9cb-4359-b767-b851895cfdb0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pressurelines", " ", "=", " ", 
+  RowBox[{"3", "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Range", "[", "6", "]"}], "-", "1"}], ")"}], "*", 
+    "8"}]}]}]], "Input",
+ CellChangeTimes->{{3.789727686153817*^9, 3.7897277609297376`*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"f0d3ffff-a3db-4e2e-9acd-c5b8cfd0b069"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "11", ",", "19", ",", "27", ",", "35", ",", "43"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.7897277616338553`*^9, 3.789801838495702*^9, 
+  3.7898026456215334`*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"6714c11c-8a75-40a6-9c05-dc35dbe103b8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"newpressures", " ", "=", 
+  RowBox[{
+   RowBox[{"newdata", "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", " ", "pressurelines", ",", "3"}], "]"}], "]"}], "/", 
+   "0.070307", " "}]}]], "Input",
+ CellChangeTimes->{{3.7897277819794292`*^9, 3.7897277944580517`*^9}, {
+  3.7897278343802943`*^9, 3.789727837001237*^9}, {3.789801927414874*^9, 
+  3.789801950946933*^9}, {3.7898026562072153`*^9, 3.789802660872734*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"4aaefc36-9163-47c3-a696-d8ec6fec6cf5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "19.912668724309103`", ",", "17.068001763693516`", ",", 
+   "14.22333480307793`", ",", "11.378667842462345`", ",", 
+   "8.534000881846758`", ",", "5.689333921231173`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7897277950913506`*^9, 3.789727837808079*^9, 3.789801841767948*^9, 
+   3.7898019439416203`*^9, {3.789802650736849*^9, 3.7898026619908085`*^9}},
+ CellLabel->"Out[20]=",ExpressionUUID->"04a80c34-d0a9-4d62-b79b-c288afcc10df"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plotnewdata", " ", "=", " ", 
+  RowBox[{"Partition", "[", 
+   RowBox[{
+    RowBox[{"Riffle", "[", 
+     RowBox[{"newpressures", ",", " ", "newflows"}], "]"}], ",", "2"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7897278485802608`*^9, 3.789727911658523*^9}, {
+  3.789802687476576*^9, 3.789802713819096*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"f7fda915-a782-4ab3-8226-a3a337d6341f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"19.912668724309103`", ",", "62.48577093785502`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"17.068001763693516`", ",", "51.19633173451522`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"14.22333480307793`", ",", "39.63068505169854`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"11.378667842462345`", ",", "29.35034083249208`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8.534000881846758`", ",", "20.8344695936733`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5.689333921231173`", ",", "12.435242063050651`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.789727872097349*^9, 3.789727913258239*^9, 3.7898018448018355`*^9, 
+   3.7898019605791206`*^9, {3.789802692611987*^9, 3.78980271441949*^9}},
+ CellLabel->"Out[23]=",ExpressionUUID->"b9b32a9a-3afd-470e-8ecc-408fd60bdbc8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"newline", "=", " ", 
+  RowBox[{"Fit", "[", 
+   RowBox[{"plotnewdata", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "x"}], "}"}], ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7897280564103346`*^9, 3.7897281100707445`*^9}, {
+  3.7897281535803475`*^9, 3.789728154054078*^9}, {3.789728762869027*^9, 
+  3.78972878906997*^9}, {3.7898026991972113`*^9, 3.7898026993717747`*^9}, {
+  3.7898027342016134`*^9, 3.789802735109151*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"df01ce0a-31a6-46bd-a071-a51df9e232a2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "9.219295799811398`"}], "+", 
+  RowBox[{"3.5316067362332326`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{{3.7897281475365157`*^9, 3.789728155657791*^9}, {
+   3.7897287715767255`*^9, 3.789728789590537*^9}, 3.789801848082056*^9, 
+   3.7898019634743676`*^9, {3.789802700295324*^9, 3.789802735879081*^9}},
+ CellLabel->"Out[25]=",ExpressionUUID->"0dd87239-19f7-4e56-ad4d-5bd5c5a76ef5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"plotolddata", ",", " ", "plotnewdata"}], "}"}], 
+     "\[IndentingNewLine]", ",", " ", 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<Fast GC Flow\>\""}], 
+     "\[IndentingNewLine]", ",", " ", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Inlet pressure\\n(psi)\>\"", ",", 
+        "\"\<Carrier gas flow\\n(ml/min)\>\""}], "}"}]}], 
+     "\[IndentingNewLine]", ",", " ", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", " ", "Green"}], "}"}]}], "\[IndentingNewLine]", 
+     ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", "Large"}], "\[IndentingNewLine]", ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Old\>\"", ",", "\"\<New\>\""}], "}"}]}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", ",", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "newline", ",", " ", "oldline", ",", " ", "poiseflow", ",", 
+       "poiseflow2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "5", ",", "20"}], "}"}], ",", " ", 
+     RowBox[{"PlotLegends", "\[Rule]", "\"\<Expressions\>\""}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.78972792128477*^9, 3.789728030436775*^9}, {
+   3.7897281724249763`*^9, 3.789728194182728*^9}, {3.7897282336080027`*^9, 
+   3.7897282549668245`*^9}, {3.7897282974866557`*^9, 
+   3.7897284436197386`*^9}, {3.789801977246524*^9, 3.789802005597681*^9}, {
+   3.7898027492852755`*^9, 3.7898027643249855`*^9}, {3.7898029188217344`*^9, 
+   3.7898030293589935`*^9}, 3.7898030653976235`*^9, {3.7898032402259216`*^9, 
+   3.7898032733333282`*^9}, {3.7898055248003473`*^9, 
+   3.7898057242707605`*^9}, {3.7898058428395495`*^9, 3.789805895813884*^9}, {
+   3.7898077459496117`*^9, 3.7898077469090853`*^9}, {3.789807795733432*^9, 
+   3.789807821422748*^9}},
+ CellLabel->"In[95]:=",ExpressionUUID->"74c3b5e0-ee32-4651-87ac-557ef04da337"],
+
+Cell[BoxData[
+ TemplateBox[{GraphicsBox[{{{}, {{{}, {
+         Hue[0.67, 0.6, 0.6], 
+         Directive[
+          PointSize[0.012833333333333334`], 
+          AbsoluteThickness[1.6], 
+          RGBColor[1, 0, 0]], 
+         PointBox[CompressedData["
+1:eJxTTMoPSmViYGCQAGIQDQEKDne25d7elqvqAOPfPcykoz4Lwc+8tiNCYSWC
+f3KZTH7nNRhfwyFqN//2hkMOcP5Tk/jV6e0I/o5Sr/835iH4Zc2anyLNEXwI
+DeMbOGS2nm100faB8xcVmGTvd/WD86cxba1b6uAJ51/U+Gjs9Qeh3uN915np
+ajD1Jg4tpt49/jPD4PwDwR4tnH4I/vSPqrqzmhH85y9mL87vQ/DrTLY1nvaE
+8WUcrNLeXzvkKw3nyx+sZfkuKAPnf1QX8suMw82fbsRZJrpPxgEAaN5asg==
+
+          "]]}, {
+         Hue[0.9060679774997897, 0.6, 0.6], 
+         Directive[
+          PointSize[0.012833333333333334`], 
+          AbsoluteThickness[1.6], 
+          RGBColor[0, 1, 0]], 
+         PointBox[{{19.912668724309103`, 62.48577093785502}, {
+          17.068001763693516`, 51.19633173451522}, {14.22333480307793, 
+          39.63068505169854}, {11.378667842462345`, 29.35034083249208}, {
+          8.534000881846758, 20.8344695936733}, {5.689333921231173, 
+          12.435242063050651`}}]}, {}}}, {}, {}, {}, {}}, {{{{}, {}, 
+        TagBox[{
+          Directive[
+           Opacity[1.], 
+           RGBColor[0.368417, 0.506779, 0.709798], 
+           AbsoluteThickness[1.6]], 
+          LineBox[CompressedData["
+1:eJwV0Hk41HkAx3FFYnnaaNxkZhqTI8zMV5OrfDCOIb9I9JBcKUc9q1oZbdJW
+OlYTnWaWTYV0STUxWjp2lw7NYlViKbLtU5rGUVONI7XtH+/n9f+bkZy5fO10
+LS2tsK/97x3WAZqWFg1t22pSyp/TYR8YP1uuQ8OxM4kq9SAdBalcww36NES3
+G2cFvKUj/EKXdrcxDc+Zot2D0xh46spSX7aj4V2LT7nLPAbee97sSAilwdS8
+o79hLQPMiJHC28U0xNWqYx8pGdixPVJ/h7MJlCr3CJ0PTIgGj7nFZpnikFEK
+34Vvh3+8uuLEZ8zQt8i4zjxiPrR7Jcrf/zJH9qhGtTHJAcnijppIE0tI4/Js
+Dpc5gbANN3oLrJD4YN+rTXXO8Ht4O3Wn2BqyN9wLluOumPngbXNLmw3Otusf
+NbfgwucCyzZ9ci5CHG/Y5DN5WEUNrpTR6ZD13aqM9CNob7xV1nudjqE5u3O0
+l7lh7rIVUl2KgTDjF/YZ0QshXs++1D/CwKaMo51uWXyQTzn4dy8TGf4z2vvz
+FmHcRG+k2HEe2Nn3modPuqMkKjo8VDEPepvtJLWNHsjSt+M4JbFwa1ggj232
+xHeBHKdfte3geae2I+WFF05rGis3l9qhwPqlx7IRb6i5+R49PmyUtaaWnTBa
+AvoRg53+A2x0B+3pL3fxwd51c4K6RfOxmSHjC6wBg+aV9lZW9uhVtEymVQMt
+x633/3TNHjV8v1dTPF8kHzxVMh7sgDl79XyH5b6wnJV03+yNA2Kna6SzA/1g
+oF2elbTLEYY+gWYVCj9Y7bT1jmE74dS5m0dT4/yhaxcnX37PCXc/7srbp/SH
+02KLy6LVCxA943yRWaYAmX3GTSFazngATdnfnwVQqcVRQqkzznpXPTbYEwCB
+690SobMLTG0qcn7WC0Sj2mtS0+aCNMf7ljGSQKxfwOvpWOsK1ljYi/3WQbAR
+8ZTVOhz88W7yvLI6CExjcZVuBAd/XvpGcoMEg4YA74FSDlLDUt+9rg9GseyX
+fuMhDl5aqEKFQUK4Jbj59bhz0VrVoTBvFSI5PEM2VsCFNLFfaBkfgu2Pv0xK
+erl4/9mTL1KFoO5Ip04rm4fG1ZpgwaZQ5B4XWsXk8LDmdW+M/7SlSHw4NfpD
+Mw+ihYzDsn1LwS03OmXzLYHVulr+doMwHJE3xZklElQ0ZfZsLQnD7Bny7qqL
+BJKBA5UvbSl0nV6yeKyaYNxwS7onk0LZknunhTUEq9zjXQpZFBbkdGeorhDY
+FnGuL3SgEPxm4hNXTr7+61Tk8yj82OHDuPkbQb1krpoZQGH0REv6o06CrrCr
+vgkZFOo9l7exugg8tpboXttAIa+rh5fdTVBauVuhm0nB0Eg1ad5LkDAZFVXz
+PQX7/FmF8c8JXp2bSJvKpZCYESl7rSTQaAsOlRZRmD/zqamXiiDG1Tlq5DCF
+4YqUbeIhgsZYU0v/YxRyn20RuI4S7Lg6WKGUUpCGS59kfSCYmXCw3qOcQsIQ
+3evuR4L0guzcg5UU2AXnT5qNESjqEnwHqijUNjWkNUwQFBnyFPsvUtiW6N9q
+8Ing7SKrQ08vUfCbUnBXTxFErtGJ4lyhoFeyorjmM8G1wiGLfBmFdv6ziS9f
+CEwanvR11VL4D6UaFr0=
+           "]]}, Annotation[#, "Charting`Private`Tag$37160#1"]& ], 
+        TagBox[{
+          Directive[
+           Opacity[1.], 
+           RGBColor[0.880722, 0.611041, 0.142051], 
+           AbsoluteThickness[1.6]], 
+          LineBox[CompressedData["
+1:eJwVxX041AcAB/BrVMSK64q8nrdz4ri7n6caF9+8huK8/BbWCypdKtLOsM7K
+Wy8c9dhcHpUhu+W9R2Yl8muoLMppcvOy2DybystJSl5q2x+f52MWFRd08BMa
+jbbzP//fbpnNoNEYiLqmOGtRxKTYXnt1GtQZGKy9XS+8wKSyDvG0j2oyENpU
+MpJymkkJK/rUlHQGdvTGOyujmNSgg+VMrRUDjivpU1JrJvXGqVmxz48B9Wdl
+VeORppR54FRui4wB4UG5T95ZY+pUSrDmKc46KNPL04d6NlCJY985hovXQ5Qu
+CO/v0KX+dO7bLf1BD6p208yAPHVKbeDSy3vd+sDxb5vo8f+0REkVNcHrDHBa
+N7n1Ne+NK8HSPi7wMMRFjnGAbEkDbj0th1KlRrjBqnO+eZGBlb9Ot3U8NoZO
+NstiUmIE1wpL08MLJmjyPiY4qjLDF/5ju+qYTNwYo22yf22FJ3fuFg3cYqI4
+rP7vB7U2MAkIKVjhb4ZuR51l2eEcSI+wqp9PmWFvHz0hp4ILYjEJo2fMESLh
+eN7L5OP9Oo0p2UYLVKjKJAPnHFFIfi70e2QBk0KVKCttE8SaVlzbSEtctO3k
+WoVvQawX1/a2mhVEUvUIeZgTSt7dKTtx2QqC3s6YtZsFmOFlfNbvyoJ4Ynow
+WuACZp5WqvsICweuzqZaGwFnotd6KxOtob3FKV1Xcxu02naxDQ3ZiHbi3JrU
+dENHvtG58zfZoLhj/ffeuyEqp7jw/XYbXN/2aejzUXcYrI58qPfKBmgc1lD9
+5QEttVJxZNpGKFmSH98qPGGYaioIY9mCudCerHrqhRVWuxuCHthi7kWy3FHh
+DdutG2oT99ihu3OWim3ejrg/6K2+NA5C9ZhrrjT7YHxGSvoUcDBM0v1aqnzh
+4XC/0Idjj7c1sSN2l/xwZ8Z54d1je9yNS67Myd+BI3b8fsVBB2RY7tg/mrYT
+xon8l1XqXCyiy98+wx/mdKl8RSAX4sD17FhxABjwFIxc5sLl7ihn0UEIWd2V
+5/QJLgrP5o801grhuM/RrX8LD7O+G6VvWIGIEsbUzWXxYOMm67a+HoiU3z4u
+XBrgocxrsxvNOgg/5fWqd7H4YHo2VQRfDYIk38cwLImPE4n61cXGwYjoWVJ9
+3cZH+7VQuSg/GLxS3WLjNQQihro6e1eFIK+hdbdeBIEeX4McQVYIdJY3KOWV
+BLzqfD1MlpHoK3HZOldFgB0/qc9TI1Hk8qDEp4aAFjdvwn05CbskZcz4DQJP
+qn+XHdYksf3V/CKvgUBouehFvS6J0wpXs2aKwJHiM7l+5iRUVzsOP+0lcCH3
+F2WSO4mfnYIeW/YROLEzujrbk8Q3ff38r5QEQrRXpRV5k9DWHV/QHyCwISvQ
+ts2PBDtjde7eYQKlmcMpa0JIRMQE1714SaBe8sFcfoCE9crB9c7jBGTOpe9u
+RZOYvHbgpHSCQPK8Z+cjEQnJUIKHg4rA1qSchOmjJAqEBc/EswTuf2n0UJBA
+Yt8E0/n+WwLlfOpKQCIJVlb593pzBLKn98dHJZOob20UNc4TEMZVGpxLIXEy
+wr1La5EA3z5gqvAUCbelR7w9SwQYE69bq1NJaBSGyGo+EJitlBVQ6SSebBqa
+//iRQF+M07GnmST+BeNlGmQ=
+           "]]}, Annotation[#, "Charting`Private`Tag$37160#2"]& ], 
+        TagBox[{
+          Directive[
+           Opacity[1.], 
+           RGBColor[0.560181, 0.691569, 0.194885], 
+           AbsoluteThickness[1.6]], 
+          LineBox[CompressedData["
+1:eJwVzWs0lHkAx/HZiBxOFx5DKblOGGL8JxsGP5NkXMYwTymVy6S1dLE6Niqy
+6Kg0lSQ5klvKWSqOyrYcpai2pggVS7SJ1DSYsk2XIdu++J7Py6+5JCF06ywG
+gxH0vf+9Y3WEYjAoHGOPjuR7c2HjGzG/QZPCR74bHe7LRU4sR2+7DoWN4Udv
+Lw3gQlTdo9GrT8H2MCmtprl47mg1WWtN4c7r9PUtsVz869bcGRlAYbrcWPbu
+KBcWIRPHbhZQ2GbsX8fv4yI9TayT7mAIv9mX9ip3rUDym3xueBIT2Wminepm
+Fwy592ySnjeCvCB9PXPyR2j0n5bfemwMnrpay9zCFRJp52Wx4SJQ364Y9Me7
+gbD0fuH5mGBehZ/R+bPu4HfdjM2QLkbucOMeUzkP2g/et91vX4KZRNuyg06e
+8Kq2WhqnNkV+mWUzI9oLG4VvwurNzNDTkFacvxboaLpR0n/dDKodtU/rJgDT
+YLpQS2gOqf8LZVu2N6TbWJdeTJgjRpXWVGfHB5lKwXC2BTp2STIqW/n4Yjhn
+osDOEqk3rqkS4lahaO06UYDMEuWO2kKi54MkHWsndrQVwhJLyr6d88FOXyf2
+nxrWCMmsrCj3W43yT02Vu85YY2CLsjRwaDUmOQdc+7xYuEjVBHYc8oVZnm7G
+qpcsfJBv6RfYr0H2TwZrepOX4cEJydaHbWug2xZmY2Jig2HtxyWseD/cP7X4
+0OErNsgVZnUf0hRAcrSs6IufLa42cuVDZwRYNDf6L6N3tjBR0XUU/KGrUZEU
+nWkHg1lNicK//WGSsZS3gcWGcOD4UGR6ALSsNzWE3mODMShZEWcRCLbHwtrk
+zfbwrd2XtbcxEAmD+q3+DAc8CtbI2BIZBMWkdK2g0AGjLY/30F+C4ON4t0jg
+sBwpYcW0R64QTZPu6k/tyxHY/GxwmgRjm71zX+dWR9RProu5+zAYS5Kd5Rc1
+nXBpqiKQuIpgoS+9oBXiBFlsc8zBbBEorOa9POOE8yPPdoR1iVBQX/xCf8wJ
+ZrIq4UmrEHAjufy+lRy8KjRxECeGQCKKr/+cw4Gg3ffV/rYQpD2ZUZ/u5yCO
+mZjDYobiWt5TzUcsZ3T7ejqGSkKRekpgsiHFGYODt2veXg1FVNe0cm+bM5wj
+5dazZ4nBqVhQtmQeAf/D/BPFQWLkNbRuMooimFSMd5eWijF/dkPvhRqC8Y4E
+aplCjJ5yT4/PFwm6K4NkqWNilHjeKxdcJri+h53ZNS6GfUpvvKKOIMtydCLt
+vRh+775OcRoIjJMjZE9UYvzW6WXe3PL9ZxqUmfkDDeXZ+3HdTwlOb7dTDjBp
+/OEW2m7VQ5DqPaeKGNPY39PnvLuXQMJ8vfnwQhp6CxRq434C+5ZyGXcxDZsD
+c49F/ENwy2Bh1RFzGlHx4vq3cgJFo3aEqz2NZdrPme4Kgs7jI9RxBxrj52L2
+SccIGmJaZcPLaaQO/OrjqCTImJvumsuhUSgqfJb0kYApUVGjLjQix8zc76oI
+1C5PZLyVNFg5v5cafSZ4qVufmedK42pr48+NXwlqru1QevBo7Ita9Uh3iiA3
+J6DqpAcN/rSMs3maYHekbcRbTxpziuiCy98Iwrnahl6g0eEy8HVmhsBLZ0SW
+703jP2hJGSk=
+           "]]}, Annotation[#, "Charting`Private`Tag$37160#3"]& ], 
+        TagBox[{
+          Directive[
+           Opacity[1.], 
+           RGBColor[0.922526, 0.385626, 0.209179], 
+           AbsoluteThickness[1.6]], 
+          LineBox[CompressedData["
+1:eJwVxX0w1HkAB2Dl/UjFlsoqtDZ2V+x+zRW75ZP3JWK9bPy8raNQoy6KSxSj
+JmzN5fIy9LYqUxGGorIpL4fOEa6i9ZK9rpSULnXJSnf3xzOPefQeUexCNTU1
+n//8/6+MPJqaGg0vh0zlHAUfVu4RS+o1aDCi9xL5GB+5O7n6u3VpcArLqvAe
+58Pv2oD6oCENpcMvSxI+8jFsy5iutqTBf6T6pysGAnx0vNsX6U1D0+iWDQwX
+ASz8p07eK6ShQBlba1IpwOH0AN3DNsvgNn79yncZm5Dy6rR9aPJylFZWNTi4
+OeFP/kCY9LIxWhoGwtakAOpDRRPNvSvQKC24ccBjC6KlfVUBy1ahuinv7AFr
+ZxCm/l6Bqwl2Ty04IplzhnP/vZ2ZUjoY6TXTH8dcoP3b320PekwhyaBvDm92
+hdM1xpp41WrszNDJqsl3A+X7SlxrZob4IY64cr87HjY2nRu6ZQayoc/yF6EH
+Vm8LLNbyNUeWFunyXekJ6S7m9WdT5vid172gbtYTZC4Vfx2zwGj4OHdhtxBf
+lulMFbLWYvKFw/SXGi+UBAX7eXetxWGlMK/9Z28k61rasSUMKIae0jMkW5Ho
+bse+rW4JHilzGnXxgexz46V9pZYQ5UxQ1sa+mOZmOyicmEgU7NI1nfOFWb5e
+pouSicU/XD3xYngbju0w8hhMWQdBW93RrWI/6LWJrUxMrJCoaXtittMPDwro
+x3PqrKDpnrB0NfFH9IkLJV88rREOjQWcUn+sMpB0Gr+xhn28o4OBvgh66mXJ
+kiwWEk/ZvYvdL4JJ5hpBCJONda9a3pwaF0HLMqxe1MFG2Uxd4BVxANibVlan
+hHOQqRPraH8/AHtGDVu91GzwzL027jQ3EJPT0iBhsQ0uZN8zSigNhKtte4nQ
+Zj0Yh9gslnoQGqf5qs8968EsIzlNSUHYxeEp+mJtIe1QxXQOB8E0hTdRqWGH
+vSZROeW+wbAwlJZr+dvhdmI2a/ZWMGhwEyhL7dCWpr1ho7kYhbVnnhm+tYNP
+A1PqlS+GfaS9s2IjF44fNCP6VWJE+yXUzuRyUU5lpq5P3I70R99URUNc9GdQ
+88mj23Ez/7FGN5OHGNknNa5HCA4VCE1CUnlI+sDe2nwrBFH9X98fbONh3NmC
+1mERCm7Z0gumiwnoPikeDbmhyK9vDTOOIug9GteapgrFEs36wfIKgtd3V8pv
+xlAYkG3eNFNJcKkltyhvB4VzmztkwiqCyA7VPkkcBU7qYMJkDcGT3hHrRbsp
+eL6ZnePWE7Q+lxXFJFE40udkfvc+wVldVpJRFoX3Zx/E//GYQBTkyPrxPIUG
+R1EPY4BgUWiFpoeMQsaAgndgkKAzgq6kX6Sgv3RStWKIwCluvqiznIJVtsHJ
+iDECTlqLplkVhaiEgNrXEwRaMi9lj5zCOu3h5fxJgubLjfJLTRTeXYxJk74l
+SL/GKT54n8Khkf2utu8JpusMtjHbKBT7FT9J/kQw1t4vT++iEPnWjN/+D8GZ
+LpfigG4KzNyr541nCMS9N5KsH1K40Xon7s4sQffTQtbjfgppUS7denMEOaPa
+WhWPKDh/7eKGfyVwfZ6qPPKEgk5JYGHVPMH8+Gt58CCFh9+PzH77RnB7MrSY
+o6DwL2LPGxE=
+           "]]}, 
+         Annotation[#, "Charting`Private`Tag$37160#4"]& ]}}, {}, {}}}, {
+    DisplayFunction -> Identity, PlotRangePadding -> {{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.05]}}, AxesOrigin -> {5.465729763750409, 0}, 
+     PlotRange -> {{5.689333921231173, 20.}, {0, 90.3954802259887}}, 
+     PlotRangeClipping -> True, ImagePadding -> All, DisplayFunction -> 
+     Identity, AspectRatio -> NCache[GoldenRatio^(-1), 0.6180339887498948], 
+     Axes -> {True, True}, AxesLabel -> {
+       FormBox["\"Inlet pressure\\n(psi)\"", TraditionalForm], 
+       FormBox["\"Carrier gas flow\\n(ml/min)\"", TraditionalForm]}, 
+     AxesOrigin -> {5.465729763750409, 0}, DisplayFunction :> Identity, 
+     Frame -> {{False, False}, {False, False}}, 
+     FrameLabel -> {{None, None}, {None, None}}, 
+     FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+     GridLines -> {None, None}, GridLinesStyle -> Directive[
+       GrayLevel[0.5, 0.4]], ImageSize -> Large, 
+     Method -> {"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+           (Identity[#]& )[
+            Part[#, 1]], 
+           (Identity[#]& )[
+            Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+           (Identity[#]& )[
+            Part[#, 1]], 
+           (Identity[#]& )[
+            Part[#, 2]]}& )}}, PlotLabel -> 
+     FormBox["\"Fast GC Flow\"", TraditionalForm], 
+     PlotRange -> {{5.689333921231173, 20.}, {0, 90.3954802259887}}, 
+     PlotRangeClipping -> True, PlotRangePadding -> {{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.05]}}, Ticks -> {Automatic, Automatic}}],FormBox[
+    TagBox[
+     GridBox[{{
+        FormBox[
+         TemplateBox[{"\"Old\"", "\"New\""}, "PointLegend", 
+          DisplayFunction -> (StyleBox[
+            StyleBox[
+             PaneBox[
+              TagBox[
+               GridBox[{{
+                  TagBox[
+                   GridBox[{{
+                    GraphicsBox[{{}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.462], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[1, 0, 0]], {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.462], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[1, 0, 0]], 
+                    PointBox[
+                    NCache[{
+                    Scaled[{
+                    Rational[1, 2], 
+                    Rational[1, 2]}]}, {
+                    Scaled[{0.5, 0.5}]}]]}}}, AspectRatio -> Full, 
+                    ImageSize -> {10, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #}, {
+                    GraphicsBox[{{}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.462], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[0, 1, 0]], {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.462], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[0, 1, 0]], 
+                    PointBox[
+                    NCache[{
+                    Scaled[{
+                    Rational[1, 2], 
+                    Rational[1, 2]}]}, {
+                    Scaled[{0.5, 0.5}]}]]}}}, AspectRatio -> Full, 
+                    ImageSize -> {10, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxDividers -> {
+                    "Columns" -> {{False}}, "Rows" -> {{False}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{All}}, "Rows" -> {{All}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                GridBoxAlignment -> {
+                 "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                False, GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}], 
+               "Grid"], Alignment -> Left, AppearanceElements -> None, 
+              ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+              "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
+            FontFamily -> "Arial"}, Background -> Automatic, StripOnInput -> 
+            False]& ), InterpretationFunction :> (RowBox[{"PointLegend", "[", 
+             RowBox[{
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    RowBox[{"PointSize", "[", "0.012833333333333334`", "]"}], 
+                    ",", 
+                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
+                    InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[1, 0, 0], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> RGBColor[0.6666666666666666, 0., 0.], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"1", ",", "0", ",", "0"}], "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                    BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                    ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[1, 0, 0]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[1, 0, 0], Editable -> False, Selectable -> 
+                    False]}], "]"}], ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    RowBox[{"PointSize", "[", "0.012833333333333334`", "]"}], 
+                    ",", 
+                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
+                    InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0, 1, 0], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> RGBColor[0., 0.6666666666666666, 0.], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                    BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                    ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0, 1, 0]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0, 1, 0], Editable -> False, Selectable -> 
+                    False]}], "]"}]}], "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{#, ",", #2}], "}"}], ",", 
+               RowBox[{"LegendMarkers", "\[Rule]", 
+                 RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"False", ",", "Automatic"}], "}"}]}], "}"}]}], 
+               ",", 
+               RowBox[{"Joined", "\[Rule]", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "False"}], "}"}]}], ",", 
+               RowBox[{"LabelStyle", "\[Rule]", 
+                 RowBox[{"{", "}"}]}], ",", 
+               RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& ), 
+          Editable -> True], TraditionalForm]}, {
+        FormBox[
+         TemplateBox[{"newline", "oldline", "poiseflow", "poiseflow2"}, 
+          "LineLegend", DisplayFunction -> (StyleBox[
+            StyleBox[
+             PaneBox[
+              TagBox[
+               GridBox[{{
+                  TagBox[
+                   GridBox[{{
+                    GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    Opacity[1.], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    Opacity[1.], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #}, {
+                    GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    Opacity[1.], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    Opacity[1.], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}, {
+                    GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    Opacity[1.], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    Opacity[1.], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #3}, {
+                    GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    Opacity[1.], 
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    Opacity[1.], 
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #4}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxDividers -> {
+                    "Columns" -> {{False}}, "Rows" -> {{False}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{All}}, "Rows" -> {{All}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+                GridBoxAlignment -> {
+                 "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                False, GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}], 
+               "Grid"], Alignment -> Left, AppearanceElements -> None, 
+              ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+              "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
+            FontFamily -> "Arial"}, Background -> Automatic, StripOnInput -> 
+            False]& ), InterpretationFunction :> (RowBox[{"LineLegend", "[", 
+             RowBox[{
+               RowBox[{"{", 
+                 RowBox[{
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
+                    InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[
+                    0.24561133333333335`, 0.3378526666666667, 
+                    0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
+                    None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0.368417`", ",", "0.506779`", ",", "0.709798`"}],
+                     "]"}], NumberMarks -> False]], Appearance -> None, 
+                    BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.368417, 0.506779, 0.709798]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.368417, 0.506779, 0.709798], Editable -> False,
+                     Selectable -> False], ",", 
+                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+                   ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
+                    InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[
+                    0.587148, 0.40736066666666665`, 0.09470066666666668], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0.880722`", ",", "0.611041`", ",", "0.142051`"}],
+                     "]"}], NumberMarks -> False]], Appearance -> None, 
+                    BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.880722, 0.611041, 0.142051]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.880722, 0.611041, 0.142051], Editable -> False,
+                     Selectable -> False], ",", 
+                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+                   ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
+                    InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[
+                    0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0.560181`", ",", "0.691569`", ",", "0.194885`"}],
+                     "]"}], NumberMarks -> False]], Appearance -> None, 
+                    BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.560181, 0.691569, 0.194885]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.560181, 0.691569, 0.194885], Editable -> False,
+                     Selectable -> False], ",", 
+                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+                   ",", 
+                   RowBox[{"Directive", "[", 
+                    RowBox[{
+                    RowBox[{"Opacity", "[", "1.`", "]"}], ",", 
+                    InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[
+                    0.6150173333333333, 0.25708400000000003`, 
+                    0.13945266666666667`], FrameTicks -> None, 
+                    PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0.922526`", ",", "0.385626`", ",", "0.209179`"}],
+                     "]"}], NumberMarks -> False]], Appearance -> None, 
+                    BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.922526, 0.385626, 0.209179]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.922526, 0.385626, 0.209179], Editable -> False,
+                     Selectable -> False], ",", 
+                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], 
+                    "]"}]}], "}"}], ",", 
+               RowBox[{"{", 
+                 RowBox[{
+                   TagBox[#, HoldForm], ",", 
+                   TagBox[#2, HoldForm], ",", 
+                   TagBox[#3, HoldForm], ",", 
+                   TagBox[#4, HoldForm]}], "}"}], ",", 
+               RowBox[{"LegendMarkers", "\[Rule]", "None"}], ",", 
+               RowBox[{"LabelStyle", "\[Rule]", 
+                 RowBox[{"{", "}"}]}], ",", 
+               RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& ), 
+          Editable -> True], TraditionalForm]}}, 
+      GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> False, 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+      GridBoxSpacings -> {"Columns" -> {{0}}}], "Grid"], TraditionalForm]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.789806555018509*^9, 3.7898066055533223`*^9, 
+  3.789806646902708*^9, 3.7898077476371374`*^9, 3.7898078227791967`*^9},
+ CellLabel->"Out[95]=",ExpressionUUID->"5288fe88-875c-4c21-9a4d-fb50604582ab"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"{", 
+   RowBox[{"newline", ",", " ", "oldline"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7898034573261213`*^9, 3.7898035064836206`*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"71b09767-cbea-4d84-be4b-9e86c8c701d6"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      RowBox[{
+       RowBox[{"-", "9.219295799811398`"}], "+", 
+       RowBox[{"3.5316067362332326`", " ", "x"}]}]},
+     {
+      RowBox[{
+       RowBox[{"-", "39.77549946625027`"}], "+", 
+       RowBox[{"6.293326542638903`", " ", "x"}]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.7898035068197145`*^9},
+ CellLabel->
+  "Out[36]//TableForm=",ExpressionUUID->"49a20767-25db-417d-8d76-\
+7a0a981585e5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Theoretical calculation", "Subsection",
+ CellChangeTimes->{{3.789805953766814*^9, 
+  3.789805960644459*^9}},ExpressionUUID->"064cafd4-80f5-4e97-93a5-\
+30ca03e057f9"],
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryResults",
+  DynamicModuleBox[{Typeset`q$$ = "Dynamic Viscosity of hydrogen", 
+   Typeset`opts$$ = {
+   AppearanceElements -> {
+     "Extrusion", "Warnings", "Assumptions", "Pods", "Unsuccessful"}, 
+    Asynchronous -> All, 
+    Method -> {
+     "ExtrusionChosen" -> {
+       "Fast parse", "Fast parse", 1, 0, "Input", 
+        "Entity[\"Chemical\", \
+\"MolecularHydrogen\"][EntityProperty[\"Chemical\", \"Viscosity\"]]"}, 
+      "ExtrusionOpen" -> True, 
+      "Formats" -> {"cell", "minput", "moutput", "msound", "dataformats"}}}, 
+   Typeset`elements$$ = {
+   "Extrusion", "Warnings", "Assumptions", "Pods", "Unsuccessful"}, 
+   Typeset`pod1$$ = XMLElement[
+   "pod", {"title" -> "Input interpretation", "scanner" -> "Identity", "id" -> 
+     "Input", "position" -> "100", "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Entity[\"Chemical\", \
+\"MolecularHydrogen\"][EntityProperty[\"Chemical\", \"Viscosity\"]]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             FormBox[
+              TagBox[
+               GridBox[{{
+                  PaneBox[
+                   StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox[
+                    TagBox[
+                    TagBox["\"hydrogen\"", 
+                    $CellContext`TagBoxWrapper[
+                    "Entity" -> {ChemicalData, "MolecularHydrogen"}, 
+                    "SRString" :> $CellContext`GeneralData[
+                    ChemicalData, "MolecularHydrogen", "SpokenName"]]], 
+                    Identity], {
+                    LineIndent -> 0, LineSpacing -> {0.9, 0, 1.5}}], 
+                    "\"dynamic viscosity\""}}, 
+                    GridBoxBackground -> {"Columns" -> {
+                    GrayLevel[0.949], None}, "Rows" -> {{None}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False, 
+                    GridBoxDividers -> {"Columns" -> {
+                    GrayLevel[0.84], 
+                    GrayLevel[0.84], 
+                    GrayLevel[0.84]}, "Rows" -> {{
+                    GrayLevel[0.84]}}, 
+                    "RowsIndexed" -> {
+                    1 -> GrayLevel[0.84], -1 -> GrayLevel[0.84]}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {1, 1, 1}, "Rows" -> {{0.3}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+                    AllowScriptLevelChange -> False, BaselinePosition -> 1], 
+                    $CellContext`TagBoxWrapper["Separator" -> " | "]], 
+                    LineSpacing -> {1, 0, 1.5}, LineIndent -> 0], 
+                   BaselinePosition -> Center]}}, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                ColumnsEqual -> False, RowsEqual -> False, 
+                GridBoxSpacings -> {"Columns" -> {{
+                    AbsoluteThickness[-1]}}, "Rows" -> {{0}}}, 
+                AllowScriptLevelChange -> False], 
+               $CellContext`TagBoxWrapper["Separator" -> " | "]], 
+              TraditionalForm], 
+             PolynomialForm[#, TraditionalOrder -> False]& ], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,computabledata,formatteddata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {"\n   ", 
+       XMLElement["expressiontype", {"name" -> "Grid"}, {}], "\n  "}]}], 
+   Typeset`pod2$$ = XMLElement[
+   "pod", {"title" -> "Result", "scanner" -> "Data", "id" -> "Result", 
+     "position" -> "200", "error" -> "false", "numsubpods" -> "1", "primary" -> 
+     "true"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["microsources", {}, {"\n    ", 
+         XMLElement["microsource", {}, {"ChemicalData"}], "\n   "}], 
+       XMLElement["datasources", {}, {"\n    ", 
+         XMLElement["datasource", {}, {"NISTREFPROP"}], "\n   "}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            StyleBox[
+             TemplateBox[{
+               StyleBox[
+                TagBox[
+                 RowBox[{
+                   TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"8.9", 
+                    StyleBox["\[Times]", 
+                    GrayLevel[0.5]], 
+                    SuperscriptBox["10", "-6"]}], 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> RowBox[{"8.9", "\[Times]", 
+                    SuperscriptBox["10", "-6"]}], "SRString" -> 
+                    "8.9 times 10 to the negative 6"], SyntaxForm -> 
+                    CenterDot], "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"Pa\"", "\[InvisibleSpace]", "\"\[ThinSpace]\"", 
+                    "\[InvisibleSpace]", "\"s\""}], FontFamily -> "Helvetica",
+                     FontSize -> Smaller]}], Identity], #& , SyntaxForm -> 
+                    Dot], "  ", 
+                   StyleBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"pascal seconds\"", "\[NoBreak]",
+                     "\")\""}], {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], "Unit", SyntaxForm -> Dot], 
+                LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 0, 
+                ZeroWidthTimes -> False], "\"  \"", 
+               StyleBox[
+                RowBox[{"\"(\"", "\[NoBreak]", 
+                  TemplateBox[{"\"at \"", 
+                    StyleBox[
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["25", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "25", "SRString" -> "25"]], "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"\[Degree]C\"", FontFamily -> "Helvetica", FontSize -> 
+                    Smaller]}], Identity], #& , SyntaxForm -> Dot], "Unit", 
+                    SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False]}, "RowDefault"], "\[NoBreak]",
+                   "\")\""}], {FontFamily -> "Verdana", FontSize -> 10, 
+                 GrayLevel[0.5], LinebreakAdjustments -> {1, 100, 1, 0, 100}, 
+                 LineIndent -> 0}]}, "RowDefault"], LineIndent -> 0], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,computabledata,formatteddata,numberdata,quantitydata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {"\n   ", 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], "\n  "}]}], 
+   Typeset`pod3$$ = XMLElement[
+   "pod", {"title" -> "Unit conversions", "scanner" -> "Unit", "id" -> 
+     "UnitConversion", "position" -> "300", "error" -> "false", "numsubpods" -> 
+     "4"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            StyleBox[
+             TagBox[
+              RowBox[{
+                TagBox[
+                 TagBox[
+                  RowBox[{
+                    TagBox["8.9", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "8.9", "SRString" -> "8.9"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"\[Micro]Pa\"", "\[InvisibleSpace]", "\"\[ThinSpace]\"",
+                     "\[InvisibleSpace]", "\"s\""}], FontFamily -> 
+                    "Helvetica", FontSize -> Smaller]}], Identity], #& , 
+                 SyntaxForm -> Dot], "  ", 
+                StyleBox[
+                 
+                 RowBox[{
+                  "\"(\"", "\[NoBreak]", "\"micropascal seconds\"", 
+                   "\[NoBreak]", "\")\""}], {
+                 FontFamily -> "Helvetica", FontSize -> Smaller, 
+                  GrayLevel[0.6], LinebreakAdjustments -> {1, 100, 1, 0, 100},
+                   LineIndent -> 0}]}], "Unit", SyntaxForm -> Dot], 
+             LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 0, 
+             ZeroWidthTimes -> False], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,computabledata,formatteddata,numberdata,quantitydata"}]}], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            StyleBox[
+             TagBox[
+              RowBox[{
+                TagBox[
+                 TagBox[
+                  RowBox[{
+                    TagBox["0.0089", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "0.0089", "SRString" -> "0.0089"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"mPa\"", "\[InvisibleSpace]", "\"\[ThinSpace]\"", 
+                    "\[InvisibleSpace]", "\"s\""}], FontFamily -> "Helvetica",
+                     FontSize -> Smaller]}], Identity], #& , SyntaxForm -> 
+                 Dot], "  ", 
+                StyleBox[
+                 
+                 RowBox[{
+                  "\"(\"", "\[NoBreak]", "\"millipascal seconds\"", 
+                   "\[NoBreak]", "\")\""}], {
+                 FontFamily -> "Helvetica", FontSize -> Smaller, 
+                  GrayLevel[0.6], LinebreakAdjustments -> {1, 100, 1, 0, 100},
+                   LineIndent -> 0}]}], "Unit", SyntaxForm -> Dot], 
+             LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 0, 
+             ZeroWidthTimes -> False], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,computabledata,formatteddata,numberdata,quantitydata"}]}], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             GridBox[{{
+                StyleBox[
+                 TagBox[
+                  RowBox[{
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["0.0089", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "0.0089", "SRString" -> "0.0089"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"cP\"", FontFamily -> "Helvetica", FontSize -> 
+                    Smaller]}], Identity], #& , SyntaxForm -> Dot], "  ", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"centipoise\"", "\[NoBreak]", 
+                    "\")\""}], {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], "Unit", SyntaxForm -> Dot], 
+                 LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 0,
+                  ZeroWidthTimes -> False]}, {
+                TemplateBox[{"\" \"", 
+                  StyleBox[
+                   
+                   RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"unit officially deprecated\"", 
+                    "\[NoBreak]", "\")\""}], {
+                   FontFamily -> "Verdana", FontSize -> 10, 
+                    GrayLevel[0.5], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}, "RowDefault"]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+              "Column", 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+              GridBoxSpacings -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{0}}}], "Column"], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,computabledata,formatteddata,numberdata,quantitydata"}]}], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             GridBox[{{
+                StyleBox[
+                 TagBox[
+                  TagBox[
+                   TagBox[
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"8.9", 
+                    StyleBox["\[Times]", 
+                    GrayLevel[0.5]], 
+                    SuperscriptBox["10", "-5"]}], 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> RowBox[{"8.9", "\[Times]", 
+                    SuperscriptBox["10", "-5"]}], "SRString" -> 
+                    "8.9 times 10 to the negative 5"], SyntaxForm -> 
+                    CenterDot], "\[InvisibleSpace]", " ", 
+                    StyleBox[
+                    "\"poise\"", {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], Identity], #& , SyntaxForm -> Dot], "Unit", 
+                  SyntaxForm -> Dot], 
+                 LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 0,
+                  ZeroWidthTimes -> False]}, {
+                TemplateBox[{"\" \"", 
+                  StyleBox[
+                   RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"unit officially deprecated\"", 
+                    "\[NoBreak]", "\")\""}], {
+                   FontFamily -> "Verdana", FontSize -> 10, 
+                    GrayLevel[0.5], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}, "RowDefault"]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+              "Column", 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+              GridBoxSpacings -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{0}}}], "Column"], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,computabledata,formatteddata,numberdata,quantitydata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "4"}, {"\n   ", 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], "\n   ", 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], "\n   ", 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], "\n   ", 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], "\n  "}]}], 
+   Typeset`pod4$$ = XMLElement[
+   "pod", {
+    "title" -> "Comparisons as dynamic viscosity", "scanner" -> "Unit", "id" -> 
+     "ComparisonAsDynamicViscosity", "position" -> "400", "error" -> "false", 
+     "numsubpods" -> "3"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FormBox[
+             TemplateBox[{"\" \[TildeTilde] \"", 
+               TemplateBox[{"\"\"", "0", "\".\"", "5", "2"}, "RowDefault"], 
+               "\" \"", 
+               StyleBox["\"\[Times]\"", 
+                GrayLevel[0.3], FontSize -> 10.219999999999999`, StripOnInput -> 
+                False], "\"\[MediumSpace]\"", 
+               StyleBox[
+               "\"air dynamic dynamic viscosity at 0 \[Degree]C\"", 
+                FontFamily -> "Helvetica", FontSize -> Smaller, StripOnInput -> 
+                False], "\" \"", 
+               StyleBox[
+                RowBox[{"\"(\"", "\[NoBreak]", 
+                  TemplateBox[{"\"\[TildeTilde]\[ThinSpace]\"", 
+                    StyleBox[
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"1.7", 
+                    StyleBox["\[Times]", 
+                    GrayLevel[0.5]], 
+                    SuperscriptBox["10", "-5"]}], 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> RowBox[{"1.7", "\[Times]", 
+                    SuperscriptBox["10", "-5"]}], "SRString" -> 
+                    "1.7 times 10 to the negative 5"], SyntaxForm -> 
+                    CenterDot], "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"Pa\"", "\[InvisibleSpace]", "\"\[ThinSpace]\"", 
+                    "\[InvisibleSpace]", "\"s\""}], FontFamily -> "Helvetica",
+                     FontSize -> Smaller]}], Identity], #& , SyntaxForm -> 
+                    Dot], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False], "\"\[MediumSpace]\""}, 
+                   "RowDefault"], "\[NoBreak]", "\")\""}], {
+                FontFamily -> "Verdana", FontSize -> 10, 
+                 GrayLevel[0.5], LinebreakAdjustments -> {1, 100, 1, 0, 100}, 
+                 LineIndent -> 0}]}, "RowDefault"], TraditionalForm], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement["dataformats", {}, {"plaintext"}]}], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FormBox[
+             TemplateBox[{"\" \[TildeTilde] \"", 
+               TemplateBox[{"\"\"", "0", "\".\"", "5", "9"}, "RowDefault"], 
+               "\" \"", 
+               StyleBox["\"\[Times]\"", 
+                GrayLevel[0.3], FontSize -> 10.219999999999999`, StripOnInput -> 
+                False], "\"\[MediumSpace]\"", 
+               StyleBox[
+               "\"dynamic viscosity of carbon dioxide at 300 K and 1 bar of \
+pressure\"", FontFamily -> "Helvetica", FontSize -> Smaller, StripOnInput -> 
+                False], "\" \"", 
+               StyleBox[
+                RowBox[{"\"(\"", "\[NoBreak]", 
+                  TemplateBox[{"\"\[TildeTilde]\[ThinSpace]\"", 
+                    StyleBox[
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"1.5", 
+                    StyleBox["\[Times]", 
+                    GrayLevel[0.5]], 
+                    SuperscriptBox["10", "-5"]}], 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> RowBox[{"1.5", "\[Times]", 
+                    SuperscriptBox["10", "-5"]}], "SRString" -> 
+                    "1.5 times 10 to the negative 5"], SyntaxForm -> 
+                    CenterDot], "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"Pa\"", "\[InvisibleSpace]", "\"\[ThinSpace]\"", 
+                    "\[InvisibleSpace]", "\"s\""}], FontFamily -> "Helvetica",
+                     FontSize -> Smaller]}], Identity], #& , SyntaxForm -> 
+                    Dot], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False], "\"\[MediumSpace]\""}, 
+                   "RowDefault"], "\[NoBreak]", "\")\""}], {
+                FontFamily -> "Verdana", FontSize -> 10, 
+                 GrayLevel[0.5], LinebreakAdjustments -> {1, 100, 1, 0, 100}, 
+                 LineIndent -> 0}]}, "RowDefault"], TraditionalForm], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement["dataformats", {}, {"plaintext"}]}], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FormBox[
+             TemplateBox[{"\" \[TildeTilde] \"", 
+               TemplateBox[{"\"\"", "1", "\".\"", "1"}, "RowDefault"], 
+               "\" \"", 
+               StyleBox["\"\[Times]\"", 
+                GrayLevel[0.3], FontSize -> 10.219999999999999`, StripOnInput -> 
+                False], "\"\[MediumSpace]\"", 
+               StyleBox[
+               "\"hydrogen dynamic dynamic viscosity at 0 \[Degree]C\"", 
+                FontFamily -> "Helvetica", FontSize -> Smaller, StripOnInput -> 
+                False], "\" \"", 
+               StyleBox[
+                RowBox[{"\"(\"", "\[NoBreak]", 
+                  TemplateBox[{"\"\[TildeTilde]\[ThinSpace]\"", 
+                    StyleBox[
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["8.4", 
+                    $CellContext`TagBoxWrapper[
+                    "StringBoxes" -> "8.4", "SRString" -> "8.4"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"\[Micro]Pa\"", "\[InvisibleSpace]", "\"\[ThinSpace]\"",
+                     "\[InvisibleSpace]", "\"s\""}], FontFamily -> 
+                    "Helvetica", FontSize -> Smaller]}], Identity], #& , 
+                    SyntaxForm -> Dot], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False], "\"\[MediumSpace]\""}, 
+                   "RowDefault"], "\[NoBreak]", "\")\""}], {
+                FontFamily -> "Verdana", FontSize -> 10, 
+                 GrayLevel[0.5], LinebreakAdjustments -> {1, 100, 1, 0, 100}, 
+                 LineIndent -> 0}]}, "RowDefault"], TraditionalForm], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement["dataformats", {}, {"plaintext"}]}], 
+     XMLElement["expressiontypes", {"count" -> "3"}, {"\n   ", 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], "\n   ", 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], "\n   ", 
+       XMLElement["expressiontype", {"name" -> "Default"}, {}], "\n  "}]}], 
+   Typeset`aux1$$ = {True, False, {False}, True}, Typeset`aux2$$ = {
+   True, False, {False}, True}, Typeset`aux3$$ = {
+   True, False, {False, False, False, False}, True}, Typeset`aux4$$ = {
+   True, False, {False, False, False}, True}, Typeset`asyncpods$$ = {}, 
+   Typeset`nonpods$$ = {
+    XMLElement["sources", {"count" -> "2"}, {
+      XMLElement[
+      "source", {
+       "url" -> 
+        "https://www4f.wolframalpha.com/sources/\
+ChemicalDataSourceInformationNotes.html", "text" -> "Chemical data"}, {}], 
+      XMLElement[
+      "source", {
+       "url" -> 
+        "https://www4f.wolframalpha.com/sources/\
+ThermodynamicDataSourceInformationNotes.html", "text" -> 
+        "Thermodynamic data"}, {}]}]}, Typeset`initdone$$ = True, 
+   Typeset`queryinfo$$ = {
+   "success" -> "true", "error" -> "false", "numpods" -> "4", "datatypes" -> 
+    "Chemical,Thermodynamic", "timedout" -> "", "timedoutpods" -> "", 
+    "timing" -> "1.196", "parsetiming" -> "0.268", "parsetimedout" -> "false",
+     "recalculate" -> "", "id" -> 
+    "MSP822113g7753a0b453fbb00000e96779hefhc81ch", "host" -> 
+    "https://www4f.wolframalpha.com", "server" -> "12", "related" -> 
+    "https://www4f.wolframalpha.com/api/v1/relatedQueries.jsp?id=\
+MSPa822213g7753a0b453fbb00005491bg24h9i8he461835045885286472386", "version" -> 
+    "2.6"}, Typeset`sessioninfo$$ = {
+   "TimeZone" -> 2., 
+    "Date" -> {2020, 2, 4, 13, 17, 3.6172733`8.310956303727906}, "Line" -> 42,
+     "SessionID" -> 33507521154338003455}, Typeset`showpods$$ = {1, 2, 3, 4}, 
+   Typeset`failedpods$$ = {}, Typeset`chosen$$ = {
+   "Fast parse", "Fast parse", 1, 0, "Input", 
+    "Entity[\"Chemical\", \"MolecularHydrogen\"][EntityProperty[\"Chemical\", \
+\"Viscosity\"]]"}, Typeset`open$$ = True, Typeset`newq$$ = 
+   "Dynamic Viscosity of hydrogen"}, 
+   DynamicBox[ToBoxes[
+     AlphaIntegration`FormatAlphaResults[
+      Dynamic[{
+       1, {Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$, Typeset`pod4$$}, {
+        Typeset`aux1$$, Typeset`aux2$$, Typeset`aux3$$, Typeset`aux4$$}, 
+        Typeset`chosen$$, Typeset`open$$, Typeset`elements$$, Typeset`q$$, 
+        Typeset`opts$$, Typeset`nonpods$$, Typeset`queryinfo$$, 
+        Typeset`sessioninfo$$, Typeset`showpods$$, Typeset`failedpods$$, 
+        Typeset`newq$$}]], StandardForm],
+    ImageSizeCache->{560., {618., 19.}},
+    TrackedSymbols:>{Typeset`showpods$$, Typeset`failedpods$$}],
+   DynamicModuleValues:>{},
+   Initialization:>If[
+     Not[Typeset`initdone$$], Null; WolframAlphaClient`Private`doAsyncUpdates[
+       Hold[{Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$, Typeset`pod4$$}],
+        Typeset`asyncpods$$, 
+       Dynamic[Typeset`failedpods$$]]; Typeset`asyncpods$$ = {}; 
+     Typeset`initdone$$ = True],
+   SynchronousInitialization->False],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "WolframAlphaShortInput",ExpressionUUID->\
+"a02d4947-974c-498f-861a-c83f6cc4221e"],
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryResults",
+  DynamicModuleBox[{Typeset`q$$ = "Poiseiulle flow", Typeset`opts$$ = {
+   AppearanceElements -> {
+     "Extrusion", "Warnings", "Assumptions", "Pods", "Unsuccessful"}, 
+    Asynchronous -> All, 
+    InputAssumptions -> {
+     "*F.PoiseuillesLaw.eta-_0.0000089+Pa+s", "*F.PoiseuillesLaw.R-_0.125+mm",
+       "*F.PoiseuillesLaw.L-_1+m", "*F.PoiseuillesLaw.dP-_10+psi"}, 
+    Method -> {
+     "ExtrusionChosen" -> {"Result", "Result", 1, 1, "Content"}, 
+      "ExtrusionOpen" -> True, 
+      "Formats" -> {"cell", "minput", "moutput", "msound", "dataformats"}}}, 
+   Typeset`elements$$ = {
+   "Extrusion", "Warnings", "Assumptions", "Pods", "Unsuccessful"}, 
+   Typeset`pod1$$ = XMLElement[
+   "pod", {"title" -> "Input information", "scanner" -> "Formula", "id" -> 
+     "Input", "position" -> "100", "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "FormulaData[{\"PoiseuillesLaw\", \"Radius\"}, {\"\[Eta]\" -> \
+Quantity[8.9\[Times]10^-6, \"Pascals\" \"Seconds\"], \"R\" -> Quantity[0.125, \
+\"Millimeters\"], \"L\" -> Quantity[1, \"Meters\"], \"\[CapitalDelta]\
+\[InvisibleSpace]P\" -> Quantity[10, \"PoundsForce\"/\"Inches\"^2]}]"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            StyleBox[
+             TagBox[
+              GridBox[{{
+                 TagBox[
+                  PaneBox[
+                   StyleBox["\"Poiseuille's law\"", 
+                    GrayLevel[0], StripOnInput -> False], 
+                   BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  Global`TagBoxWrapper["Label"]], "\[SpanFromLeft]"}, {
+                 TagBox[
+                  PaneBox[
+                  "\"dynamic viscosity\"", 
+                   BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  Global`TagBoxWrapper["Label"]], 
+                 TemplateBox[{
+                   StyleBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"8.9", 
+                    StyleBox["\[Times]", 
+                    GrayLevel[0.5]], 
+                    SuperscriptBox["10", "-6"]}], 
+                    Global`TagBoxWrapper[
+                    "StringBoxes" -> RowBox[{"8.9", "\[Times]", 
+                    SuperscriptBox["10", "-6"]}], "SRString" -> 
+                    "8.9 times 10 to the negative 6"], SyntaxForm -> 
+                    CenterDot], "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{"\"Pa\"", "\[InvisibleSpace]", "\"\[ThinSpace]\"",
+                     "\[InvisibleSpace]", "\"s\""}], FontFamily -> 
+                    "Helvetica", FontSize -> Smaller]}], Identity], #& , 
+                    SyntaxForm -> Dot], "  ", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"pascal seconds\"", "\[NoBreak]",
+                     "\")\""}], {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False]}, "RowDefault"]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"radius of pipe\"", 
+                   BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  Global`TagBoxWrapper["Label"]], 
+                 TemplateBox[{
+                   StyleBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["0.125", 
+                    Global`TagBoxWrapper[
+                    "StringBoxes" -> "0.125", "SRString" -> "0.125"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"mm\"", FontFamily -> "Helvetica", FontSize -> 
+                    Smaller]}], Identity], #& , SyntaxForm -> Dot], "  ", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"millimeters\"", "\[NoBreak]", 
+                    "\")\""}], {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False]}, "RowDefault"]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"length of pipe\"", 
+                   BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  Global`TagBoxWrapper["Label"]], 
+                 TemplateBox[{
+                   StyleBox[
+                    TagBox[
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["1", 
+                    Global`TagBoxWrapper[
+                    "StringBoxes" -> "1", "SRString" -> "1"]], 
+                    "\[InvisibleSpace]", " ", 
+                    StyleBox[
+                    "\"meter\"", {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], Identity], #& , SyntaxForm -> Dot], "Unit", 
+                    SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False]}, "RowDefault"]}, {
+                 TagBox[
+                  PaneBox[
+                  "\"pressure difference\"", 
+                   BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  Global`TagBoxWrapper["Label"]], 
+                 TemplateBox[{
+                   StyleBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["10", 
+                    Global`TagBoxWrapper[
+                    "StringBoxes" -> "10", "SRString" -> "10"]], "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    "\"psi\"", FontFamily -> "Helvetica", FontSize -> 
+                    Smaller]}], Identity], #& , SyntaxForm -> Dot], "  ", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", 
+                    "\"pounds\[Hyphen]force per square inch\"", "\[NoBreak]", 
+                    "\")\""}], {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False]}, "RowDefault"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {Left, Left}, "Rows" -> {{Baseline}}, 
+                 "ItemsIndexed" -> {{1, 1} -> {Left, Baseline}, {1, 2} -> {
+                    Left, Baseline}}}, AutoDelete -> False, 
+               GridBoxBackground -> {
+                "Columns" -> {{None}}, "Rows" -> {{None}}, 
+                 "ItemsIndexed" -> {{{1, 1}, {1, 2}} -> 
+                   GrayLevel[0.9568627450980393]}}, 
+               GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {"Columns" -> {{1.5}, 2}, "Rows" -> {{1}}}, 
+               FrameStyle -> GrayLevel[0.84], BaselinePosition -> Automatic, 
+               AllowScriptLevelChange -> False], "Grid"], 
+             LineSpacing -> {0.9, 0, 1.5}, LineIndent -> 0, StripOnInput -> 
+             False], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,computabledata,formatteddata,numberdata,\
+quantitydata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {"\n   ", 
+       XMLElement["expressiontype", {"name" -> "Grid"}, {}], "\n  "}]}], 
+   Typeset`pod2$$ = XMLElement[
+   "pod", {"title" -> "Result", "scanner" -> "Formula", "id" -> "Result", 
+     "position" -> "200", "error" -> "false", "numsubpods" -> "1", "primary" -> 
+     "true"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "FormulaData[{\"PoiseuillesLaw\", \"Radius\"}, {\"\[Eta]\" -> \
+Quantity[8.9\[Times]10^-6, \"Pascals\" \"Seconds\"], \"R\" -> Quantity[0.125, \
+\"Millimeters\"], \"L\" -> Quantity[1, \"Meters\"], \"\[CapitalDelta]\
+\[InvisibleSpace]P\" -> Quantity[10, \"PoundsForce\"/\"Inches\"^2]}]"}], 
+       XMLElement[
+       "moutput", {}, {"Quantity[0.743, \"Milliliters\"/\"Seconds\"]"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            StyleBox[
+             TagBox[
+              GridBox[{{
+                 TagBox[
+                  PaneBox[
+                  "\"flow rate of fluid\"", 
+                   BaseStyle -> {{
+                    BaselinePosition -> Baseline, FontColor -> 
+                    GrayLevel[0.3]}, LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                  Global`TagBoxWrapper["Label"]], 
+                 TagBox[
+                  GridBox[{{
+                    StyleBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["0.743", 
+                    Global`TagBoxWrapper[
+                    "StringBoxes" -> "0.743", "SRString" -> "0.743"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{"\"mL\"", "\[InvisibleSpace]", "\"/\"", 
+                    "\[InvisibleSpace]", "\"s\""}], FontFamily -> "Helvetica",
+                     FontSize -> Smaller]}], Identity], #& , SyntaxForm -> 
+                    Dot], "  ", 
+                    StyleBox[
+                    
+                    RowBox[{
+                    "\"(\"", "\[NoBreak]", "\"milliliters per second\"", 
+                    "\[NoBreak]", "\")\""}], {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False]}, {
+                    StyleBox[
+                    TemplateBox[{
+                    StyleBox["\"=\"", {
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\" \"", 
+                    StyleBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["0.706", 
+                    Global`TagBoxWrapper[
+                    "StringBoxes" -> "0.706", "SRString" -> "0.706"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{"\"gal\"", "\[InvisibleSpace]", "\"/\"", 
+                    "\[InvisibleSpace]", "\"h\""}], FontFamily -> "Helvetica",
+                     FontSize -> Smaller]}], Identity], #& , SyntaxForm -> 
+                    Dot], "  ", 
+                    StyleBox[
+                    
+                    RowBox[{"\"(\"", "\[NoBreak]", "\"gallons per hour\"", 
+                    "\[NoBreak]", "\")\""}], {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False]}, "RowDefault"], LineIndent -> 
+                    0]}, {
+                    StyleBox[
+                    TemplateBox[{
+                    StyleBox["\"=\"", {
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}], "\" \"", 
+                    StyleBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox[
+                    TagBox[
+                    RowBox[{
+                    TagBox["6190", 
+                    Global`TagBoxWrapper[
+                    "StringBoxes" -> "6190", "SRString" -> "6190"]], 
+                    "\[NoBreak]", 
+                    StyleBox[
+                    RowBox[{}], FontFamily -> "Helvetica", FontSize -> 
+                    Smaller], "\[InvisibleSpace]", "\[ThickSpace]", 
+                    "\[InvisibleSpace]", 
+                    StyleBox[
+                    
+                    RowBox[{"\"gal\"", "\[InvisibleSpace]", "\"/\"", 
+                    "\[InvisibleSpace]", "\"yr\""}], FontFamily -> 
+                    "Helvetica", FontSize -> Smaller]}], Identity], #& , 
+                    SyntaxForm -> Dot], "  ", 
+                    StyleBox[
+                    
+                    RowBox[{"\"(\"", "\[NoBreak]", "\"gallons per year\"", 
+                    "\[NoBreak]", "\")\""}], {
+                    FontFamily -> "Helvetica", FontSize -> Smaller, 
+                    GrayLevel[0.6], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}]}], "Unit", SyntaxForm -> Dot], 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0, ZeroWidthTimes -> False]}, "RowDefault"], LineIndent -> 
+                    0]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                   BaselinePosition -> 1, DefaultBaseStyle -> "Column", 
+                   GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                  "Column"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {Left, Left}, "Rows" -> {{Baseline}}}, 
+               AutoDelete -> False, 
+               GridBoxBackground -> {"Columns" -> {None, None}}, 
+               GridBoxFrame -> {"Columns" -> {{True}}, "Rows" -> {{True}}}, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {"Columns" -> {{1.5}, 2}, "Rows" -> {{1}}}, 
+               FrameStyle -> GrayLevel[0.84], BaselinePosition -> Automatic, 
+               AllowScriptLevelChange -> False], "Grid"], 
+             LineSpacing -> {0.9, 0, 1.5}, LineIndent -> 0, StripOnInput -> 
+             False], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,numberdata,\
+quantitydata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {"\n   ", 
+       XMLElement["expressiontype", {"name" -> "Grid"}, {}], "\n  "}], 
+     XMLElement["states", {"count" -> "2"}, {
+       XMLElement[
+       "state", {
+        "name" -> "More units", "input" -> "Result__More units"}, {}], 
+       XMLElement[
+       "state", {
+        "name" -> "Step-by-step solution", "input" -> 
+         "Result__Step-by-step solution", "stepbystep" -> "true"}, {}]}]}], 
+   Typeset`pod3$$ = XMLElement[
+   "pod", {"title" -> "Equation", "scanner" -> "Formula", "id" -> "Equation", 
+     "position" -> "300", "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Column[{FormulaData[{\"PoiseuillesLaw\", \"Radius\"}, {\"\[Eta]\" -> \
+Quantity[8.9\[Times]10^-6, \"Pascals\" \"Seconds\"], \"R\" -> Quantity[0.125, \
+\"Millimeters\"], \"L\" -> Quantity[1, \"Meters\"], \"\[CapitalDelta]\
+\[InvisibleSpace]P\" -> Quantity[10, \"PoundsForce\"/\"Inches\"^2]}], \
+FormulaData[{\"PoiseuillesLaw\", \"Radius\"}, \"QuantityVariableTable\"]}]"}], 
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             GridBox[{{
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    TagBox[
+                    GridBox[{{
+                    TagBox[
+                    PaneBox[
+                    StyleBox[
+                    TemplateBox[{
+                    TagBox[
+                    TagBox[
+                    RowBox[{"Q", "\[LongEqual]", 
+                    FractionBox[
+                    RowBox[{"\[Pi]", " ", 
+                    SuperscriptBox["R", "4"], " ", 
+                    "\[CapitalDelta]\[InvisibleSpace]P"}], 
+                    RowBox[{"8", " ", "\[Eta]", " ", "L"}]]}], HoldForm], 
+                    PolynomialForm[#, TraditionalOrder -> False]& ]}, 
+                    "RowDefault"], {
+                    GrayLevel[0], LinebreakAdjustments -> {1, 100, 1, 0, 100},
+                     LineIndent -> 0}], 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    Global`TagBoxWrapper["Label"]], "\[SpanFromLeft]"}, {
+                    TagBox[
+                    PaneBox[
+                    "Q", BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    Global`TagBoxWrapper["Label"]], 
+                    "\"flow rate of fluid\""}, {
+                    TagBox[
+                    PaneBox[
+                    "\[Eta]", 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    Global`TagBoxWrapper["Label"]], "\"dynamic viscosity\""}, {
+                    TagBox[
+                    PaneBox[
+                    "R", BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    Global`TagBoxWrapper["Label"]], "\"radius of pipe\""}, {
+                    TagBox[
+                    PaneBox[
+                    "L", BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    Global`TagBoxWrapper["Label"]], "\"length of pipe\""}, {
+                    TagBox[
+                    PaneBox[
+                    "\[CapitalDelta]\[InvisibleSpace]P", 
+                    BaseStyle -> {{
+                    Alignment -> Left, BaselinePosition -> Baseline, 
+                    FontColor -> GrayLevel[0.3]}, 
+                    LineSpacing -> {0.9, 0, 1.5}, 
+                    LinebreakAdjustments -> {1, 10, 10000, 0, 100}, 
+                    TextAlignment -> Left}, BaselinePosition -> Baseline], 
+                    Global`TagBoxWrapper["Label"]], 
+                    "\"pressure difference\""}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {Left, Left}, "Rows" -> {{Baseline}}, 
+                    "ItemsIndexed" -> {{1, 1} -> {Left, Baseline}, {1, 2} -> {
+                    Left, Baseline}}}, AutoDelete -> False, 
+                    GridBoxBackground -> {
+                    "Columns" -> {None, None}, "Rows" -> {None, None}}, 
+                    GridBoxFrame -> {
+                    "Columns" -> {{True}}, "Rows" -> {{True}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{1.5}, 2}, "Rows" -> {{1}}}, FrameStyle -> 
+                    GrayLevel[0.84], BaselinePosition -> Automatic, 
+                    AllowScriptLevelChange -> False], "Grid"], 
+                    LineSpacing -> {0.9, 0, 1.5}, LineIndent -> 0, 
+                    StripOnInput -> False]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+              DefaultBaseStyle -> "Column", 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Column"], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,computabledata,formatteddata,formuladata"}]}], 
+     XMLElement["expressiontypes", {"count" -> "1"}, {"\n   ", 
+       XMLElement["expressiontype", {"name" -> "Grid"}, {}], "\n  "}]}], 
+   Typeset`aux1$$ = {True, False, {False}, True}, Typeset`aux2$$ = {
+   True, False, {False}, True}, Typeset`aux3$$ = {True, False, {False}, True},
+    Typeset`asyncpods$$ = {}, Typeset`nonpods$$ = {
+    XMLElement["assumptions", {"count" -> "6"}, {
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaSolve", "template" -> "Calculate ${desc1}", "count" -> 
+        "5"}, {
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.Q", "desc" -> "flow rate of fluid", 
+          "input" -> "*FS-_**PoiseuillesLaw.Q--"}, {}], 
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.R", "desc" -> "radius of pipe", "input" -> 
+          "*FS-_**PoiseuillesLaw.R--"}, {}], 
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.dP", "desc" -> "pressure difference", 
+          "input" -> "*FS-_**PoiseuillesLaw.dP--"}, {}], 
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.eta", "desc" -> "dynamic viscosity", 
+          "input" -> "*FS-_**PoiseuillesLaw.eta--"}, {}], 
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.L", "desc" -> "length of pipe", "input" -> 
+          "*FS-_**PoiseuillesLaw.L--"}, {}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "desc" -> "dynamic viscosity", "current" -> 
+        "1", "count" -> "1"}, {
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.eta", "desc" -> "0.0000089 Pa s", "valid" -> 
+          "true", "input" -> "*F.PoiseuillesLaw.eta-_0.0000089+Pa+s"}, {}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "desc" -> "radius of pipe", "current" -> 
+        "1", "count" -> "1"}, {
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.R", "desc" -> "0.125 mm", "valid" -> 
+          "true", "input" -> "*F.PoiseuillesLaw.R-_0.125+mm"}, {}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "desc" -> "length of pipe", "current" -> 
+        "1", "count" -> "1"}, {
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.L", "desc" -> "1 m", "valid" -> "true", 
+          "input" -> "*F.PoiseuillesLaw.L-_1+m"}, {}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariable", "desc" -> "pressure difference", 
+        "current" -> "1", "count" -> "1"}, {
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.dP", "desc" -> "10 psi", "valid" -> "true",
+           "input" -> "*F.PoiseuillesLaw.dP-_10+psi"}, {}]}], 
+      XMLElement[
+      "assumption", {
+       "type" -> "FormulaVariableOption", "template" -> 
+        "Assuming ${desc1}. Use ${desc2} instead", "count" -> "2"}, {
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.R", "desc" -> "radius of pipe", "input" -> 
+          "*FVarOpt-_**PoiseuillesLaw.R--"}, {}], 
+        XMLElement[
+        "value", {
+         "name" -> "PoiseuillesLaw.d", "desc" -> "pipe diameter", "input" -> 
+          "*FVarOpt-_**PoiseuillesLaw.d--"}, {}]}]}], 
+    XMLElement["warnings", {"count" -> "1"}, {
+      XMLElement[
+      "spellcheck", {
+       "word" -> "Poiseiulle", "suggestion" -> "poiseuille", "text" -> 
+        "Interpreting \"Poiseiulle\" as \"poiseuille\""}, {}]}]}, 
+   Typeset`initdone$$ = True, Typeset`queryinfo$$ = {
+   "success" -> "true", "error" -> "false", "numpods" -> "3", "datatypes" -> 
+    "Formula", "timedout" -> "", "timedoutpods" -> "", "timing" -> 
+    "2.0140000000000002", "parsetiming" -> "1.341", "parsetimedout" -> 
+    "false", "recalculate" -> "", "id" -> 
+    "MSP1011918i4gcaa550edc09000059bcie6f0fb52698", "host" -> 
+    "https://www4c.wolframalpha.com", "server" -> "50", "related" -> 
+    "https://www4c.wolframalpha.com/api/v1/relatedQueries.jsp?id=\
+MSPa1012018i4gcaa550edc090000525c037f46822i352883977977439258118", "version" -> 
+    "2.6"}, Typeset`sessioninfo$$ = {
+   "TimeZone" -> 2., 
+    "Date" -> {2020, 2, 4, 13, 20, 32.5353957`9.264930994930788}, "Line" -> 
+    44, "SessionID" -> 33507521154338003455}, Typeset`showpods$$ = {1, 2, 3}, 
+   Typeset`failedpods$$ = {}, Typeset`chosen$$ = {
+   "Result", "Result", 1, 1, "Content"}, Typeset`open$$ = True, 
+   Typeset`newq$$ = "Poiseiulle flow"}, 
+   DynamicBox[ToBoxes[
+     AlphaIntegration`FormatAlphaResults[
+      Dynamic[{
+       1, {Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$}, {
+        Typeset`aux1$$, Typeset`aux2$$, Typeset`aux3$$}, Typeset`chosen$$, 
+        Typeset`open$$, Typeset`elements$$, Typeset`q$$, Typeset`opts$$, 
+        Typeset`nonpods$$, Typeset`queryinfo$$, Typeset`sessioninfo$$, 
+        Typeset`showpods$$, Typeset`failedpods$$, Typeset`newq$$}]], 
+     StandardForm],
+    ImageSizeCache->{560., {1265., 19.}},
+    TrackedSymbols:>{Typeset`showpods$$, Typeset`failedpods$$}],
+   DynamicModuleValues:>{},
+   Initialization:>If[
+     Not[Typeset`initdone$$], Null; WolframAlphaClient`Private`doAsyncUpdates[
+       Hold[{Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$}], 
+       Typeset`asyncpods$$, 
+       Dynamic[Typeset`failedpods$$]]; Typeset`asyncpods$$ = {}; 
+     Typeset`initdone$$ = True],
+   SynchronousInitialization->False],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "WolframAlphaShortInput",
+ CellLabel->"In[43]:=",ExpressionUUID->"67b75914-2b53-4efb-b891-6c3e9e8f2914"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"poiseflow", " ", "=", " ", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Pi", "*", 
+       SuperscriptBox[
+        RowBox[{"Quantity", "[", 
+         RowBox[{
+          RowBox[{"0.25", "/", "2"}], ",", " ", "\"\<Millimeters\>\""}], 
+         "]"}], "4"], "*", 
+       RowBox[{"UnitConvert", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Quantity", "[", 
+           RowBox[{"x", ",", " ", "\"\<psi\>\""}], "]"}], "-", " ", 
+          RowBox[{"Quantity", "[", 
+           RowBox[{"0", ",", " ", "\"\<Hectopascals\>\""}], "]"}]}], ",", 
+         " ", "\"\<Pascals\>\""}], "]"}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"8", "*", 
+       RowBox[{"Quantity", "[", 
+        RowBox[{
+         RowBox[{"8.9", "*", 
+          SuperscriptBox["10", 
+           RowBox[{"-", "6"}]]}], ",", " ", 
+         RowBox[{"\"\<Pascals\>\"", "*", "\"\<Seconds\>\""}]}], "]"}], "*", 
+       RowBox[{"Quantity", "[", 
+        RowBox[{"1.1", ",", " ", "\"\<Meters\>\""}], "]"}]}], ")"}]}], ",", 
+    " ", 
+    RowBox[{"\"\<Milliliters\>\"", "/", "\"\<Minutes\>\""}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7898041362658663`*^9, 3.7898042931830883`*^9}, {
+   3.7898043479177084`*^9, 3.7898045018020096`*^9}, {3.7898046189805384`*^9, 
+   3.7898046542871304`*^9}, {3.789804932399101*^9, 3.789804952219099*^9}, {
+   3.7898049855150576`*^9, 3.789804991218807*^9}, {3.789805047417414*^9, 
+   3.7898050482622085`*^9}, {3.7898051180025835`*^9, 
+   3.7898051193709245`*^9}, {3.7898053412863226`*^9, 
+   3.7898054333619585`*^9}, {3.7898058755201797`*^9, 3.789805875682691*^9}, {
+   3.7898062338091984`*^9, 3.7898062436448774`*^9}, {3.789806456236193*^9, 
+   3.789806467875044*^9}, {3.7898065102257867`*^9, 3.7898065262937584`*^9}, {
+   3.789806595058451*^9, 3.789806596455694*^9}, 3.789806639283099*^9},
+ CellLabel->"In[92]:=",ExpressionUUID->"65221d45-b5e7-4c8e-9a62-2082ddf82088"],
+
+Cell[BoxData[
+ TemplateBox[{
+  RowBox[{"4.051235402778858`", " ", "x"}],
+   RowBox[{"\"mL\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     "\"min\""}],"milliliters per minute",FractionBox[
+   "\"Milliliters\"", "\"Minutes\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{
+  3.7898045794283423`*^9, {3.7898046313733835`*^9, 3.7898046572471647`*^9}, {
+   3.7898049437796535`*^9, 3.7898049531436048`*^9}, 3.789805004241911*^9, 
+   3.7898050489951887`*^9, 3.789805119952409*^9, 3.7898053441486588`*^9, 
+   3.7898053825369196`*^9, {3.7898054266519527`*^9, 3.789805434497918*^9}, 
+   3.789805879569292*^9, 3.78980647063066*^9, 3.78980652748457*^9, 
+   3.789806597068022*^9, 3.789806639899443*^9},
+ CellLabel->"Out[92]=",ExpressionUUID->"7a447941-acd0-4eaf-9a5c-3bf8193d7a1b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"poiseflow2", " ", "=", " ", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Pi", "*", 
+       SuperscriptBox[
+        RowBox[{"Quantity", "[", 
+         RowBox[{
+          RowBox[{"0.25", "/", "2"}], ",", " ", "\"\<Millimeters\>\""}], 
+         "]"}], "4"], "*", 
+       RowBox[{"UnitConvert", "[", 
+        RowBox[{
+         RowBox[{"Quantity", "[", 
+          RowBox[{"x", ",", " ", "\"\<psi\>\""}], "]"}], ",", " ", 
+         "\"\<Pascals\>\""}], "]"}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"8", "*", 
+       RowBox[{"Quantity", "[", 
+        RowBox[{
+         RowBox[{"8.9", "*", 
+          SuperscriptBox["10", 
+           RowBox[{"-", "6"}]]}], ",", " ", 
+         RowBox[{"\"\<Pascals\>\"", "*", "\"\<Seconds\>\""}]}], "]"}], "*", 
+       RowBox[{"Quantity", "[", 
+        RowBox[{"0.8", ",", " ", "\"\<Meters\>\""}], "]"}]}], ")"}]}], ",", 
+    " ", 
+    RowBox[{"\"\<Milliliters\>\"", "/", "\"\<Minutes\>\""}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.789805822032211*^9, 3.7898058303220916`*^9}},
+ CellLabel->"In[80]:=",ExpressionUUID->"fd44af64-f483-488d-8bbf-70f8a106c1cb"],
+
+Cell[BoxData[
+ TemplateBox[{
+  RowBox[{"5.570448678820932`", " ", "x"}],
+   RowBox[{"\"mL\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     "\"min\""}],"milliliters per minute",FractionBox[
+   "\"Milliliters\"", "\"Minutes\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.7898058319397078`*^9},
+ CellLabel->"Out[80]=",ExpressionUUID->"dc015ef4-9392-4f9b-9b48-0e91817a8175"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.789806044863642*^9, 
+  3.789806047269253*^9}},ExpressionUUID->"24772f19-06f4-4670-872b-\
+fabbaf7e9982"],
+
+Cell["\<\
+The two gauges do not show exactly the same flows at the same indicated \
+pressures, but the theoretical calculations suggest that the difference in \
+flows can be attributed to difference in the length of the columns.\
+\>", "Text",
+ CellChangeTimes->{{3.7898060501455526`*^9, 3.7898061411999354`*^9}, {
+  3.7898062113383026`*^9, 3.789806211861909*^9}, {3.789807691362645*^9, 
+  3.789807706294694*^9}},ExpressionUUID->"4a8b6994-0d08-4bca-aad2-\
+e11b111c7586"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["\<\
+The gauges are precise enough for repeatable flow settings, but for accurate \
+flow measurement, set the FID flame hydrogen to zero and measure carrier gas \
+flow at the detector.\
+\>", "Text",
+ CellChangeTimes->{{3.7898068561170373`*^9, 
+  3.7898070169198728`*^9}},ExpressionUUID->"8e9a2322-1863-4956-994e-\
+1e33396f21a0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell["\<\
+When setting the gas flows, use the flow through the detector as an \
+indication.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.789807043935601*^9, 3.789807105769226*^9}, {
+  3.789807719220121*^9, 
+  3.7898077235864973`*^9}},ExpressionUUID->"d16761dc-5b97-4121-93c6-\
+f70e3117ac25"]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+WindowStatusArea->None,
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 498, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1339, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1497, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1757, 51, 414, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2196, 61, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2358, 66, 1319, 20, 55, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3714, 91, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[3876, 96, 308, 7, 33, "Text",ExpressionUUID->"58017d69-3afa-41b2-8673-1b5e1d4c2e55"],
+Cell[4187, 105, 327, 7, 33, "Text",ExpressionUUID->"d500d134-6242-4d65-9a05-5552b52d09e4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4551, 117, 262, 4, 69, "Section",ExpressionUUID->"313534f2-78b3-47e4-a3e5-f406dd67943e"],
+Cell[4816, 123, 173, 3, 33, "Text",ExpressionUUID->"3c284fc6-367b-4722-9de9-07b33c753d3b"],
+Cell[4992, 128, 387, 9, 39, "Input",ExpressionUUID->"9a92db0c-faec-4781-8bf4-e596b14f4dd6"],
+Cell[CellGroupData[{
+Cell[5404, 141, 214, 3, 39, "Input",ExpressionUUID->"79d5d048-8166-4e4e-a664-4235839b31db"],
+Cell[5621, 146, 16480, 449, 138, "Output",ExpressionUUID->"c570f525-257f-423e-a5cd-8eb39729caff"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22138, 600, 557, 15, 39, "Input",ExpressionUUID->"2d37b734-c6e9-411b-ad1a-2ec14a692504"],
+Cell[22698, 617, 271, 5, 39, "Output",ExpressionUUID->"a7aff1cd-fdf4-44fa-878b-52d6cfd51461"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23006, 627, 426, 11, 39, "Input",ExpressionUUID->"937baa8c-6c65-42da-912c-5a9af9d0e281"],
+Cell[23435, 640, 2048, 52, 78, "Output",ExpressionUUID->"1c3c9fbf-6217-4520-ac5b-86aaf00809fb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25520, 697, 953, 20, 154, "Input",ExpressionUUID->"c52b73cb-e088-4a13-8b5e-cd2304770c15"],
+Cell[26476, 719, 3670, 78, 350, "Output",ExpressionUUID->"02bbe66b-63c3-4675-90b9-93d5991e3908"]
+}, Open  ]],
+Cell[30161, 800, 167, 3, 33, "Text",ExpressionUUID->"aba6bdd6-a9af-444c-9aa3-8407d4967303"],
+Cell[30331, 805, 435, 10, 39, "Input",ExpressionUUID->"b8e65ef5-50ec-4e0e-87a9-d16195033dc0"],
+Cell[CellGroupData[{
+Cell[30791, 819, 267, 5, 39, "Input",ExpressionUUID->"4be98d2d-4406-470f-b258-71b497602a85"],
+Cell[31061, 826, 5796, 119, 882, "Output",ExpressionUUID->"77276327-1fa8-447e-9d79-46714d167a07"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36894, 950, 298, 6, 39, "Input",ExpressionUUID->"102a5a02-4822-4e00-a4d1-bd6e2601c1e1"],
+Cell[37195, 958, 342, 6, 39, "Output",ExpressionUUID->"40554a29-d749-432e-a899-21183b442f56"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37574, 969, 466, 8, 39, "Input",ExpressionUUID->"b10d306c-d8ea-4c67-bb33-34e4222c4323"],
+Cell[38043, 979, 522, 10, 39, "Output",ExpressionUUID->"5dd7e337-d9cb-4359-b767-b851895cfdb0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38602, 994, 357, 9, 39, "Input",ExpressionUUID->"f0d3ffff-a3db-4e2e-9acd-c5b8cfd0b069"],
+Cell[38962, 1005, 293, 6, 39, "Output",ExpressionUUID->"6714c11c-8a75-40a6-9c05-dc35dbe103b8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39292, 1016, 514, 10, 39, "Input",ExpressionUUID->"4aaefc36-9163-47c3-a696-d8ec6fec6cf5"],
+Cell[39809, 1028, 475, 9, 39, "Output",ExpressionUUID->"04a80c34-d0a9-4d62-b79b-c288afcc10df"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40321, 1042, 413, 9, 39, "Input",ExpressionUUID->"f7fda915-a782-4ab3-8226-a3a337d6341f"],
+Cell[40737, 1053, 860, 19, 39, "Output",ExpressionUUID->"b9b32a9a-3afd-470e-8ecc-408fd60bdbc8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41634, 1077, 539, 10, 39, "Input",ExpressionUUID->"df01ce0a-31a6-46bd-a071-a51df9e232a2"],
+Cell[42176, 1089, 421, 7, 39, "Output",ExpressionUUID->"0dd87239-19f7-4e56-ad4d-5bd5c5a76ef5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42634, 1101, 2084, 45, 211, "Input",ExpressionUUID->"74c3b5e0-ee32-4651-87ac-557ef04da337"],
+Cell[44721, 1148, 37241, 742, 380, "Output",ExpressionUUID->"5288fe88-875c-4c21-9a4d-fb50604582ab"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81999, 1895, 275, 5, 39, "Input",ExpressionUUID->"71b09767-cbea-4d84-be4b-9e86c8c701d6"],
+Cell[82277, 1902, 922, 28, 69, "Output",ExpressionUUID->"49a20767-25db-417d-8d76-7a0a981585e5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[83236, 1935, 171, 3, 33, "Subsection",ExpressionUUID->"064cafd4-80f5-4e97-93a5-30ca03e057f9"],
+Cell[83410, 1940, 36845, 746, 654, "WolframAlphaShortInput",ExpressionUUID->"a02d4947-974c-498f-861a-c83f6cc4221e"],
+Cell[120258, 2688, 33560, 682, 1301, "WolframAlphaShortInput",ExpressionUUID->"67b75914-2b53-4efb-b891-6c3e9e8f2914"],
+Cell[CellGroupData[{
+Cell[153843, 3374, 1946, 43, 66, "Input",ExpressionUUID->"65221d45-b5e7-4c8e-9a62-2082ddf82088"],
+Cell[155792, 3419, 783, 14, 48, "Output",ExpressionUUID->"7a447941-acd0-4eaf-9a5c-3bf8193d7a1b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[156612, 3438, 1169, 31, 86, "Input",ExpressionUUID->"fd44af64-f483-488d-8bbf-70f8a106c1cb"],
+Cell[157784, 3471, 388, 8, 48, "Output",ExpressionUUID->"dc015ef4-9392-4f9b-9b48-0e91817a8175"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[158233, 3486, 155, 3, 69, "Section",ExpressionUUID->"24772f19-06f4-4670-872b-fabbaf7e9982"],
+Cell[158391, 3491, 469, 8, 55, "Text",ExpressionUUID->"4a8b6994-0d08-4bca-aad2-e11b111c7586"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[158897, 3504, 254, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[159154, 3510, 333, 7, 33, "Text",ExpressionUUID->"8e9a2322-1863-4956-994e-1e33396f21a0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[159524, 3522, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[159691, 3527, 290, 7, 27, "ItemNumbered",ExpressionUUID->"d16761dc-5b97-4121-93c6-f70e3117ac25"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

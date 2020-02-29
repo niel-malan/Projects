@@ -1,0 +1,546 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24260,        538]
+NotebookOptionsPosition[     20117,        461]
+NotebookOutlinePosition[     21101,        493]
+CellTagsIndexPosition[     21058,        490]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["Fast GC temperature program", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.7910163342134733`*^9, 
+   3.7910163393008776`*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["18 February 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.791016343941473*^9, 
+   3.7910163541063023`*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+The best temperature program would be one that is controlled all the way. \
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.7910163615703907`*^9, 3.7910164062808423`*^9}, {3.791016470905106*^9, 
+   3.7910164814439363`*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"],
+
+Cell["\<\
+Experience have shown that the temperature program must start as soon as \
+possible. Every moment that is spent at constant temperature reduces the \
+sharpness of the GC peaks.\
+\>", "Text",
+ CellChangeTimes->{{3.7910164589191437`*^9, 3.7910164686291943`*^9}, {
+  3.791020076427625*^9, 3.791020147804883*^9}, {3.791020461044434*^9, 
+  3.7910204697611313`*^9}, {3.791020502700117*^9, 
+  3.791020513543106*^9}},ExpressionUUID->"9767b289-0364-4992-8010-\
+7fed4f9b1a9f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell["\<\
+A simulated SFC\[Times]GC chromatogram was recorded. It contained 18 GC runs. \
+The temperature program was determined by tinkering with settings during a \
+previous run.\
+\>", "Text",
+ CellChangeTimes->{{3.7910201523553047`*^9, 3.791020200020897*^9}, {
+  3.791020237433894*^9, 3.791020294112629*^9}, {3.7910203322028155`*^9, 
+  3.7910203401565638`*^9}},ExpressionUUID->"3bb482d3-99c9-451d-bd36-\
+5bbc4c4fdb41"],
+
+Cell["\<\
+
+2020_02_18-134737.dat\
+\>", "Text",
+ CellChangeTimes->{{3.7910202228837867`*^9, 
+  3.7910202250270576`*^9}},ExpressionUUID->"20dd2e3e-2e22-475a-8a25-\
+887c2ea3ed61"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      NCache[
+       Rational[1, 90], 0.011111111111111112`]], AbsoluteThickness[1.6], 
+     LineBox[CompressedData["
+1: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
+moUxzRZPvuf//D98unN7
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[
+      NCache[
+       Rational[1, 90], 0.011111111111111112`]], AbsoluteThickness[1.6], 
+     LineBox[CompressedData["
+1:eJw11wk4ldkbAPCbLeHaye7em0IbSpZm6rwqIky0UFr+UibRYpQlSfe6ltYh
+jTRkabKkJNlGNKVS1JQwSkpc02ZaRLYrS//3PPfrPk9Pz+/5zvd95zvnXQ6u
+355V/lIsFus5/qP/s1gPzjlWlJIfyYmXwbt2AovVyHsxcoMkXNJY8X4Tdbae
+xcta0t12yMjvAvX9sBtZD0iM81bbkVDqsvqwG4/Jy+F4Pf8z1G0Nw6v/IXHD
+6Quysqib8HlPyTZdkcuP83cBi68urHnQRsQx08/nVqFZ8oUGPu3kbPzhD6VO
+u5nxHcTHRfN6UAMaXuWm14pIqEucrObKPcCqSa/lFP9LsuKtKionB6Mj/pth
+9ZrYqxlPK/wJDQqt54PfEJljvS9UMtB8zaLlXW+J0aM8jekj1Hh7SDexLDNb
+rR32C75vrKCv+T+SsqdTJrYPzf+cf8/1Ayl7fhM07EOY938kc2enb/aMoz62
+893oJ2J1OSOqtg7NOhR4fd9nsqjFc4v1a7QoiizY3EsMNtRPsv+M9j2Rulu9
+j7wxFlxSnkBz8PPP9RGN++y6tXp7cf6utkccvhBLU7HFiB11Fq73F6IoPXIt
+wZu6f7wlop8srpgyqLUfTbfDZIDwresLzbLo9Yf4GyAuIb/JLapD81OWHts5
+SJab3XEr6UFzrHCBh0hD64oZrfr7cD70e4bI9EuPOPWuaH7AyU9Rw0Sn3sOi
+JhydvbwrUlNMuOELQ0+d28c8X0zmupfPvvmYGpcvYIR4zyv02fKVPi/x9qDZ
+V5Kd3VJ63zwUn+fg+6bxK6l3a1vQ6Y3OvocfOErW65tM0U2g/oQLNEa0+nLK
+4oupd2NAjJGvsgpPwlvQokjcsHFS+EOZ7RQxfZ42BtQ4WTrzbeDP08LQuNyn
+JojN5+Tu9a5ojpwgZek3EmXbH5wSga7BcO7/Rg5nrhJF5KNhweYqFxaEswN2
+q7SgRSZ4AwtsrAcfKUmFA8vyCE6YBeVJWmO7LNEefqrr7CfBQ8Xdu+f7oenn
+npwE+ScG56ueDmfiaRKQ4e1O+Xe/j5eCVVEa2l2j6F7PSqM4KUgK3ar3o3kE
+fl/wIoVWKfCB5WfavdCAy8OThshLQc2OMRFMvEpD1pz94H4Z3Wu2MfG2NMRq
+XXE61YEupvshA7lNpdlf2PuZ8TJwSzDwSdGRmuafDIQkR0elh6KDcXl0ZKHD
+e/jXB3n7mXiQhdNdWa8/PkcXZ2CAy4Jyztp9QnYk83w5AIe+veX2aNFKDFg5
+MJItfbYyKJIZLwfXpFibhzIimXiaDH90sQ+oPEJn03yaDM+4eRZ5o9/HT4YQ
+M05R+owDzHzk4fqLmLPNXgeYfJGHo57Tm9bHojk+237olAd2teHjW3/R8RiO
+ZAq8TX6luKIXzcd0qpoCRf/VHemZFQWsRprvCqCevenRbX90MX5+lgLU7FDp
+qElB9za7+6kqwkbtOypv69C+P+NPESZ4A392v0GzZiVotynCqMkBhTHtg8z+
+KcH7otWicVs0dOICKEHydsdU4Xp6HbfzgxKccp/X/j4E3YvlwZYNM3Tnfp11
+Gp2E6S1kg09c5Iad+ejgd6MFfWwY+BTYHFNL78f09lWGSuf+xF9eo0Uj0YHX
+laFZxzDqnFw0xt98/KnAqP0GtTEbdM0gBoAKTDhnv6tyjGb2VwUMJzfGj+9F
+d8+wkp+tCs9PJ95iZ6AvYHx5q8LwWIpXRxH6DN0PVbh35Z8GVi7ajn6PKgSm
+fuj2v43mY/m5qwo11fMv8NvRwZj/Y6qgID/qbzkezcSnGnjcCtr+t94hfB9+
+zio1+LZWtP0uQftWuSjFqIFCjJb2oDs1Ll+ZGnQcz+laEnSIWV81yL0f2Fsh
+QMtjeiqqw7zmTP3c8+h6Wu/UQUPcfVOv5ZBkfYPUoU9s4+HViW4cXv0qVx3c
+TK08qifoeFqu1eFOTvmm7ep8YKli/eRqwP3WO8O+09GcuA+edhrgpCx2XGyD
+pu1kmwZsq7OdlGXHl9TrAxogcy/joLk1ep3ynJIMDTBR9Jauc+FL6sN9DbCx
+j20w90LTdP+kAXHLjj32DOBL1m+qJiwOLLp4YzualkuiCR3tDoK+cHodt9df
+E84Hdisp8fmS9YzC61VLZjn+Rt9H660mJNtpf8tN40vy8aMmNPI4a6ZV8iX1
+TEMLspJvxR8pRevQ/qkFNWm2lp211FhuIrVgf9jQnZUP0Yex/RRoAcfct7NS
+xJes5y0tCJcuaf31Ax2P7UFOG0K4hlvC+vmS/FmoDY1XHj+MmyLA+MBysF0b
+YoVR4yZ6Aqa+aUP8hnxRozG6GJevWhtqPR1+6p2GfobTeYW+2GPVYY2m6Sc/
+FYI1XQelHdBmtP5OhfprO+5ddBcw850KSuZWrfkbBcx8p0LUT6rEYBf6Ql+z
++79T4fSRuGy1SAETbzrQ0pizo+A4uhHbjZsOdIf/3XYyDV2D5SNWByLJ3/zg
+AjofnMBVHYj5q//lULmAqR86cKE46qVy7ff56UJ4qXpnbgPaGcvbXF2IXeu/
+N7KNXj+lI+OlCyL/x9Vhr9D0x9eF4669h9p7BJL8KtQFse/7ZrYYTdO/SRde
+Q/MLd5kYyXiWHgSk/WB5VBkdcQMbth5YC6rzJnRjJPEaoAc7g77K9JvGSOpR
+kh50r99SxrdBP6P5rwfaRkkhXYTeT/uJHvjY3jZNcEaLMfz19cG4aV15qTc6
+m55H9CGv1JYX7Y/uxvPZfn1IZvnFXw2OkZwHcvSh+FlLrecBOr+Lfc2P9KHi
+5ETqkgR0JZ4fxPrw8smyys3J6MMfsEEZQNimvJ6zmTGSeuBoAJmzpeeZ5TPz
+2YLXP6uueX4FbYft87gBtLulrXtXiabDKwxgfPDe1R130c6YziID6Hx44tr5
+RzHM+hvCxahC1sRzdBLt94bQLbQe1XqDtqQJagiWDRbLMnuZ9eQbwgWnr38e
+F9P5uihJXTKEnRylhaPSQsl+PTWESL9lW3XYaHo8nTAEU31dqXE9tDy2w0VG
+UKRCVoaaCpn8N4Knjh7NhRboStofjIAf9/t7J4Km4fbCCAJ3sLJ3uAqZ+RpD
+SWramlAv9Bks52AMJxfNzV2wWcj0T2NQSr2ZfmSrkDk/GMPcmuPK1oFCJl+M
+QXNyf4lgD1qM2ztgDN2GkeaXItCH8XihygH57Ekim4NCJh45oPTSuIAdiw7G
+488KDkQPNgS9O4w2eYEBwoExf+dnAYloO6z/0RwIk/WMeE7dTt/PAZndc1xz
+f0PPLsGGy4G3dz9Klaegl2G9q+bAiNdeX60M5v2NHEh1G7rclM68v4cDA4NH
+e15koT9iOMhygQux8UvOoXfSfs2FX4t0zjpcFDL9hgtfXJf0KOUKJfuFo596
+3Wbb0efJYL1fzwVwY5nK0fF0v0O50FMpuC1VyLw/iQsmC7t4G4uETH3nQrvL
+4qqhfGa9a7iQ5v2kx/mKUHIeaeHCvcHZK6yuos9iP/vChW1BedyBEub9LB6s
+Y1lsc7osZPo9D2Ry3z0JKqfXn+CO8oDbM56ZUCpk+gMPEnM0PSIq0bE0gHlQ
+6lfgnknns4/WAx4scLabuaf8+37zQMd+VmsUdTYeJw/y4M7/fp/Ju/b9e3jg
+UL7IzKcYnUP/HuFB00D5InEps553ebCpjtPhWMbs1xMeOJn/YZv1F3oNLSg8
+mDkrOJFVgcbuWT/Eg6Nd42knr6Oxmq1kT4NfyucopuP9/wev4biv
+      "]]}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 202.25},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->{663., Automatic},
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox["\"TColumn Setpoint\"", TraditionalForm],
+  PlotRange->{{0, 13}, {200, 650}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Text",
+ CellChangeTimes->{
+  3.791016507103426*^9},ExpressionUUID->"87c33ad8-74b6-45fb-89c0-\
+97bcba55b74e"]
+}, Open  ]],
+
+Cell["Calculations", "Section",
+ CellChangeTimes->{{3.7854911900001135`*^9, 3.7854912032646475`*^9}, {
+  3.785589805500736*^9, 3.7855898070067077`*^9}, {3.7860967323396125`*^9, 
+  3.7860967370230837`*^9}},ExpressionUUID->"313534f2-78b3-47e4-a3e5-\
+f406dd67943e"],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell["\<\
+The coaxial heater has no control over the temperature at the low end. During \
+the first half second or so the temperature is constant, at the trapping \
+temperature, probably because there is some residual liquid carbon dioxide \
+left in the space between the column and the wall of the coaxial heater. \
+There is also some residual carbon dioxide blowing out of the length of tube \
+between the cryo stop valve and the metering valve, but opening the metering \
+valve more did not seem to shorten this cold period.\
+\>", "Text",
+ CellChangeTimes->{{3.7910180386968937`*^9, 3.7910180438241415`*^9}, {
+   3.7910184658790913`*^9, 3.791018847520033*^9}, 3.791018992901394*^9, 
+   3.7910195301307344`*^9},ExpressionUUID->"578b8c34-44f2-42e1-a48a-\
+0f0df4d2600d"],
+
+Cell["\<\
+After this constant period there is a period of rapid temperature rise, but \
+to about 25 \[Degree]C. I attribute this rise to the coaxial heater absorbing \
+heat from the environment. \
+\>", "Text",
+ CellChangeTimes->{{3.7910188506107283`*^9, 
+  3.79101903542872*^9}},ExpressionUUID->"3ad0a062-64cd-442e-a83c-\
+156ac30fa30c"],
+
+Cell["\<\
+Then, at around 1 s, there is a short stationary period, where the \
+temperature does not seem to change. I have no ready explanation for this. It \
+might be linked to the melting of water ice on the outside of the column. \
+\>", "Text",
+ CellChangeTimes->{{3.791019039892787*^9, 3.7910191223374205`*^9}, {
+  3.7910195180380583`*^9, 3.791019522317618*^9}, {3.79101955813488*^9, 
+  3.7910195747634363`*^9}},ExpressionUUID->"fe2b32fb-f959-47fb-8a36-\
+5de9028b9b27"],
+
+Cell["\<\
+After this time the resistive heating becomes effective and the temperature \
+rises under PID control. \
+\>", "Text",
+ CellChangeTimes->{{3.7910191449669304`*^9, 3.7910191671157303`*^9}, {
+  3.791019746131379*^9, 3.7910197710877075`*^9}, {3.79102038656252*^9, 
+  3.7910203872536697`*^9}},ExpressionUUID->"b8ea9db2-3e86-49c7-8042-\
+ff63c2ab4b3c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+The temperature program above has been chosen because it keeps the stationary \
+point at around 1s as short as possible. The temperature increase from 300 K \
+to 450 K is ballistic: the coaxial heater gives its maximum  power, and the \
+temperature rises at a rate of about 4500 K/min. Above 450 K the temperature \
+is under PID control. \
+\>", "Text",
+ CellChangeTimes->{{3.791019174845068*^9, 3.79101942059352*^9}, {
+  3.791020540769374*^9, 
+  3.791020541432557*^9}},ExpressionUUID->"13a5401e-e27a-4ea6-a22c-\
+14d2d47d9071"],
+
+Cell["\<\
+The longitudinal temperature gradients that might exist remain unexamined.\
+\>", "Text",
+ CellChangeTimes->{{3.7910199269461784`*^9, 
+  3.791019982296232*^9}},ExpressionUUID->"fdb3eff4-4505-4900-b4f1-\
+e5b973712621"],
+
+Cell["\<\
+The 18 consecutive temperature ramps obtained are very similar and should \
+yield good chromatograms. The first one differs slightly from the rest.\
+\>", "Text",
+ CellChangeTimes->{{3.7910205799087143`*^9, 3.791020661443775*^9}, {
+  3.7910206962597156`*^9, 
+  3.791020717832054*^9}},ExpressionUUID->"6fc07aa0-8dec-4a9e-a175-\
+e9efc9016966"],
+
+Cell["\<\
+Although the temperature program obtained good enough for the chromatographic \
+work, it is fundamentally unsatisfactory: for a great deal of the \
+chromatogram the set point bears no resemblance to the actual temperature \
+obtained.\
+\>", "Text",
+ CellChangeTimes->{{3.791020667649189*^9, 
+  3.791020845756158*^9}},ExpressionUUID->"31339b16-4440-46ae-9b6a-\
+8759dbc8e547"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["\<\
+A temperature program was devised that starts as soon as possible and \
+minimizes periods with constant temperature. \
+\>", "Text",
+ CellChangeTimes->{
+  3.7910197365320377`*^9, {3.7910197837638226`*^9, 3.791019815120973*^9}, {
+   3.791019885261597*^9, 3.7910199019669466`*^9}, {3.791020445528902*^9, 
+   3.7910204511658845`*^9}, {3.79102063802143*^9, 3.7910206487736435`*^9}, {
+   3.7910208516583443`*^9, 
+   3.7910208776608405`*^9}},ExpressionUUID->"6e032a54-c08f-44b9-b4c6-\
+2d6437e63167"],
+
+Cell["\<\
+In its current guise the SFC\[Times]GC instrument is not suitable for the \
+analysis of volatile compounds. \
+\>", "Text",
+ CellChangeTimes->{{3.791020880351648*^9, 
+  3.79102091450137*^9}},ExpressionUUID->"8cee83ee-6a2e-4da6-9355-\
+1544b7b7c301"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"],
+
+Cell[CellGroupData[{
+
+Cell["Design an integrated stop/control valve for cryogen flow. ", \
+"ItemNumbered",
+ CellChangeTimes->{{3.79101947456925*^9, 3.7910195004231443`*^9}, {
+  3.79101960328922*^9, 
+  3.79101960328922*^9}},ExpressionUUID->"a2a2d0f9-1903-48d1-9295-\
+965d0b254119"],
+
+Cell["\<\
+Use a high-speed camera to time the melting and evaporation of water ice, and \
+synchronize it to the temperature measurement.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.79101947456925*^9, 3.7910195004231443`*^9}, {
+  3.791019604237652*^9, 3.7910196657253437`*^9}, {3.7910197080272284`*^9, 
+  3.7910197291497703`*^9}, {3.7910199070324078`*^9, 
+  3.7910199070344*^9}},ExpressionUUID->"7f2dba6e-2ea5-45f4-a97f-96a909d9f5f2"],
+
+Cell["\<\
+Use a high-speed thermal camera to estimate the longitudinal temperature \
+gradients of the coaxial heater. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.79101947456925*^9, 3.7910195004231443`*^9}, {
+  3.791019604237652*^9, 3.7910196657253437`*^9}, {3.7910197080272284`*^9, 
+  3.7910197291497703`*^9}, {3.7910199084316654`*^9, 3.791019918830869*^9}, {
+  3.7910199863224707`*^9, 
+  3.791020030308894*^9}},ExpressionUUID->"37ed614b-c8d8-4468-b2c0-\
+15d34c69284a"],
+
+Cell["\<\
+Switch to a real-time operating system with deterministic timing. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.79101947456925*^9, 3.7910195004231443`*^9}, {
+  3.791019604237652*^9, 3.79101970120247*^9}, {3.7910203990650997`*^9, 
+  3.79102039906614*^9}},ExpressionUUID->"2fd08a18-db85-452d-8e00-\
+e4c2ebae0e73"],
+
+Cell["\<\
+Discuss the best controller for this purpose with an engineer versed in \
+control systems theory. \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.79101947456925*^9, 3.7910195004231443`*^9}, {
+  3.791019604237652*^9, 3.79101970120247*^9}, {3.7910204011206503`*^9, 
+  3.7910204302168665`*^9}},ExpressionUUID->"60f5857e-2d29-4c4e-8c6f-\
+a3b140926d51"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 502, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1343, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1501, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1761, 51, 415, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2201, 61, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2363, 66, 1075, 16, 33, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"],
+Cell[3441, 84, 476, 9, 33, "Text",ExpressionUUID->"9767b289-0364-4992-8010-7fed4f9b1a9f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3954, 98, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[4116, 103, 421, 8, 33, "Text",ExpressionUUID->"3bb482d3-99c9-451d-bd36-5bbc4c4fdb41"],
+Cell[4540, 113, 176, 6, 55, "Text",ExpressionUUID->"20dd2e3e-2e22-475a-8a25-887c2ea3ed61"],
+Cell[4719, 121, 8029, 149, 440, "Text",ExpressionUUID->"87c33ad8-74b6-45fb-89c0-97bcba55b74e"]
+}, Open  ]],
+Cell[12763, 273, 262, 4, 69, "Section",ExpressionUUID->"313534f2-78b3-47e4-a3e5-f406dd67943e"],
+Cell[CellGroupData[{
+Cell[13050, 281, 250, 4, 55, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[13303, 287, 770, 12, 77, "Text",ExpressionUUID->"578b8c34-44f2-42e1-a48a-0f0df4d2600d"],
+Cell[14076, 301, 336, 7, 33, "Text",ExpressionUUID->"3ad0a062-64cd-442e-a83c-156ac30fa30c"],
+Cell[14415, 310, 473, 8, 55, "Text",ExpressionUUID->"fe2b32fb-f959-47fb-8a36-5de9028b9b27"],
+Cell[14891, 320, 355, 7, 33, "Text",ExpressionUUID->"b8ea9db2-3e86-49c7-8042-ff63c2ab4b3c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15283, 332, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[15443, 337, 536, 10, 55, "Text",ExpressionUUID->"13a5401e-e27a-4ea6-a22c-14d2d47d9071"],
+Cell[15982, 349, 226, 5, 33, "Text",ExpressionUUID->"fdb3eff4-4505-4900-b4f1-e5b973712621"],
+Cell[16211, 356, 350, 7, 33, "Text",ExpressionUUID->"6fc07aa0-8dec-4a9e-a175-e9efc9016966"],
+Cell[16564, 365, 383, 8, 55, "Text",ExpressionUUID->"31339b16-4440-46ae-9b6a-8759dbc8e547"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16984, 378, 254, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[17241, 384, 502, 10, 33, "Text",ExpressionUUID->"6e032a54-c08f-44b9-b4c6-2d6437e63167"],
+Cell[17746, 396, 257, 6, 33, "Text",ExpressionUUID->"8cee83ee-6a2e-4da6-9355-1544b7b7c301"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18040, 407, 164, 3, 69, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"],
+Cell[CellGroupData[{
+Cell[18229, 414, 258, 5, 27, "ItemNumbered",ExpressionUUID->"a2a2d0f9-1903-48d1-9295-965d0b254119"],
+Cell[18490, 421, 433, 7, 27, "ItemNumbered",ExpressionUUID->"7f2dba6e-2ea5-45f4-a97f-96a909d9f5f2"],
+Cell[18926, 430, 470, 9, 27, "ItemNumbered",ExpressionUUID->"37ed614b-c8d8-4468-b2c0-15d34c69284a"],
+Cell[19399, 441, 320, 6, 27, "ItemNumbered",ExpressionUUID->"2fd08a18-db85-452d-8e00-e4c2ebae0e73"],
+Cell[19722, 449, 355, 7, 27, "ItemNumbered",ExpressionUUID->"60f5857e-2d29-4c4e-8c6f-a3b140926d51"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

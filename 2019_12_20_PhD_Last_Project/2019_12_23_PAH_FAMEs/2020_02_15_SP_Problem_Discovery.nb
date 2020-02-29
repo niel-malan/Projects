@@ -1,0 +1,256 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10328,        248]
+NotebookOptionsPosition[      7604,        189]
+NotebookOutlinePosition[      8588,        221]
+CellTagsIndexPosition[      8545,        218]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project report", "Title",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+  3.7845483504703264`*^9, 3.784548354496603*^9}, {3.78454864193289*^9, 
+  3.784548646564549*^9}},ExpressionUUID->"d17f4424-a917-4d4f-94ca-\
+e53c984f5c44"],
+
+Cell["How the set point problem was found", "Subtitle",
+ CellChangeTimes->{{3.7845444920776753`*^9, 3.784544499103841*^9}, {
+   3.7845483504703264`*^9, 3.784548354496603*^9}, {3.784893594271753*^9, 
+   3.7848935968348985`*^9}, {3.7854733694647818`*^9, 3.785473394876835*^9}, 
+   3.785560155405504*^9, {3.786095925455278*^9, 3.786095960894475*^9}, {
+   3.786096794943133*^9, 3.7860967973776608`*^9}, {3.7907470921024666`*^9, 
+   3.790747102468764*^9}},ExpressionUUID->"5c8df932-9992-46d0-881c-\
+45b869b2dfe0"],
+
+Cell["D Malan", "Author",
+ CellChangeTimes->{{3.7845483567535667`*^9, 
+  3.7845483593196535`*^9}},ExpressionUUID->"79381105-d1f5-4556-8de7-\
+f9f0c48b5225"],
+
+Cell["\<\
+Department of Chemistry
+University of Pretoria\
+\>", "Department",
+ CellChangeTimes->{{3.6387804692164187`*^9, 3.638780474075697*^9}, {
+  3.6387806147977457`*^9, 
+  3.6387806229002085`*^9}},ExpressionUUID->"3ad3a730-1699-4e14-a00b-\
+7329cecf413d"],
+
+Cell["15 February 2020", "Date",
+ CellChangeTimes->{{3.7845483898310356`*^9, 3.784548396079321*^9}, {
+   3.7853958233995085`*^9, 3.7853958241534977`*^9}, 3.7854733627547235`*^9, 
+   3.785560263756798*^9, {3.786096012256065*^9, 3.7860960123059254`*^9}, {
+   3.7860967476975265`*^9, 3.7860968137946997`*^9}, {3.790747107019595*^9, 
+   3.7907471151149564`*^9}},ExpressionUUID->"01983c70-102d-4049-bdae-\
+a1e819539979"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section",
+ CellChangeTimes->{{3.7845484125392857`*^9, 
+  3.784548423051174*^9}},ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-\
+a025405352fb"],
+
+Cell["\<\
+Previous reports discussed the problem with the set point repeatability. The \
+purpose of this report is to examine the discovery of the problem on a \
+personal level, before the memory of it fades and a new an improved version \
+is created.\
+\>", "Text",
+ CellChangeTimes->{{3.7845445376058397`*^9, 3.7845445797171965`*^9}, {
+   3.7845446376173005`*^9, 3.7845446468137007`*^9}, {3.7845447848364754`*^9, 
+   3.7845447870695057`*^9}, 3.7845451447613544`*^9, {3.784545698748372*^9, 
+   3.7845456987563505`*^9}, {3.7845457683013554`*^9, 
+   3.7845457966973495`*^9}, {3.784545830836029*^9, 3.7845458308410115`*^9}, 
+   3.7845484444200373`*^9, {3.7848936034861116`*^9, 3.784893641934288*^9}, {
+   3.7848937247238865`*^9, 3.784893727045675*^9}, {3.784894337762957*^9, 
+   3.7848944887122707`*^9}, {3.7853958304476633`*^9, 3.785395928272104*^9}, {
+   3.785473404668659*^9, 3.7854734160013533`*^9}, {3.7855601706617002`*^9, 
+   3.7855601946525555`*^9}, {3.785560271533992*^9, 3.785560277491069*^9}, 
+   3.7860959302654824`*^9, {3.7860965749048395`*^9, 3.7860966026206512`*^9}, {
+   3.790747122060392*^9, 3.7907471272315693`*^9}, {3.790747191274423*^9, 
+   3.790747191596525*^9}, {3.79074722887551*^9, 3.790747277494558*^9}, {
+   3.7907473426414213`*^9, 3.7907473466247764`*^9}, {3.790747386227919*^9, 
+   3.7907474269520655`*^9}, {3.7907474620432696`*^9, 
+   3.790747481884234*^9}},ExpressionUUID->"c48750c8-73ed-4622-8562-\
+1ab993964939"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experimental", "Section",
+ CellChangeTimes->{{3.7845446632976365`*^9, 
+  3.784544701383749*^9}},ExpressionUUID->"01225c12-fc5c-4b80-8774-\
+9d4c9dda8576"],
+
+Cell["\<\
+Previous reports describes the experimental data. If this document progresses \
+past the draft stage the data will be shown here.\
+\>", "Text",
+ CellChangeTimes->{{3.790747282014507*^9, 
+  3.7907473337681437`*^9}},ExpressionUUID->"9d1ba7b8-58b3-4270-ade4-\
+07b313f1baf7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculations", "Section",
+ CellChangeTimes->{{3.7854911900001135`*^9, 3.7854912032646475`*^9}, {
+  3.785589805500736*^9, 3.7855898070067077`*^9}, {3.7860967323396125`*^9, 
+  3.7860967370230837`*^9}},ExpressionUUID->"313534f2-78b3-47e4-a3e5-\
+f406dd67943e"],
+
+Cell["\<\
+Some calculations were done to show the influence of the set point \
+variability on the retention times.\
+\>", "Text",
+ CellChangeTimes->{{3.7907474334217725`*^9, 3.7907474576240864`*^9}, {
+  3.7907474885394673`*^9, 3.790747501116826*^9}, {3.790747566897999*^9, 
+  3.7907475725329375`*^9}},ExpressionUUID->"9a635802-e734-4ca9-8246-\
+5777f7a42419"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Section",
+ CellChangeTimes->{{3.7855079047462983`*^9, 3.785507921826629*^9}, {
+  3.785508018508127*^9, 3.785508024260746*^9}, {3.78609670320755*^9, 
+  3.7860967100143394`*^9}},ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-\
+fe42d4cfa09c"],
+
+Cell["\<\
+It was found that the variability in the set point can cause a 100 ms \
+difference in retention time between two consecutive, identical fast GC runs.\
+\>", "Text",
+ CellChangeTimes->{{3.7907475209926996`*^9, 
+  3.7907476163528137`*^9}},ExpressionUUID->"8decc79e-c360-44ca-b40c-\
+629cd5f06973"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.7855696451552353`*^9, 
+  3.785569649894513*^9}},ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-\
+bc98cbed73db"],
+
+Cell["\<\
+Variation in column temperature is the bane of fast temperature programmed \
+GC. Andr\[EAcute]\[CloseCurlyQuote]s worked suffered from it, and many of my \
+problems were caused by it. In some of my work it didn\[CloseCurlyQuote]t \
+show at all.\
+\>", "Text",
+ CellChangeTimes->{{3.7907476638957295`*^9, 
+  3.7907477503427*^9}},ExpressionUUID->"87634cab-605e-4a49-86b5-0c8616c9a098"],
+
+Cell["\<\
+The event that lead to the in-depth investigation of the problem was a \
+\[OpenCurlyQuote]split\[CloseCurlyQuote] peak in what was otherwise a \
+beautiful chromatogram. That this was not an intrinsic issue was shown by the \
+fact that adjacent runs were perfectly good and repeatable. The peak width \
+was 100 ms, and the retention time was retarded by 100 ms. The issue was \
+confused a bit by the fact that the GC chromatogram had fewer data points \
+than the adjacent ones: they were lost because the software does not run on a \
+real-time operating system. I built up a theory, which still has validity, \
+that the \
+\>", "Text",
+ CellChangeTimes->{{3.7907476444228272`*^9, 3.7907476574849043`*^9}, {
+  3.7907477584968667`*^9, 3.790747880449292*^9}, {3.7907479398993964`*^9, 
+  3.790747980957859*^9}, {3.790748021992637*^9, 3.7907482228922462`*^9}, {
+  3.790748342114361*^9, 3.790748394379839*^9}, {3.790748481324438*^9, 
+  3.790748483487656*^9}},ExpressionUUID->"9c58f639-457f-46bc-9477-\
+626aec94f37e"]
+}, Open  ]],
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{{3.784545640828317*^9, 3.784545646825271*^9}, {
+  3.784894608665481*^9, 3.7848946159839106`*^9}, {3.7855118066531153`*^9, 
+  3.785511815742812*^9}},ExpressionUUID->"f84efae4-08e6-4fde-83ac-\
+0785fe6e6287"],
+
+Cell["Recommendations", "Section",
+ CellChangeTimes->{{3.7855120994821634`*^9, 
+  3.7855121085339622`*^9}},ExpressionUUID->"d383fda1-025d-4d0e-a15f-\
+adbb748a8822"]
+}, Open  ]]
+},
+PrintingStyleEnvironment->"Printout",
+WindowSize->{1350, 674},
+WindowMargins->{{0, Automatic}, {Automatic, 2}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.3199999999999, 841.92},
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Report"}, "StandardReport.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 255, 4, 95, "Title",ExpressionUUID->"d17f4424-a917-4d4f-94ca-e53c984f5c44"],
+Cell[838, 28, 508, 7, 33, "Subtitle",ExpressionUUID->"5c8df932-9992-46d0-881c-45b869b2dfe0"],
+Cell[1349, 37, 155, 3, 41, "Author",ExpressionUUID->"79381105-d1f5-4556-8de7-f9f0c48b5225"],
+Cell[1507, 42, 257, 7, 33, "Department",ExpressionUUID->"3ad3a730-1699-4e14-a00b-7329cecf413d"],
+Cell[1767, 51, 415, 6, 44, "Date",ExpressionUUID->"01983c70-102d-4049-bdae-a1e819539979"],
+Cell[CellGroupData[{
+Cell[2207, 61, 159, 3, 69, "Section",ExpressionUUID->"8b1a6ffb-395a-49e3-ac93-a025405352fb"],
+Cell[2369, 66, 1441, 22, 55, "Text",ExpressionUUID->"c48750c8-73ed-4622-8562-1ab993964939"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3847, 93, 159, 3, 69, "Section",ExpressionUUID->"01225c12-fc5c-4b80-8774-9d4c9dda8576"],
+Cell[4009, 98, 281, 6, 33, "Text",ExpressionUUID->"9d1ba7b8-58b3-4270-ade4-07b313f1baf7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4327, 109, 262, 4, 69, "Section",ExpressionUUID->"313534f2-78b3-47e4-a3e5-f406dd67943e"],
+Cell[4592, 115, 357, 7, 33, "Text",ExpressionUUID->"9a635802-e734-4ca9-8246-5777f7a42419"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4986, 127, 250, 4, 69, "Section",ExpressionUUID->"0ad6a660-efcf-41ad-9bc0-fe42d4cfa09c"],
+Cell[5239, 133, 303, 6, 33, "Text",ExpressionUUID->"8decc79e-c360-44ca-b40c-629cd5f06973"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5579, 144, 157, 3, 69, "Section",ExpressionUUID->"8cdfc9e0-5ddc-43b7-86e2-bc98cbed73db"],
+Cell[5739, 149, 392, 7, 33, "Text",ExpressionUUID->"87634cab-605e-4a49-86b5-0c8616c9a098"],
+Cell[6134, 158, 1018, 16, 77, "Text",ExpressionUUID->"9c58f639-457f-46bc-9477-626aec94f37e"]
+}, Open  ]],
+Cell[7167, 177, 254, 4, 69, "Section",ExpressionUUID->"f84efae4-08e6-4fde-83ac-0785fe6e6287"],
+Cell[7424, 183, 164, 3, 55, "Section",ExpressionUUID->"d383fda1-025d-4d0e-a15f-adbb748a8822"]
+}, Open  ]]
+}
+]
+*)
+
