@@ -10,14 +10,709 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[       762,         33]
-NotebookOptionsPosition[       561,         21]
-NotebookOutlinePosition[       902,         36]
-CellTagsIndexPosition[       859,         33]
+NotebookDataLength[     34780,        754]
+NotebookOptionsPosition[     33034,        716]
+NotebookOutlinePosition[     33375,        731]
+CellTagsIndexPosition[     33332,        728]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"codexfile", " ", "=", " ", 
+  "\"\<C:\\\\Users\\\\fskdm\\\\My \
+PhD\\\\Projects\\\\2019_12_20_PhD_Last_Project\\\\2019_12_20_FishOil\\\\\
+CodexFishOils.txt\>\""}]], "Input",
+ CellChangeTimes->{{3.792137461596653*^9, 3.7921374886124196`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"b1881fde-b480-4a87-89e8-9fa813714ec5"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\fskdm\\\\My \
+PhD\\\\Projects\\\\2019_12_20_PhD_Last_Project\\\\2019_12_20_FishOil\\\\\
+CodexFishOils.txt\"\>"], "Output",
+ CellChangeTimes->{3.792137490164271*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"ce6093b0-1b25-4ef3-8892-9f55f52c1ed7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"codexdata", " ", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"codexfile", ",", " ", "\"\<TSV\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"codexdata", "//", "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.792137492673561*^9, 3.7921375140155005`*^9}, {
+   3.7921375636618075`*^9, 3.7921375677748175`*^9}, {3.7921377088047657`*^9, 
+   3.792137714097575*^9}, {3.7921377851785803`*^9, 3.792137788581436*^9}, {
+   3.792137941421838*^9, 3.7921379445534196`*^9}, 3.7921390551327066`*^9, {
+   3.7922356238097124`*^9, 3.7922356245955825`*^9}},
+ CellLabel->
+  "In[101]:=",ExpressionUUID->"ab9cd9f9-8892-4b0f-a090-86723c445173"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"\<\"N:D\"\>", "\<\"N\"\>", "\<\"D\"\>", "\<\"n-\"\>", "\<\"Fatty \
+acids\"\>", "\<\"Anchovy\"\>", "\<\"Anchovy\"\>", "\<\"Tuna\"\>", "\<\"Tuna\"\
+\>", "\<\"Krill\"\>", "\<\"Krill\"\>", "\<\"Menhaden\"\>", \
+"\<\"Menhaden\"\>", "\<\"Salmon (Wild)\"\>", "\<\"Salmon (Wild)\"\>", \
+"\<\"Salmon (Farmed)\"\>", "\<\"Salmon (Farmed)\"\>", "\<\"Cod Liver\"\>", \
+"\<\"Cod Liver\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"Limits\"\>", \
+"\<\"Low\"\>", "\<\"High\"\>", "\<\"Low\"\>", "\<\"High\"\>", "\<\"Low\"\>", \
+"\<\"High\"\>", "\<\"Low\"\>", "\<\"High\"\>", "\<\"Low\"\>", "\<\"High\"\>", \
+"\<\"Low\"\>", "\<\"High\"\>", "\<\"Low\"\>", "\<\"High\"\>", "\<\"\"\>"},
+    {"\<\"C14:0\"\>", "14", "0", "\<\"\"\>", "\<\"myristic acid\"\>", "2.7`", 
+     "11.5`", "\<\"ND\"\>", "5.`", "5.`", "13.`", "8.`", "11.`", "2.`", "5.`",
+      "1.5`", "5.5`", "2.`", "6.`", "\<\"\"\>"},
+    {"\<\"C15:0\"\>", "15", 
+     "0", "\<\"\"\>", "\<\"pentadecanoic acid\"\>", "\<\"ND\"\>", 
+     "1.5`", "\<\"ND\"\>", "2.`", "\<\"NA\"\>", "\<\"\"\>", "\<\"ND\"\>", 
+     "1.`", "\<\"ND\"\>", "1.`", "\<\"ND\"\>", "0.5`", "\<\"ND\"\>", 
+     "0.5`", "\<\"\"\>"},
+    {"\<\"C16:0\"\>", "16", "0", "\<\"\"\>", "\<\"palmitic acid\"\>", "13.`", 
+     "22.`", "14.`", "24.`", "17.`", "24.6`", "18.`", "20.`", "10.`", "16.`", 
+     "6.5`", "12.`", "7.`", "14.`", "\<\"\"\>"},
+    {"\<\"C16:1\"\>", "16", "1", "\<\"(n-7)\"\>", "\<\"palmitoleic acid\"\>", 
+     "4.`", "12.6`", "\<\"ND\"\>", "12.5`", "2.5`", "9.`", "9.`", "13.`", 
+     "4.`", "6.`", "2.`", "5.`", "4.5`", "11.5`", "\<\"\"\>"},
+    {"\<\"C17:0\"\>", "17", 
+     "0", "\<\"\"\>", "\<\"heptadecanoic acid\"\>", "\<\"ND\"\>", 
+     "2.`", "\<\"ND\"\>", "3.`", "\<\"NA\"\>", "\<\"\"\>", "\<\"ND\"\>", 
+     "1.`", "\<\"ND\"\>", "1.`", "\<\"ND\"\>", 
+     "0.5`", "\<\"NA\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"C18:0\"\>", "18", "0", "\<\"\"\>", "\<\"stearic acid\"\>", "1.`", 
+     "7.`", "\<\"ND\"\>", "7.5`", "\<\"NA\"\>", "\<\"\"\>", "2.5`", "4.`", 
+     "2.`", "5.`", "2.`", "5.`", "1.`", "4.`", "\<\"\"\>"},
+    {"\<\"C18:1\"\>", "18", "1.1`", "\<\"(n-7)\"\>", "\<\"vaccenic acid\"\>", 
+     "1.7`", "3.7`", "\<\"ND\[Dash] 7.0\"\>", "4.7`", "8.1`", "2.5`", "3.5`", 
+     "1.5`", "2.5`", "\<\"NA\"\>", "\<\"\"\>", "\<\"2.0\[Dash]7.0\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"C18:1\"\>", "18", "1", "\<\"(n-9)\"\>", "\<\"oleic acid\"\>", 
+     "3.6`", "17.`", "10.`", "25.`", "6.`", "14.5`", "5.5`", "8.5`", "8.`", 
+     "16.`", "30.`", "47.`", "12.`", "21.`", "\<\"\"\>"},
+    {"\<\"C18:2\"\>", "18", 
+     "2", "\<\"(n-6)\"\>", "\<\"linoleic acid\"\>", "\<\"ND\"\>", 
+     "3.5`", "\<\"ND\"\>", "3.`", "\<\"ND\"\>", "3.`", "2.`", "3.5`", "1.5`", 
+     "2.5`", "8.`", "15.`", "0.5`", "3.`", "\<\"\"\>"},
+    {"\<\"C18:3\"\>", "18", 
+     "2.9`", "\<\"(n-3)\"\>", "\<\"linolenic acid\"\>", "\<\"ND\"\>", 
+     "7.`", "\<\"ND\"\>", "2.`", "0.1`", "4.7`", "\<\"ND\"\>", 
+     "2.`", "\<\"ND\"\>", "2.`", "3.`", "6.`", "\<\"ND\"\>", 
+     "2.`", "\<\"\"\>"},
+    {"\<\"C18:3\"\>", "18", 
+     "3", "\<\"(n-6)\"\>", "\<\"\[Gamma]-linolenic acid\"\>", "\<\"ND\"\>", 
+     "5.`", "\<\"ND\"\>", "4.`", "\<\"NA\"\>", "\<\"\"\>", "\<\"ND\"\>", 
+     "2.5`", "\<\"ND\"\>", "2.`", "\<\"ND\"\>", 
+     "0.5`", "\<\"NA\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"C18:4\"\>", "18", 
+     "4", "\<\"(n-3)\"\>", "\<\"stearidonic acid\"\>", "\<\"ND\"\>", 
+     "5.`", "\<\"ND\"\>", "2.`", "1.`", "8.1`", "1.5`", "3.`", "1.`", "4.`", 
+     "0.5`", "1.5`", "0.5`", "4.5`", "\<\"\"\>"},
+    {"\<\"C20:0\"\>", "22", 
+     "0", "\<\"\"\>", "\<\"arachidic acid\"\>", "\<\"ND\"\>", 
+     "1.8`", "\<\"ND\"\>", "2.5`", "\<\"NA\"\>", "\<\"\"\>", "0.1`", 
+     "0.5`", "\<\"ND\"\>", "0.5`", "0.1`", 
+     "0.5`", "\<\"NA\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"C20:1\"\>", "20", 
+     "1", "\<\"(n-9)\"\>", "\<\"eicosenoic acid\"\>", "\<\"ND\"\>", 
+     "4.`", "\<\"ND\"\>", "2.5`", "\<\"NA\"\>", "\<\"\"\>", "\<\"ND\"\>", 
+     "0.5`", "2.`", "10.`", "1.5`", "7.`", "5.`", "17.`", "\<\"\"\>"},
+    {"\<\"C20:1\"\>", "20", 
+     "0.9`", "\<\"(n-11)\"\>", "\<\"eicosenoic acid\"\>", "\<\"ND\"\>", 
+     "4.`", "\<\"ND\"\>", "3.`", "\<\"NA\"\>", "\<\"\"\>", "0.5`", 
+     "2.`", "\<\"NA\"\>", "\<\"\"\>", "\<\"NA\"\>", "\<\"\"\>", "1.`", 
+     "5.5`", "\<\"\"\>"},
+    {"\<\"C20:4\"\>", "20", 
+     "4", "\<\"(n-6)\"\>", "\<\"arachidonic acid\"\>", "\<\"ND\"\>", 
+     "2.5`", "\<\"ND\"\>", "3.`", "\<\"NA\"\>", "\<\"\"\>", "\<\"ND\"\>", 
+     "2.`", "0.5`", "2.5`", "\<\"ND\"\>", "1.2`", "\<\"ND\"\>", 
+     "1.5`", "\<\"\"\>"},
+    {"\<\"C20:4\"\>", "20", 
+     "3.9`", "\<\"(n-3)\"\>", "\<\"eicosatetraenoic acid\"\>", "\<\"ND\"\>", 
+     "2.`", "\<\"ND\"\>", 
+     "1.`", "\<\"NA\"\>", "\<\"\"\>", "\<\"NA\"\>", "\<\"\"\>", "1.`", "3.`", 
+     "0.5`", "1.`", "\<\"ND\"\>", "2.`", "\<\"\"\>"},
+    {"\<\"C20:5\"\>", "20", 
+     "5", "\<\"(n-3)\"\>", "\<\"eicosapentaenoic acid\"\>", "5.`", "26.`", 
+     "2.5`", "9.`", "14.3`", "28.`", "12.5`", "19.`", "6.5`", "11.5`", "2.`", 
+     "6.`", "7.`", "16.`", "\<\"\"\>"},
+    {"\<\"C21:5\"\>", "21", 
+     "5", "\<\"(n-3)\"\>", "\<\"heneicosapentaenoic acid\"\>", "\<\"ND\"\>", 
+     "4.`", "\<\"ND\"\>", "1.`", "\<\"NA\"\>", "\<\"\"\>", "0.5`", 
+     "1.`", "\<\"ND\"\>", "4.`", "\<\"NA\"\>", "\<\"\"\>", "\<\"ND\"\>", 
+     "1.5`", "\<\"\"\>"},
+    {"\<\"C22:1\"\>", "22", 
+     "1", "\<\"(n-9)\"\>", "\<\"erucic acid\"\>", "\<\"ND\"\>", 
+     "2.3`", "\<\"ND\"\>", "2.`", "\<\"ND\"\>", "1.5`", "0.1`", 
+     "0.5`", "\<\"ND\"\>", "1.5`", "3.`", "7.`", "\<\"ND\"\>", 
+     "1.5`", "\<\"\"\>"},
+    {"\<\"C22:1\"\>", "22", 
+     "0.9`", "\<\"(n-11)\"\>", "\<\"cetoleic acid\"\>", "\<\"ND\"\>", 
+     "5.6`", "\<\"ND\"\>", "1.`", "\<\"NA\"\>", "\<\"\"\>", "\<\"ND\"\>", 
+     "0.1`", "1.`", "1.5`", "\<\"NA\"\>", "\<\"\"\>", "5.`", 
+     "12.`", "\<\"\"\>"},
+    {"\<\"C22:5\"\>", "22", 
+     "5", "\<\"(n-3)\"\>", "\<\"docosapentaenoic acid\"\>", "\<\"ND\"\>", 
+     "4.`", "\<\"ND\"\>", "3.`", "\<\"ND\"\>", "0.7`", "2.`", "3.`", "1.5`", 
+     "3.`", "1.`", "2.5`", "0.5`", "3.`", "\<\"\"\>"},
+    {"\<\"C22:6\"\>", "22", 
+     "6", "\<\"(n-3)\"\>", "\<\"docosahexaenoic acid\"\>", "4.`", "26.5`", 
+     "21.`", "42.5`", "7.1`", "15.7`", "5.`", "11.5`", "6.`", "14.`", "3.`", 
+     "10.`", "6.`", "18.`", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>"},
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>"},
+    {"\<\"ND = non-detect, defined as \[LessEqual]0.05%\"\>", "\<\"\"\>", "\<\
+\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"NA = not applicable or available\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+    "N:D", "N", "D", "n-", "Fatty acids", "Anchovy", "Anchovy", "Tuna", 
+     "Tuna", "Krill", "Krill", "Menhaden", "Menhaden", "Salmon (Wild)", 
+     "Salmon (Wild)", "Salmon (Farmed)", "Salmon (Farmed)", "Cod Liver", 
+     "Cod Liver", ""}, {
+    "", "", "", "", "Limits", "Low", "High", "Low", "High", "Low", "High", 
+     "Low", "High", "Low", "High", "Low", "High", "Low", "High"}, {
+    "C14:0", 14, 0, "", "myristic acid", 2.7, 11.5, "ND", 5., 5., 13., 8., 
+     11., 2., 5., 1.5, 5.5, 2., 6.}, {
+    "C15:0", 15, 0, "", "pentadecanoic acid", "ND", 1.5, "ND", 2., "NA", "", 
+     "ND", 1., "ND", 1., "ND", 0.5, "ND", 0.5}, {
+    "C16:0", 16, 0, "", "palmitic acid", 13., 22., 14., 24., 17., 24.6, 18., 
+     20., 10., 16., 6.5, 12., 7., 14.}, {
+    "C16:1", 16, 1, "(n-7)", "palmitoleic acid", 4., 12.6, "ND", 12.5, 2.5, 
+     9., 9., 13., 4., 6., 2., 5., 4.5, 11.5}, {
+    "C17:0", 17, 0, "", "heptadecanoic acid", "ND", 2., "ND", 3., "NA", "", 
+     "ND", 1., "ND", 1., "ND", 0.5, "NA", ""}, {
+    "C18:0", 18, 0, "", "stearic acid", 1., 7., "ND", 7.5, "NA", "", 2.5, 4., 
+     2., 5., 2., 5., 1., 4.}, {
+    "C18:1", 18, 1.1, "(n-7)", "vaccenic acid", 1.7, 3.7, "ND\[Dash] 7.0", 
+     4.7, 8.1, 2.5, 3.5, 1.5, 2.5, "NA", "", "2.0\[Dash]7.0", "", ""}, {
+    "C18:1", 18, 1, "(n-9)", "oleic acid", 3.6, 17., 10., 25., 6., 14.5, 5.5, 
+     8.5, 8., 16., 30., 47., 12., 21.}, {
+    "C18:2", 18, 2, "(n-6)", "linoleic acid", "ND", 3.5, "ND", 3., "ND", 3., 
+     2., 3.5, 1.5, 2.5, 8., 15., 0.5, 3.}, {
+    "C18:3", 18, 2.9, "(n-3)", "linolenic acid", "ND", 7., "ND", 2., 0.1, 4.7,
+      "ND", 2., "ND", 2., 3., 6., "ND", 2.}, {
+    "C18:3", 18, 3, "(n-6)", "\[Gamma]-linolenic acid", "ND", 5., "ND", 4., 
+     "NA", "", "ND", 2.5, "ND", 2., "ND", 0.5, "NA", ""}, {
+    "C18:4", 18, 4, "(n-3)", "stearidonic acid", "ND", 5., "ND", 2., 1., 8.1, 
+     1.5, 3., 1., 4., 0.5, 1.5, 0.5, 4.5}, {
+    "C20:0", 22, 0, "", "arachidic acid", "ND", 1.8, "ND", 2.5, "NA", "", 0.1,
+      0.5, "ND", 0.5, 0.1, 0.5, "NA", ""}, {
+    "C20:1", 20, 1, "(n-9)", "eicosenoic acid", "ND", 4., "ND", 2.5, "NA", "",
+      "ND", 0.5, 2., 10., 1.5, 7., 5., 17.}, {
+    "C20:1", 20, 0.9, "(n-11)", "eicosenoic acid", "ND", 4., "ND", 3., "NA", 
+     "", 0.5, 2., "NA", "", "NA", "", 1., 5.5}, {
+    "C20:4", 20, 4, "(n-6)", "arachidonic acid", "ND", 2.5, "ND", 3., "NA", 
+     "", "ND", 2., 0.5, 2.5, "ND", 1.2, "ND", 1.5}, {
+    "C20:4", 20, 3.9, "(n-3)", "eicosatetraenoic acid", "ND", 2., "ND", 1., 
+     "NA", "", "NA", "", 1., 3., 0.5, 1., "ND", 2.}, {
+    "C20:5", 20, 5, "(n-3)", "eicosapentaenoic acid", 5., 26., 2.5, 9., 14.3, 
+     28., 12.5, 19., 6.5, 11.5, 2., 6., 7., 16.}, {
+    "C21:5", 21, 5, "(n-3)", "heneicosapentaenoic acid", "ND", 4., "ND", 1., 
+     "NA", "", 0.5, 1., "ND", 4., "NA", "", "ND", 1.5}, {
+    "C22:1", 22, 1, "(n-9)", "erucic acid", "ND", 2.3, "ND", 2., "ND", 1.5, 
+     0.1, 0.5, "ND", 1.5, 3., 7., "ND", 1.5}, {
+    "C22:1", 22, 0.9, "(n-11)", "cetoleic acid", "ND", 5.6, "ND", 1., "NA", 
+     "", "ND", 0.1, 1., 1.5, "NA", "", 5., 12.}, {
+    "C22:5", 22, 5, "(n-3)", "docosapentaenoic acid", "ND", 4., "ND", 3., 
+     "ND", 0.7, 2., 3., 1.5, 3., 1., 2.5, 0.5, 3.}, {
+    "C22:6", 22, 6, "(n-3)", "docosahexaenoic acid", 4., 26.5, 21., 42.5, 7.1,
+      15.7, 5., 11.5, 6., 14., 3., 10., 6., 18.}, {}, {}, {
+    "ND = non-detect, defined as \[LessEqual]0.05%"}, {
+    "NA = not applicable or available"}}]]], "Output",
+ CellChangeTimes->{3.792235625782405*^9, 3.792236849215529*^9, 
+  3.7923061814151573`*^9},
+ CellLabel->
+  "Out[102]//TableForm=",ExpressionUUID->"d11ede75-65a5-48b5-8ba3-\
+6a7e130b200c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"codexdata", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7922347339776297`*^9, 3.7922347426674366`*^9}},
+ CellLabel->"In[72]:=",ExpressionUUID->"d1c03b86-ee58-42fc-96cc-be112cee8907"],
+
+Cell[BoxData["20"], "Output",
+ CellChangeTimes->{3.79223474348521*^9, 3.7922353199219866`*^9},
+ CellLabel->"Out[72]=",ExpressionUUID->"4c3b36f2-a81e-4398-894c-4a910b0cd07d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"faprofile", " ", "=", 
+  RowBox[{"ReplaceAll", "[", 
+   RowBox[{
+    RowBox[{"codexdata", "[", 
+     RowBox[{"[", 
+      RowBox[{
+       RowBox[{"3", ";;", 
+        RowBox[{"-", "5"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "2", ",", "6"}], "}"}]}], "]"}], "]"}], ",", " ", 
+    RowBox[{
+     RowBox[{"\"\<ND\>\"", "|", "\"\<NA\>\""}], " ", "\[Rule]", " ", "0"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7921382722391443`*^9, 3.7921384006817617`*^9}, {
+   3.792139103060092*^9, 3.792139161140814*^9}, {3.792139353030769*^9, 
+   3.7921393645749035`*^9}, 3.7921394013954616`*^9, {3.7921395600403085`*^9, 
+   3.7921395753154736`*^9}, {3.7921396617853312`*^9, 3.792139663221448*^9}, {
+   3.7921397648177867`*^9, 3.792139765363329*^9}, {3.7921398001776285`*^9, 
+   3.792139811233122*^9}, {3.792140387969432*^9, 3.792140388897896*^9}, {
+   3.792140490514201*^9, 3.792140525473775*^9}, 3.7921406349530363`*^9, 
+   3.792234445866212*^9},
+ CellLabel->"In[61]:=",ExpressionUUID->"82a044da-84c1-49a5-b731-2add3fdb1a69"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "14", ",", "2.7`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "15", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "16", ",", "13.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "16", ",", "4.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "17", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "18", ",", "1.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "18", ",", "1.7`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "18", ",", "3.6`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "18", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "18", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "18", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "18", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "22", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "20", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "20", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "20", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "20", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "20", ",", "5.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "21", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "22", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "22", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "22", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", "22", ",", "4.`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.792138291429824*^9, 3.7921383341346483`*^9}, {
+   3.7921383651188154`*^9, 3.7921384018955145`*^9}, {3.79213910412125*^9, 
+   3.79213916180802*^9}, 3.7921393654147043`*^9, 3.7921394021544323`*^9, 
+   3.792139576065463*^9, {3.7921398019957595`*^9, 3.792139812861739*^9}, 
+   3.7921403897316527`*^9, 3.792140491870575*^9, 3.7921405274763875`*^9, 
+   3.792140635757913*^9, 3.792234447376174*^9},
+ CellLabel->"Out[61]=",ExpressionUUID->"cd32b1d0-fa9b-45e1-96ec-e53c92888fa2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"exportBarChart", " ", "=", " ", 
+    RowBox[{"ListPointPlot3D", "[", 
+     RowBox[{
+      RowBox[{"ReplaceAll", "[", 
+       RowBox[{
+        RowBox[{"codexdata", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"3", ";;", 
+            RowBox[{"-", "5"}]}], ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", "2", ",", "i"}], "}"}]}], "]"}], "]"}], ",", 
+        " ", 
+        RowBox[{
+         RowBox[{"\"\<ND\>\"", "|", "\"\<NA\>\""}], " ", "\[Rule]", " ", 
+         "0"}]}], "]"}], "\[IndentingNewLine]", "\t", ",", " ", 
+      RowBox[{"PlotLabel", "\[Rule]", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"codexdata", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", "i"}], "]"}], "]"}], "<>", "\"\<\\n\>\"", "<>", 
+          RowBox[{"codexdata", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ",", "i"}], "]"}], "]"}]}], ",", "  ", "Bold", ",", 
+         " ", "Black"}], "]"}]}], "\[IndentingNewLine]", "\t", ",", " ", 
+      RowBox[{"PlotRange", "\[Rule]", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"{", 
+        RowBox[{"Automatic", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "28"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "10"}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+      "\t", ",", " ", 
+      RowBox[{"FaceGrids", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", 
+          RowBox[{"-", "1"}]}], "}"}], "}"}]}], "\[IndentingNewLine]", 
+      RowBox[{"(*", "\t", 
+       RowBox[{",", " ", 
+        RowBox[{"AxesLabel", "\[Rule]", "\[IndentingNewLine]", "\t\t", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"Rotate", "[", 
+              RowBox[{"\"\<Number of double bonds\>\"", ",", 
+               RowBox[{
+                RowBox[{"-", "20"}], "Degree"}]}], "]"}], ",", "Large", ",", 
+             " ", "Bold", ",", " ", "Black"}], "]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"Rotate", "[", 
+              RowBox[{"\"\<Number of carbon atoms\>\"", ",", " ", 
+               RowBox[{"60", "Degree"}]}], "]"}], ",", " ", "Large", ",", " ",
+              "Bold", ",", " ", "Black"}], "]"}], ",", " ", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"Rotate", "[", 
+              RowBox[{"\"\<Percentage\>\"", ",", " ", 
+               RowBox[{"97", " ", "Degree"}]}], "]"}], ",", " ", "Large", ",",
+              " ", "Bold", ",", " ", "Black"}], "]"}]}], "}"}]}], 
+        "\[IndentingNewLine]", "\t", ",", " ", 
+        RowBox[{"AxesStyle", " ", "\[Rule]", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Directive", "[", 
+            RowBox[{"Black", ",", " ", "Bold", ",", " ", "15"}], "]"}], 
+           "\[IndentingNewLine]", "\t\t\t\t", ",", " ", 
+           RowBox[{"Directive", "[", 
+            RowBox[{"Black", ",", " ", "Bold", ",", " ", "15"}], "]"}], 
+           "\[IndentingNewLine]", "\t\t\t\t", ",", " ", 
+           RowBox[{"Directive", "[", 
+            RowBox[{"Black", ",", " ", "Bold", ",", " ", "15"}], "]"}]}], 
+          "\[IndentingNewLine]", "\t\t\t\t", "}"}]}]}], "*)"}], 
+      "\[IndentingNewLine]", "\t", ",", 
+      RowBox[{"Filling", "\[Rule]", "Bottom"}], "\[IndentingNewLine]", "\t", 
+      ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"PointSize", "[", "0.003", "]"}]}], "\[IndentingNewLine]", 
+      "\t", ",", 
+      RowBox[{"FillingStyle", "\[Rule]", 
+       RowBox[{"Thickness", "[", "0.003", "]"}]}], "\[IndentingNewLine]", 
+      "\t", ",", " ", 
+      RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"(*", 
+      RowBox[{",", " ", 
+       RowBox[{"ViewPoint", "\[Rule]", "vp"}]}], "*)"}], 
+     "\[IndentingNewLine]", "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "6", ",", "19", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7922345019273376`*^9, 3.792234547169398*^9}, {
+   3.7922346975210996`*^9, 3.792234705380088*^9}, {3.7922347494512672`*^9, 
+   3.7922348685598125`*^9}, {3.79223510071978*^9, 3.7922351151033254`*^9}, {
+   3.7922353967236514`*^9, 3.7922354177085476`*^9}, 3.7922362981178484`*^9, {
+   3.7922363394324107`*^9, 3.792236368294213*^9}, {3.7922365919972277`*^9, 
+   3.792236614138996*^9}, {3.7922366443193045`*^9, 3.7922366733806095`*^9}, {
+   3.7922367700521455`*^9, 3.792236822076054*^9}, {3.79223685855658*^9, 
+   3.7922368592486687`*^9}, {3.792237496563969*^9, 3.792237505775344*^9}, {
+   3.7923064524473276`*^9, 3.7923064527963543`*^9}},
+ CellLabel->
+  "In[104]:=",ExpressionUUID->"fe263cdb-62c9-4086-9b49-f5a43888e8b8"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 17, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`i$$], 6, 19, 1}}, Typeset`size$$ = {
+    576., {214., 220.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i$129833$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 6}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`i$$, $CellContext`i$129833$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`exportBarChart = ListPointPlot3D[
+         ReplaceAll[
+          Part[$CellContext`codexdata, 
+           Span[3, -5], {3, 2, $CellContext`i$$}], Alternatives["ND", "NA"] -> 
+          0], PlotLabel -> Style[
+           StringJoin[
+            Part[$CellContext`codexdata, 1, $CellContext`i$$], "\n", 
+            Part[$CellContext`codexdata, 2, $CellContext`i$$]], Bold, Black], 
+         PlotRange -> {Automatic, {0, 28}, {0, 10}}, 
+         FaceGrids -> {{0, 0, -1}}, Filling -> Bottom, PlotStyle -> 
+         PointSize[0.003], FillingStyle -> Thickness[0.003], ImageSize -> 
+         Large]), "Specifications" :> {{$CellContext`i$$, 6, 19, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{627., {274., 280.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.792234858786939*^9, 3.7922348696848044`*^9}, 
+   3.792234931078701*^9, {3.7922351020811415`*^9, 3.792235119204361*^9}, 
+   3.792235327355113*^9, {3.7922354006710963`*^9, 3.7922354187517576`*^9}, 
+   3.7922356419691305`*^9, 3.792236298682327*^9, {3.7922367742728605`*^9, 
+   3.7922367805281363`*^9}, 3.792236822729309*^9, {3.79223685431187*^9, 
+   3.7922368600325747`*^9}, {3.7922369544081492`*^9, 3.792236957758168*^9}, {
+   3.7922374980310464`*^9, 3.7922375259245205`*^9}, {3.7923061926999884`*^9, 
+   3.792306197274757*^9}, {3.7923064535672827`*^9, 3.792306457396079*^9}},
+ CellLabel->
+  "Out[104]=",ExpressionUUID->"e169be3b-c1b5-41f1-86a3-14bc01d23672"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"exportBarChart", " ", "=", " ", 
+  RowBox[{"ListPointPlot3D", "[", 
+   RowBox[{"faprofile", "\[IndentingNewLine]", "\t", ",", " ", 
+    RowBox[{"PlotLabel", "\[Rule]", 
+     RowBox[{"Style", "[", 
+      RowBox[{
+      "\"\<Salmon oil: Fatty Acid Profile\>\"", ",", "  ", "Bold", ",", " ", 
+       "Black"}], "]"}]}], "\[IndentingNewLine]", "\t", ",", " ", 
+    RowBox[{"PlotRange", "\[Rule]", "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"{", 
+      RowBox[{"Automatic", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "28"}], "}"}], ",", " ", "All"}], "}"}]}], 
+    "\[IndentingNewLine]", "\t", ",", " ", 
+    RowBox[{"FaceGrids", "\[Rule]", " ", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", 
+        RowBox[{"-", "1"}]}], "}"}], "}"}]}], "\[IndentingNewLine]", 
+    RowBox[{"(*", "\t", 
+     RowBox[{",", " ", 
+      RowBox[{"AxesLabel", "\[Rule]", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Rotate", "[", 
+            RowBox[{"\"\<Number of double bonds\>\"", ",", 
+             RowBox[{
+              RowBox[{"-", "20"}], "Degree"}]}], "]"}], ",", "Large", ",", 
+           " ", "Bold", ",", " ", "Black"}], "]"}], ",", 
+         "\[IndentingNewLine]", "\t\t", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Rotate", "[", 
+            RowBox[{"\"\<Number of carbon atoms\>\"", ",", " ", 
+             RowBox[{"60", "Degree"}]}], "]"}], ",", " ", "Large", ",", " ", 
+           "Bold", ",", " ", "Black"}], "]"}], ",", " ", 
+         "\[IndentingNewLine]", "\t\t", 
+         RowBox[{"Style", "[", 
+          RowBox[{
+           RowBox[{"Rotate", "[", 
+            RowBox[{"\"\<Percentage\>\"", ",", " ", 
+             RowBox[{"97", " ", "Degree"}]}], "]"}], ",", " ", "Large", ",", 
+           " ", "Bold", ",", " ", "Black"}], "]"}]}], "}"}]}], 
+      "\[IndentingNewLine]", "\t", ",", " ", 
+      RowBox[{"AxesStyle", " ", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Directive", "[", 
+          RowBox[{"Black", ",", " ", "Bold", ",", " ", "15"}], "]"}], 
+         "\[IndentingNewLine]", "\t\t\t\t", ",", " ", 
+         RowBox[{"Directive", "[", 
+          RowBox[{"Black", ",", " ", "Bold", ",", " ", "15"}], "]"}], 
+         "\[IndentingNewLine]", "\t\t\t\t", ",", " ", 
+         RowBox[{"Directive", "[", 
+          RowBox[{"Black", ",", " ", "Bold", ",", " ", "15"}], "]"}]}], 
+        "\[IndentingNewLine]", "\t\t\t\t", "}"}]}]}], "*)"}], 
+    "\[IndentingNewLine]", "\t", ",", 
+    RowBox[{"Filling", "\[Rule]", "Bottom"}], "\[IndentingNewLine]", "\t", 
+    ",", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"PointSize", "[", "0.001", "]"}]}], "\[IndentingNewLine]", "\t", 
+    ",", 
+    RowBox[{"FillingStyle", "\[Rule]", 
+     RowBox[{"Thickness", "[", "0.001", "]"}]}], "\[IndentingNewLine]", "\t", 
+    ",", " ", 
+    RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "\[IndentingNewLine]", "\t", 
+   RowBox[{"(*", 
+    RowBox[{",", " ", 
+     RowBox[{"ViewPoint", "\[Rule]", "vp"}]}], "*)"}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdxVsoQwEABuDT8iCmbFEu2fJAofagbbJyOUwprWaZXJKRNS21CItmKZol
+syeFhdWWLKU0Zq3ZxQM1xcOSVmpEVrMsYuogzn8evr7yYZ1CzSIIooSGJ01P
+GTL+QqrkRgr7hQvCFvoDdUKMBcloP15MhoawmF+twUZPmQ7LMg4znuVILdj5
+3bGOT/rybLh9n7Bjrpt1jLuVI6f4rdLKnL32FcZaSfwcnxUeXeLbueA99uhj
+rFZ6Ss5hY8KbK8TkXj6zuipgkNK7TAkjTq9OreBG9pIFT1eYN3DA59vE4x63
+HQv4g07c6zJaXptT5JjebMW1zz1bOCtqYzYEt6/wnWaXWTuTk8S/ESWzajn2
+gUs7Q5848nND4YfHAVaavmbeIcIiilOHJdz3Bvx3GG7CRbILBfZPtHXhet51
+AY9Mkd7RnWL8D+i54v4=
+  "],
+ CellLabel->"In[91]:=",ExpressionUUID->"a5f95bf2-9d33-4080-b29a-6ea365503625"],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[0.3315753, 0.4561011, 0.6388182], PointSize[0.001], 
+    Point3DBox[CompressedData["
+1:eJxTTMoPSmViYGAQB2JmBnSg4zBrJgiwOqCK6zlgKAUDA6i4FpT+YI8qLoCm
+zxCHOUZo+mG0kYMxGPzGED97BgR4YOY5oJoDAxwkigvgEIcBMzRxmHtMiBSH
+mU+suAiauAgabYrDXlzuRBeHmYMuLoEmLuAAAO4IJV0=
+     "]]}, 
+   {RGBColor[0.3315753, 0.4561011, 0.6388182], Thickness[0.001], 
+    Line3DBox[CompressedData["
+1:eJxTTMoPSmVmYGAQB2ImIAaxUYGOw6yZIMDqgC6OoRQM9EgUN4CKazlgF4eB
+D/ao4gIO2MXRgSGJ4kZo5qKLo7vHyMEYDH7bo4vjUn/2DAjwOOBXz+BAmjgH
+jcUFSBSHATMixWHhYEIjcZg7aSUugiYu4oBdHF29KZHiMH/hCjdKxWH2Eisu
+gSYOCxd0cQYGAO6BOw0=
+     "]]}},
+  Axes->True,
+  AxesLabel->{None, None, None},
+  BoxRatios->{1, 1, 0.4},
+  DisplayFunction->Identity,
+  FaceGrids->{{{0, 0, -1}, {{0, 1, 2, 3, 4, 5, 6}, {0, 5, 10, 15, 20, 25, 
+     30}}}},
+  FaceGridsStyle->Automatic,
+  ImageSize->Large,
+  PlotLabel->FormBox[
+    StyleBox["\"Salmon oil: Fatty Acid Profile\"", Bold, 
+     GrayLevel[0], StripOnInput -> False], TraditionalForm],
+  PlotRange->{Automatic, {0, 28}, All},
+  PlotRangePadding->{{Automatic, Automatic}, {Automatic, Automatic}, {
+    Automatic, Automatic}},
+  Ticks->{Automatic, Automatic, Automatic},
+  ViewPoint->{1.0488455262871836`, -2.668217356415025, 1.7973700790079312`},
+  ViewVertical->{-0.0274838792723231, -0.08971770921210832, 
+   2.488969878576622}]], "Output",
+ CellChangeTimes->{
+  3.792234452095559*^9, {3.7922367067434063`*^9, 3.792236750848488*^9}},
+ CellLabel->"Out[91]=",ExpressionUUID->"1e1a44f7-ca08-420a-b3aa-7112aae31948"]
+}, Open  ]],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[0.3315753, 0.4561011, 0.6388182], PointSize[
+     NCache[
+      Rational[7, 1024], 0.0068359375]], Point3DBox[{0., 14., 1.5}], 
+    Point3DBox[{0., 15., 0.}], Point3DBox[{0., 16., 6.5}], 
+    Point3DBox[{1., 16., 2.}], Point3DBox[{0., 17., 0.}], 
+    Point3DBox[{0., 18., 2.}], Point3DBox[{1., 18., 30.}], 
+    Point3DBox[{2., 18., 8.}], Point3DBox[{3., 18., 3.}], 
+    Point3DBox[{3., 18., 0.}], Point3DBox[{4., 18., 0.5}], 
+    Point3DBox[{0., 22., 0.1}], Point3DBox[{1., 20., 1.5}], 
+    Point3DBox[{1., 20., 0.}], Point3DBox[{4., 20., 0.}], 
+    Point3DBox[{4., 20., 0.5}], Point3DBox[{5., 20., 2.}], 
+    Point3DBox[{5., 21., 0.}], Point3DBox[{1., 22., 3.}], 
+    Point3DBox[{1., 22., 0.}], Point3DBox[{5., 22., 1.}], 
+    Point3DBox[{6., 22., 3.}]}, 
+   {RGBColor[0.3315753, 0.4561011, 0.6388182], Thickness[0.01], 
+    Line3DBox[CompressedData["
+1:eJyd0jEKwkAUBNCPNiktRMRKexEVtXTnDB5BsPY8ehNv4xEsLU0wI+z4P2sc
+WJI8hs3uJrPj+XDqm9moHr16NPd55nhfn8l3zaKjL1ufwHfmkcQRuGTV0dcy
+/5fLeuh7+P4Jcp/Cd6YSr+B71C/5QPyefNfscL00uSX1/JnnsGmd/4961C85
+1/mv6361P1RH4NLf/ujcF8+N30k96pec76Wzp86MxbkedbMXHLg3Gg==
+     "]]}},
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox[
+      RotationBox[
+      "\"Number of double bonds\"", BoxRotation -> -0.3490658503988659], 
+      Large, Bold, 
+      GrayLevel[0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox[
+      RotationBox[
+      "\"Number of carbon atoms\"", BoxRotation -> 1.0471975511965976`], 
+      Large, Bold, 
+      GrayLevel[0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox[
+      RotationBox["\"Percentage\"", BoxRotation -> 1.6929693744344996`], 
+      Large, Bold, 
+      GrayLevel[0], StripOnInput -> False], TraditionalForm]},
+  AxesStyle->{
+    Directive[
+     GrayLevel[0], Bold, 15], 
+    Directive[
+     GrayLevel[0], Bold, 15], 
+    Directive[
+     GrayLevel[0], Bold, 15]},
+  BoxRatios->{1, 1, 0.4},
+  DisplayFunction->Identity,
+  FaceGrids->{{{0, 0, -1}, {{0, 1, 2, 3, 4, 5, 6}, {0, 5, 10, 15, 20, 25, 
+     30}}}},
+  FaceGridsStyle->Automatic,
+  ImageSize->1024,
+  PlotLabel->FormBox[
+    StyleBox["\"Salmon oil: Fatty Acid Profile\"", Large, Bold, 
+     GrayLevel[0], StripOnInput -> False], TraditionalForm],
+  PlotRange->{Automatic, {0, 28}, All},
+  PlotRangePadding->{{Automatic, Automatic}, {Automatic, Automatic}, {
+    Automatic, Automatic}},
+  Ticks->{Automatic, Automatic, Automatic},
+  ViewPoint->{1.3, -2.4, 2.},
+  ViewVertical->{0., 0., 1.}]], "Input",
+ CellChangeTimes->{3.792140614376045*^9},
+ CellLabel->"Out[53]=",ExpressionUUID->"23f5f28b-01e7-4faf-abf2-03cbe0a5e3d8"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7921380735455523`*^9, 
+  3.792138075107371*^9}},ExpressionUUID->"369d305f-9677-47ee-bfee-\
+bd943016dd82"]
 },
 WindowSize->{1350, 670},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -35,9 +730,33 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 343, 6, 28, "Input",ExpressionUUID->"b1881fde-b480-4a87-89e8-9fa813714ec5"],
+Cell[926, 30, 275, 4, 32, "Output",ExpressionUUID->"ce6093b0-1b25-4ef3-8892-9f55f52c1ed7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1238, 39, 669, 13, 48, "Input",ExpressionUUID->"ab9cd9f9-8892-4b0f-a090-86723c445173"],
+Cell[1910, 54, 11496, 196, 521, "Output",ExpressionUUID->"d11ede75-65a5-48b5-8ba3-6a7e130b200c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13443, 255, 268, 5, 28, "Input",ExpressionUUID->"d1c03b86-ee58-42fc-96cc-be112cee8907"],
+Cell[13714, 262, 173, 2, 32, "Output",ExpressionUUID->"4c3b36f2-a81e-4398-894c-4a910b0cd07d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13924, 269, 1055, 22, 30, "Input",ExpressionUUID->"82a044da-84c1-49a5-b731-2add3fdb1a69"],
+Cell[14982, 293, 2176, 55, 52, "Output",ExpressionUUID->"cd32b1d0-fa9b-45e1-96ec-e53c92888fa2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17195, 353, 4918, 109, 391, "Input",ExpressionUUID->"fe263cdb-62c9-4086-9b49-f5a43888e8b8"],
+Cell[22116, 464, 2785, 52, 573, "Output",ExpressionUUID->"e169be3b-c1b5-41f1-86a3-14bc01d23672"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24938, 521, 3746, 83, 371, "Input",ExpressionUUID->"a5f95bf2-9d33-4080-b29a-6ea365503625"],
+Cell[28687, 606, 1532, 35, 494, "Output",ExpressionUUID->"1e1a44f7-ca08-420a-b3aa-7112aae31948"]
+}, Open  ]],
+Cell[30234, 644, 2639, 65, 775, InheritFromParent,ExpressionUUID->"23f5f28b-01e7-4faf-abf2-03cbe0a5e3d8"],
+Cell[32876, 711, 154, 3, 28, "Input",ExpressionUUID->"369d305f-9677-47ee-bfee-bd943016dd82"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
