@@ -1,26 +1,26 @@
 N:D	N	D	n-	Fatty acids	Anchovy	Anchovy	Tuna	Tuna	Krill	Krill	Menhaden	Menhaden	Salmon (Wild)	Salmon (Wild)	Salmon (Farmed)	Salmon (Farmed)	Cod Liver	Cod Liver	
 				Limits	Low	High	Low	High	Low	High	Low	High	Low	High	Low	High	Low	High
 C14:0	14	0		myristic acid	2.7	11.5	ND	5.0	5.0	13.0	8.0	11.0	2.0	5.0	1.5	5.5	2.0	6.0
-C15:0	15	0		pentadecanoic acid	ND	1.5	ND	2.0	NA		ND	1.0	ND	1.0	ND	0.5	ND	0.5
+C15:0	15	0		pentadecanoic acid	ND	1.5	ND	2.0	NA	NA	ND	1.0	ND	1.0	ND	0.5	ND	0.5
 C16:0	16	0		palmitic acid	13.0	22.0	14.0	24.0	17.0	24.6	18.0	20.0	10.0	16.0	6.5	12.0	7.0	14.0
 C16:1	16	1	(n-7)	palmitoleic acid	4.0	12.6	ND	12.5	2.5	9.0	9.0	13.0	4.0	6.0	2.0	5.0	4.5	11.5
-C17:0	17	0		heptadecanoic acid	ND	2.0	ND	3.0	NA		ND	1.0	ND	1.0	ND	0.5	NA	
-C18:0	18	0		stearic acid	1.0	7.0	ND	7.5	NA		2.5	4.0	2.0	5.0	2.0	5.0	1.0	4.0
-C18:1	18	1.1	(n-7)	vaccenic acid	1.7	3.7	ND– 7.0	4.7	8.1	2.5	3.5	1.5	2.5	NA		2.0–7.0		
-C18:1	18	1	(n-9)	oleic acid	3.6	17.0	10.0	25.0	6.0	14.5	5.5	8.5	8.0	16.0	30.0	47.0	12.0	21.0
+C17:0	17	0		heptadecanoic acid	ND	2.0	ND	3.0	NA	NA	ND	1.0	ND	1.0	ND	0.5	NA	NA	
+C18:0	18	0		stearic acid	1.0	7.0	ND	7.5	NA	NA	2.5	4.0	2.0	5.0	2.0	5.0	1.0	4.0
+C18:1	18	1	(n-7)	vaccenic acid	1.7	3.7	ND	7.0	4.7	8.1	2.5	3.5	1.5	2.5	NA	NA	2.0	7.0		
+C18:1	18	0.9	(n-9)	oleic acid	3.6	17.0	10.0	25.0	6.0	14.5	5.5	8.5	8.0	16.0	30.0	47.0	12.0	21.0
 C18:2	18	2	(n-6)	linoleic acid	ND	3.5	ND	3.0	ND	3.0	2.0	3.5	1.5	2.5	8.0	15.0	0.5	3.0
 C18:3	18	2.9	(n-3)	linolenic acid	ND	7.0	ND	2.0	0.1	4.7	ND	2.0	ND	2.0	3.0	6.0	ND	2.0
-C18:3	18	3	(n-6)	γ-linolenic acid	ND	5.0	ND	4.0	NA		ND	2.5	ND	2.0	ND	0.5	NA	
+C18:3	18	3	(n-6)	γ-linolenic acid	ND	5.0	ND	4.0	NA	NA	ND	2.5	ND	2.0	ND	0.5	NA	NA	
 C18:4	18	4	(n-3)	stearidonic acid	ND	5.0	ND	2.0	1.0	8.1	1.5	3.0	1.0	4.0	0.5	1.5	0.5	4.5
-C20:0	22	0		arachidic acid	ND	1.8	ND	2.5	NA		0.1	0.5	ND	0.5	0.1	0.5	NA	
-C20:1	20	1	(n-9)	eicosenoic acid	ND	4.0	ND	2.5	NA		ND	0.5	2.0	10.0	1.5	7.0	5.0	17.0
-C20:1	20	0.9	(n-11)	eicosenoic acid	ND	4.0	ND	3.0	NA		0.5	2.0	NA		NA		1.0	5.5
-C20:4	20	4	(n-6)	arachidonic acid	ND	2.5	ND	3.0	NA		ND	2.0	0.5	2.5	ND	1.2	ND	1.5
-C20:4	20	3.9	(n-3)	eicosatetraenoic acid	ND	2.0	ND	1.0	NA		NA		1.0	3.0	0.5	1.0	ND	2.0
+C20:0	22	0		arachidic acid	ND	1.8	ND	2.5	NA	NA	0.1	0.5	ND	0.5	0.1	0.5	NA	NA	
+C20:1	20	0.9	(n-9)	eicosenoic acid	ND	4.0	ND	2.5	NA	NA	ND	0.5	2.0	10.0	1.5	7.0	5.0	17.0
+C20:1	20	0.8	(n-11)	eicosenoic acid	ND	4.0	ND	3.0	NA	NA	0.5	2.0	NA	NA	NA	NA	1.0	5.5
+C20:4	20	4	(n-6)	arachidonic acid	ND	2.5	ND	3.0	NA	NA	ND	2.0	0.5	2.5	ND	1.2	ND	1.5
+C20:4	20	3.9	(n-3)	eicosatetraenoic acid	ND	2.0	ND	1.0	NA	NA	NA	NA	1.0	3.0	0.5	1.0	ND	2.0
 C20:5	20	5	(n-3)	eicosapentaenoic acid	5.0	26.0	2.5	9.0	14.3	28.0	12.5	19.0	6.5	11.5	2.0	6.0	7.0	16.0
-C21:5	21	5	(n-3)	heneicosapentaenoic acid	ND	4.0	ND	1.0	NA		0.5	1.0	ND	4.0	NA		ND	1.5
-C22:1	22	1	(n-9)	erucic acid	ND	2.3	ND	2.0	ND	1.5	0.1	0.5	ND	1.5	3.0	7.0	ND	1.5
-C22:1	22	0.9	(n-11)	cetoleic acid	ND	5.6	ND	1.0	NA		ND	0.1	1.0	1.5	NA		5.0	12.0
+C21:5	21	5	(n-3)	heneicosapentaenoic acid	ND	4.0	ND	1.0	NA	NA	0.5	1.0	ND	4.0	NA	NA	ND	1.5
+C22:1	22	0.9	(n-9)	erucic acid	ND	2.3	ND	2.0	ND	1.5	0.1	0.5	ND	1.5	3.0	7.0	ND	1.5
+C22:1	22	0.8	(n-11)	cetoleic acid	ND	5.6	ND	1.0	NA	NA	ND	0.1	1.0	1.5	NA	NA	5.0	12.0
 C22:5	22	5	(n-3)	docosapentaenoic acid	ND	4.0	ND	3.0	ND	0.7	2.0	3.0	1.5	3.0	1.0	2.5	0.5	3.0
 C22:6	22	6	(n-3)	docosahexaenoic acid	4.0	26.5	21.0	42.5	7.1	15.7	5.0	11.5	6.0	14.0	3.0	10.0	6.0	18.0
 
